@@ -1,0 +1,123 @@
+body {
+    background-color: #ffffff;
+    color: #53335c; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.contact-section {
+    padding: 80px 0;
+    flex: 1; 
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #53335c; 
+    margin-bottom: 40px;
+}
+
+.contact-section .row {
+    display: flex;
+    align-items: stretch; 
+}
+
+.contact-info, .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 100%; /
+}
+
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: #ed2c6f; 
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #53335c; 
+}
+
+.contact-info a {
+    color: #ee3639; 
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #ed2c6f; 
+}
+
+.contact-form {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #53335c; 
+}
+
+.contact-form .btn-primary {
+    background-color: #ee3639; 
+    border-color: #ee3639;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #ed2c6f; 
+    border-color: #ed2c6f;
+}
+
+.social-links a {
+    color: #53335c; 
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ed2c6f; 
+}
+
+.footer {
+    background-color: #53335c; 
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+}
+
+.footer a {
+    color: #d7e038; 
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ed2c6f; 
+}

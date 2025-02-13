@@ -1,0 +1,87 @@
+body {
+    background-color: #ffffff;
+    color: #53335c; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand img {
+    height: 40px;
+}
+.services-section {
+    padding: 80px 0;
+    flex: 1; /
+}
+.services-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #53335c; 
+    margin-bottom: 40px;
+    text-align: center;
+}
+.service-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /*todos os cards tenham a mesma altura */
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.service-icon {
+    font-size: 3rem;
+    color: #ed2c6f; 
+    margin-bottom: 20px;
+}
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #53335c; 
+    margin-bottom: 15px;
+}
+.service-card p {
+    font-size: 1.1rem;
+    color: #53335c; 
+}
+.btn-primary {
+    background-color: #ee3639; 
+    border-color: #ee3639;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-top: auto; 
+    align-self: center; 
+}
+.btn-primary:hover {
+    background-color: #ed2c6f;
+    border-color: #ed2c6f;
+}
+.footer {
+    background-color: #53335c; 
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+}
+.footer a {
+    color: #d7e038; 
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #ed2c6f;
+}
