@@ -9,18 +9,14 @@ const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeSegment, setActiveSegment] = useState<string>('software');
 
+  // This useEffect handles the initial animation when the section comes into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll('.service-card');
-            elements.forEach((el, index) => {
-              setTimeout(() => {
-                el.classList.remove('opacity-0');
-                el.classList.remove('translate-y-8');
-              }, index * 100);
-            });
+            // Animate cards for the currently active segment
+            animateServiceCards();
             observer.unobserve(entry.target);
           }
         });
@@ -38,6 +34,32 @@ const Services = () => {
       }
     };
   }, []);
+
+  // This function animates the service cards for the active segment
+  const animateServiceCards = () => {
+    const elements = document.querySelectorAll('.service-card');
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.remove('opacity-0');
+        el.classList.remove('translate-y-8');
+      }, index * 100);
+    });
+  };
+
+  // Handle segment change
+  useEffect(() => {
+    // Reset animation classes first
+    const elements = document.querySelectorAll('.service-card');
+    elements.forEach((el) => {
+      el.classList.add('opacity-0');
+      el.classList.add('translate-y-8');
+    });
+
+    // Then trigger animation with a slight delay
+    setTimeout(() => {
+      animateServiceCards();
+    }, 50);
+  }, [activeSegment]);
 
   // Handle hash change to show the relevant segment
   useEffect(() => {
