@@ -36,28 +36,50 @@ const Index = () => {
       });
     }, 100);
 
-    // Handle hash navigation for the AtivaBot section
-    const handleActivaBotScroll = () => {
-      const element = document.getElementById('ativabot-anchor');
+    // Handle hash navigation for segments
+    const handleSegmentScroll = (segmentId: string) => {
+      const element = document.getElementById(segmentId);
       if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    };
+
+    // Check if we need to scroll to a specific segment
+    const hash = window.location.hash.substring(1);
+    if (['software', 'design', 'marketing', 'social'].includes(hash)) {
+      handleSegmentScroll(hash);
+    }
+
+    // Special case for AtivaBot section
+    if (hash === 'software') {
+      const ativabotAnchor = document.getElementById('ativabot-anchor');
+      if (ativabotAnchor) {
         setTimeout(() => {
           const ativabotSection = document.getElementById('ativabot');
           if (ativabotSection) {
             ativabotSection.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 100);
+        }, 200);
       }
-    };
-
-    // Check if we need to scroll to AtivaBot section
-    if (window.location.hash === '#software') {
-      handleActivaBotScroll();
     }
 
     // Listen for hash changes
     const hashChangeHandler = (e: HashChangeEvent) => {
-      if (e.newURL.includes('#software')) {
-        handleActivaBotScroll();
+      const newHash = new URL(e.newURL).hash.substring(1);
+      if (['software', 'design', 'marketing', 'social'].includes(newHash)) {
+        handleSegmentScroll(newHash);
+        
+        // Special case for AtivaBot
+        if (newHash === 'software') {
+          setTimeout(() => {
+            const ativabotSection = document.getElementById('ativabot');
+            if (ativabotSection) {
+              ativabotSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 200);
+        }
       }
     };
 
