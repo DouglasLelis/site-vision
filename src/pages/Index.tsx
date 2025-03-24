@@ -29,9 +29,12 @@ const Index = () => {
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
     
-    document.querySelectorAll('.reveal').forEach((el) => {
-      observer.observe(el);
-    });
+    // Apply the observer to all elements with 'reveal' class
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach((el) => {
+        observer.observe(el);
+      });
+    }, 100);
 
     // Handle hash navigation for the AtivaBot section
     const handleActivaBotScroll = () => {
@@ -52,15 +55,17 @@ const Index = () => {
     }
 
     // Listen for hash changes
-    window.addEventListener('hashchange', (e) => {
+    const hashChangeHandler = (e: HashChangeEvent) => {
       if (e.newURL.includes('#software')) {
         handleActivaBotScroll();
       }
-    });
+    };
+
+    window.addEventListener('hashchange', hashChangeHandler);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('hashchange', handleActivaBotScroll);
+      window.removeEventListener('hashchange', hashChangeHandler);
     };
   }, []);
 

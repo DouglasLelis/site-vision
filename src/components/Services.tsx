@@ -1,7 +1,9 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Check, Code, Smartphone, Monitor, Zap, Settings, Globe, Users, MessageSquare } from 'lucide-react';
+import { Check, Code, Smartphone, Monitor, Zap, Settings, Globe, Users, MessageSquare, Layout, Palette, PenTool, FileText, BarChart, TrendingUp, Mail, Instagram, Facebook } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -66,25 +68,31 @@ const Services = () => {
           title: 'Desenvolvimento Web',
           description: 'Criamos websites e aplicações web personalizadas, responsivas e de alto desempenho.',
           icon: <Monitor size={24} className="text-vision-purple" />,
-          features: ['Sites institucionais', 'E-commerce', 'Sistemas web', 'Portais']
+          features: ['Sites institucionais', 'E-commerce', 'Sistemas web', 'Portais corporativos', 'Integrações API']
         },
         {
           title: 'Aplicativos Mobile',
           description: 'Desenvolvemos aplicativos intuitivos e funcionais para iOS e Android.',
           icon: <Smartphone size={24} className="text-vision-purple" />,
-          features: ['Apps nativos', 'Apps híbridos', 'UI/UX design', 'Manutenção']
+          features: ['Apps nativos', 'Apps híbridos', 'UI/UX design', 'Manutenção', 'Notificações push']
         },
         {
           title: 'Software Personalizado',
           description: 'Soluções de software sob medida para atender às necessidades específicas do seu negócio.',
           icon: <Code size={24} className="text-vision-purple" />,
-          features: ['Automação', 'CRM', 'ERP', 'Integração de sistemas']
+          features: ['Automação', 'CRM', 'ERP', 'Integração de sistemas', 'Business Intelligence']
         },
         {
           title: 'Consultoria Técnica',
           description: 'Assessoria especializada em tecnologia e desenvolvimento de software.',
           icon: <Settings size={24} className="text-vision-purple" />,
-          features: ['Arquitetura', 'Segurança', 'Soluções cloud', 'DevOps']
+          features: ['Arquitetura', 'Segurança', 'Soluções cloud', 'DevOps', 'Migração de sistemas']
+        },
+        {
+          title: 'AtivaBot',
+          description: 'Sistema completo de atendimento que integra WhatsApp, IA e gestão de equipes.',
+          icon: <MessageSquare size={24} className="text-vision-purple" />,
+          features: ['Respostas automáticas IA', 'Integração WhatsApp', 'Gestão de equipes', 'Relatórios detalhados', 'Fluxos personalizados']
         }
       ]
     },
@@ -97,19 +105,31 @@ const Services = () => {
           title: 'Identidade Visual',
           description: 'Criação de logos e elementos visuais que representam a essência da sua marca.',
           icon: <Zap size={24} className="text-vision-pink" />,
-          features: ['Criação de logo', 'Paleta de cores', 'Tipografia', 'Diretrizes da marca']
+          features: ['Criação de logo', 'Paleta de cores', 'Tipografia', 'Diretrizes da marca', 'Manual de identidade']
         },
         {
           title: 'Design Gráfico',
           description: 'Desenvolvimento de materiais gráficos para impressão e mídias digitais.',
-          icon: <Monitor size={24} className="text-vision-pink" />,
-          features: ['Folders', 'Cartões de visita', 'Banners', 'Papelaria']
+          icon: <PenTool size={24} className="text-vision-pink" />,
+          features: ['Folders', 'Cartões de visita', 'Banners', 'Papelaria', 'Catálogos']
         },
         {
           title: 'UI/UX Design',
           description: 'Designs modernos e experiências de usuário intuitivas que encantam seus clientes.',
-          icon: <Smartphone size={24} className="text-vision-pink" />,
-          features: ['Prototipagem', 'Design system', 'User testing', 'Redesign']
+          icon: <Layout size={24} className="text-vision-pink" />,
+          features: ['Prototipagem', 'Design system', 'User testing', 'Redesign', 'Wireframes']
+        },
+        {
+          title: 'Materiais Impressos',
+          description: 'Produção de materiais impressos de alta qualidade com acabamento profissional.',
+          icon: <FileText size={24} className="text-vision-pink" />,
+          features: ['Revistas', 'Livros', 'Embalagens', 'Displays', 'Adesivos personalizados']
+        },
+        {
+          title: 'Design para Redes Sociais',
+          description: 'Criação de artes específicas para cada plataforma de mídia social.',
+          icon: <Palette size={24} className="text-vision-pink" />,
+          features: ['Posts', 'Stories', 'Capas', 'Destaques', 'Templates personalizados']
         }
       ]
     },
@@ -122,19 +142,31 @@ const Services = () => {
           title: 'Google Ads',
           description: 'Campanhas otimizadas para buscas e display na rede Google.',
           icon: <Globe size={24} className="text-vision-orange" />,
-          features: ['Pesquisa', 'Display', 'Shopping', 'Youtube']
+          features: ['Pesquisa', 'Display', 'Shopping', 'YouTube', 'Remarketing']
         },
         {
           title: 'Meta Ads',
           description: 'Campanhas de publicidade no Facebook, Instagram e WhatsApp.',
-          icon: <Users size={24} className="text-vision-orange" />,
-          features: ['Facebook Ads', 'Instagram Ads', 'Retargeting', 'Conversões']
+          icon: <Facebook size={24} className="text-vision-orange" />,
+          features: ['Facebook Ads', 'Instagram Ads', 'Retargeting', 'Conversões', 'Catálogo de produtos']
         },
         {
           title: 'SEO',
           description: 'Otimização para mecanismos de busca, aumentando sua visibilidade orgânica.',
-          icon: <Zap size={24} className="text-vision-orange" />,
-          features: ['Otimização on-page', 'Link building', 'SEO técnico', 'Análise de concorrência']
+          icon: <TrendingUp size={24} className="text-vision-orange" />,
+          features: ['Otimização on-page', 'Link building', 'SEO técnico', 'Análise de concorrência', 'Conteúdo estratégico']
+        },
+        {
+          title: 'Email Marketing',
+          description: 'Estratégias de comunicação direta e personalizada com seu público via email.',
+          icon: <Mail size={24} className="text-vision-orange" />,
+          features: ['Newsletters', 'Automações', 'Segmentação', 'A/B testing', 'Relatórios de performance']
+        },
+        {
+          title: 'Analytics e Relatórios',
+          description: 'Análise detalhada de dados para tomadas de decisão baseadas em evidências.',
+          icon: <BarChart size={24} className="text-vision-orange" />,
+          features: ['GA4', 'Pixels de conversão', 'Dashboards personalizados', 'KPIs', 'Recomendações estratégicas']
         }
       ]
     },
@@ -147,19 +179,31 @@ const Services = () => {
           title: 'Gestão de Redes Sociais',
           description: 'Administração completa das suas redes sociais com planejamento estratégico.',
           icon: <Users size={24} className="text-vision-teal" />,
-          features: ['Calendário editorial', 'Criação de conteúdo', 'Programação de posts', 'Engajamento']
+          features: ['Calendário editorial', 'Criação de conteúdo', 'Programação de posts', 'Engajamento', 'Relatórios mensais']
         },
         {
           title: 'Criação de Conteúdo',
           description: 'Desenvolvimento de conteúdo relevante para sua marca e público-alvo.',
           icon: <Zap size={24} className="text-vision-teal" />,
-          features: ['Posts', 'Stories', 'Reels/TikTok', 'Copywriting']
+          features: ['Posts', 'Stories', 'Reels/TikTok', 'Copywriting', 'Curadoria de conteúdo']
         },
         {
           title: 'Gestão de Comunidade',
           description: 'Interação com seus seguidores e gerenciamento de comentários e mensagens.',
           icon: <MessageSquare size={24} className="text-vision-teal" />,
-          features: ['Respostas', 'Moderação', 'Análise de feedback', 'SAC 2.0']
+          features: ['Respostas', 'Moderação', 'Análise de feedback', 'SAC 2.0', 'Engajamento']
+        },
+        {
+          title: 'Instagram Especializado',
+          description: 'Estratégias exclusivas para crescimento e engajamento no Instagram.',
+          icon: <Instagram size={24} className="text-vision-teal" />,
+          features: ['Feed planejado', 'Stories estratégicos', 'Reels', 'IGTV', 'Hashtags otimizadas']
+        },
+        {
+          title: 'Análise de Performance',
+          description: 'Relatórios detalhados sobre o desempenho das suas redes sociais.',
+          icon: <BarChart size={24} className="text-vision-teal" />,
+          features: ['Métricas de engajamento', 'Alcance', 'Taxa de conversão', 'Público-alvo', 'Recomendações']
         }
       ]
     }
@@ -191,6 +235,7 @@ const Services = () => {
   };
 
   const activeSegmentData = segments[activeSegment as keyof typeof segments];
+  const colorClass = `text-${activeSegmentData.color}`;
 
   return (
     <>
@@ -213,24 +258,21 @@ const Services = () => {
           {/* Segment Navigation - Mobile */}
           <div className="md:hidden space-y-2 mb-8">
             {Object.entries(segments).map(([key, segment]) => (
-              <Collapsible
-                key={key}
-                open={activeSegment === key}
-                onOpenChange={() => setActiveSegment(key)}
-                className="w-full"
-              >
-                <CollapsibleTrigger className={`w-full text-left p-4 rounded-lg ${activeSegment === key ? `bg-${segment.color}/10 text-${segment.color}` : 'bg-white'} border mb-1`}>
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">{segment.title}</span>
-                    <span>{activeSegment === key ? '−' : '+'}</span>
-                  </div>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="overflow-hidden transition-all duration-300">
-                  <div className="p-4 bg-white rounded-lg border border-t-0 -mt-1 mb-2">
+              <Card key={key} className={`w-full overflow-hidden ${activeSegment === key ? `border-${segment.color}/30` : 'border-gray-200'}`}>
+                <Button 
+                  variant="ghost" 
+                  className={`w-full justify-between p-4 rounded-lg ${activeSegment === key ? `bg-${segment.color}/10 text-${segment.color}` : 'bg-white text-gray-800'}`}
+                  onClick={() => setActiveSegment(key)}
+                >
+                  <span className="font-medium">{segment.title}</span>
+                  <span>{activeSegment === key ? '−' : '+'}</span>
+                </Button>
+                {activeSegment === key && (
+                  <CardContent className="pt-2 pb-4">
                     <p className="text-gray-600">{segment.description}</p>
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
+                  </CardContent>
+                )}
+              </Card>
             ))}
           </div>
 
@@ -255,7 +297,7 @@ const Services = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature: string, idx: number) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <Check size={16} className={`text-${activeSegmentData.color}`} />
+                      <Check size={16} className={colorClass} />
                       <span>{feature}</span>
                     </li>
                   ))}
