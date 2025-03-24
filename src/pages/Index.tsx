@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import AtivaBot from '../components/AtivaBot';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
@@ -32,8 +33,34 @@ const Index = () => {
       observer.observe(el);
     });
 
+    // Handle hash navigation for the AtivaBot section
+    const handleActivaBotScroll = () => {
+      const element = document.getElementById('ativabot-anchor');
+      if (element) {
+        setTimeout(() => {
+          const ativabotSection = document.getElementById('ativabot');
+          if (ativabotSection) {
+            ativabotSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    };
+
+    // Check if we need to scroll to AtivaBot section
+    if (window.location.hash === '#software') {
+      handleActivaBotScroll();
+    }
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', (e) => {
+      if (e.newURL.includes('#software')) {
+        handleActivaBotScroll();
+      }
+    });
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('hashchange', handleActivaBotScroll);
     };
   }, []);
 
@@ -42,6 +69,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Services />
+      <AtivaBot />
       <About />
       <Testimonials />
       <Contact />

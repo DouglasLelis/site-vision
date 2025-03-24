@@ -32,28 +32,44 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <a href="#" className="flex items-center gap-2">
-            <span className="text-vision-900 font-bold text-2xl">Vision<span className="text-vision-600">Taubaté</span></span>
+            <img 
+              src="/lovable-uploads/7108e1bc-214b-405f-9473-d17e028c6b97.png" 
+              alt="VisionTaubaté Logo" 
+              className="h-10"
+            />
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <a
-              href="#services"
-              className="text-gray-700 hover:text-vision-600 transition-colors font-medium"
+              href="#software"
+              className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
             >
-              Serviços
+              Software
+            </a>
+            <a
+              href="#design"
+              className="text-gray-700 hover:text-vision-pink transition-colors font-medium"
+            >
+              Design
+            </a>
+            <a
+              href="#marketing"
+              className="text-gray-700 hover:text-vision-orange transition-colors font-medium"
+            >
+              Marketing
+            </a>
+            <a
+              href="#social"
+              className="text-gray-700 hover:text-vision-teal transition-colors font-medium"
+            >
+              Redes Sociais
             </a>
             <a
               href="#about"
-              className="text-gray-700 hover:text-vision-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
             >
               Sobre
-            </a>
-            <a
-              href="#testimonials"
-              className="text-gray-700 hover:text-vision-600 transition-colors font-medium"
-            >
-              Clientes
             </a>
             <a
               href="#contact"
@@ -65,7 +81,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-vision-600 focus:outline-none"
+            className="md:hidden text-gray-700 hover:text-vision-purple focus:outline-none"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,25 +93,39 @@ const Navbar = () => {
           <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-4 transform origin-top transition-all duration-300 ease-in-out">
             <div className="flex flex-col space-y-4">
               <a
-                href="#services"
-                className="text-gray-700 hover:text-vision-600 transition-colors font-medium px-2 py-1"
+                href="#software"
+                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Serviços
+                Software
+              </a>
+              <a
+                href="#design"
+                className="text-gray-700 hover:text-vision-pink transition-colors font-medium px-2 py-1"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Design
+              </a>
+              <a
+                href="#marketing"
+                className="text-gray-700 hover:text-vision-orange transition-colors font-medium px-2 py-1"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Marketing
+              </a>
+              <a
+                href="#social"
+                className="text-gray-700 hover:text-vision-teal transition-colors font-medium px-2 py-1"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Redes Sociais
               </a>
               <a
                 href="#about"
-                className="text-gray-700 hover:text-vision-600 transition-colors font-medium px-2 py-1"
+                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Sobre
-              </a>
-              <a
-                href="#testimonials"
-                className="text-gray-700 hover:text-vision-600 transition-colors font-medium px-2 py-1"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Clientes
               </a>
               <a
                 href="#contact"

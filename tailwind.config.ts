@@ -64,6 +64,11 @@ export default {
 					700: '#4338CA',
 					800: '#3730A3',
 					900: '#1E40AF',
+					pink: 'hsl(var(--vision-pink))',
+					purple: 'hsl(var(--vision-purple))',
+					orange: 'hsl(var(--vision-orange))',
+					teal: 'hsl(var(--vision-teal))',
+					yellow: 'hsl(var(--vision-yellow))'
 				}
 			},
 			borderRadius: {

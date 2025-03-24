@@ -36,6 +36,13 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.75rem;
+    
+    /* VisionTaubaté Colors */
+    --vision-pink: 340 80% 55%;
+    --vision-purple: 270 50% 40%;
+    --vision-orange: 20 80% 55%;
+    --vision-teal: 180 60% 35%;
+    --vision-yellow: 60 70% 60%;
   }
 
   * {
@@ -76,11 +83,31 @@
   }
 
   .btn-primary {
-    @apply bg-vision-600 hover:bg-vision-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
+    @apply bg-vision-pink hover:bg-vision-pink/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-vision-800 border border-vision-200 px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1;
+    @apply bg-white hover:bg-gray-50 text-vision-purple border border-vision-200 px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1;
+  }
+  
+  .segment-card {
+    @apply p-6 rounded-xl transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .segment-card-software {
+    @apply bg-gradient-to-br from-vision-purple/10 to-vision-purple/5 border border-vision-purple/20;
+  }
+  
+  .segment-card-design {
+    @apply bg-gradient-to-br from-vision-pink/10 to-vision-pink/5 border border-vision-pink/20;
+  }
+  
+  .segment-card-marketing {
+    @apply bg-gradient-to-br from-vision-orange/10 to-vision-orange/5 border border-vision-orange/20;
+  }
+  
+  .segment-card-social {
+    @apply bg-gradient-to-br from-vision-teal/10 to-vision-teal/5 border border-vision-teal/20;
   }
 }
 
