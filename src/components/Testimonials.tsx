@@ -7,25 +7,26 @@ const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const testimonials = [
+    
     {
-      name: 'Carlos Silva',
-      role: 'CEO, TechInova',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YnVzaW5lc3MlMjBwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=120&q=60',
-      text: 'A VisionTaubaté transformou completamente nossa infraestrutura tecnológica. O sistema desenvolvido aumentou nossa eficiência operacional em mais de 40%. A equipe é extremamente profissional e comprometida com prazos.',
+      name: 'Artur Pinheiro',  
+      role: 'Cliente, Gráfica',
+      image: 'lovable-uploads/cliente.jpg',
+      text: 'Excelente atendimento, sempre faço meus cartões e panfletos. melhor preço de Taubaté.!',
       stars: 5
     },
     {
-      name: 'Ana Rodrigues',
-      role: 'Diretora de Marketing, FutureShop',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YnVzaW5lc3MlMjB3b21hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=120&q=60',
-      text: 'O aplicativo desenvolvido pela VisionTaubaté superou todas as nossas expectativas. A interface intuitiva e o design elegante conquistaram nossos clientes imediatamente. Recomendo sem hesitação!',
+      name: 'Patricia Braga',
+      role: 'Cliente, Stella Turismo',
+      image: 'https://lh3.googleusercontent.com/a-/ALV-UjUiTVXZHS3WFAf3twgcVWm20NcvyaPWAdlYz2RL4GH9ymqBf0Uk=w60-h60-p-rp-mo-ba3-br100',
+      text: 'Adorei o serviço prestado. Estão de parabéns!! Agilidade, qualidade e ótimo valor.',
       stars: 5
     },
     {
-      name: 'Roberto Mendes',
-      role: 'Fundador, InvestSmart',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YnVzaW5lc3MlMjBwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=120&q=60',
-      text: 'Trabalhar com a equipe da VisionTaubaté foi uma experiência excepcional. Eles compreenderam perfeitamente nossas necessidades e entregaram um produto que não apenas atendeu, mas superou nossas expectativas.',
+      name: 'Margareth de Faria',
+      role: 'Cliente, Gráfica',
+      image: 'https://lh3.googleusercontent.com/a-/ALV-UjXgQcfAVvln8Rq0K4Y8SD_cl682K7vA5K-8Iq7s4D80YKgpmrnluA=w60-h60-p-rp-mo-ba3-br100',
+      text: 'O atendimento é maravilhoso. Preço muito bom,  e a qualidade do serviço superou minhas expectativas. ',
       stars: 5
     },
   ];

@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <div ref={heroRef} className="min-h-screen flex items-center transition-opacity duration-1000 opacity-0 bg-gradient-to-br from-white via-gray-50 to-white pt-16">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto xs:my-4 px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div>
@@ -55,11 +55,12 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 reveal reveal-delay-4">
-              <a href="#contact" className="btn-primary flex items-center justify-center gap-2 group">
+              <a href="https://api.whatsapp.com/send/?phone=5512997856012&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:" className="btn-primary flex items-center justify-center gap-2 group"
+              target="_blank">
                 Inicie seu projeto
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="#software" className="btn-secondary flex items-center justify-center">
+              <a href="#services" className="btn-secondary flex items-center justify-center">
                 Conheça nossos serviços
               </a>
             </div>

@@ -88,14 +88,15 @@ const AtivaBot = () => {
               </div>
               
               <a 
-                href="https://ativabot.com.br/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center justify-center gap-2 group bg-vision-teal hover:bg-vision-teal/90"
-              >
-                Visite o site do AtivaBot
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-              </a>
+  href="https://ativabot.com.br/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="btn-primary inline-flex items-center justify-center gap-2 group bg-vision-teal hover:bg-vision-teal/90"
+  style={{ marginTop: '16px' }}
+>
+  Visite o site do AtivaBot
+  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+</a>
             </div>
           </div>
           

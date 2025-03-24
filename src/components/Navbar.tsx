@@ -33,9 +33,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <a href="#" className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/7108e1bc-214b-405f-9473-d17e028c6b97.png" 
+              src="/lovable-uploads/logodeitada.png" 
               alt="VisionTaubaté Logo" 
-              className="h-10"
+              className="h-10 md:h-4 lg:h-10"
             />
           </a>
 

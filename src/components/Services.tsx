@@ -130,6 +130,17 @@ const Services = () => {
           features: ['Criação de logo', 'Paleta de cores', 'Tipografia', 'Diretrizes da marca', 'Manual de identidade']
         },
         {
+          title: 'Criação de Fachadas',
+          description: 'Desenvolvemos fachadas empresariais impactantes que destacam sua marca e atraem clientes.',
+          icon: <Layout size={24} className="text-vision-pink" />,
+          features: [
+            'Letreiros personalizados',
+            'Placas de identificação',
+            'Sinalização externa',
+            'Revestimentos visuais'
+          ]
+        },
+        {
           title: 'Design Gráfico',
           description: 'Desenvolvimento de materiais gráficos para impressão e mídias digitais.',
           icon: <PenTool size={24} className="text-vision-pink" />,

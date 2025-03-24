@@ -87,12 +87,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contato</h3>
             <div className="space-y-4">
               <p className="text-gray-300">
-                Av. Tecnologia, 123<br />
-                Taubaté - SP, 12345-678
+              Rua Alemanha, 21 - Jardim das Nações,
+              <br />
+             Taubaté/SP CEP 12030-430
               </p>
               <p className="text-gray-300">
-                contato@visiontaubate.com<br />
-                +55 (12) 3456-7890
+              comercial@visiontaubate.com.br
+              <br />
+                +55 (12) 99785-6012 | (12) 98199-9857
+
               </p>
             </div>
           </div>

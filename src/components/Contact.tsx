@@ -59,20 +59,20 @@ const Contact = () => {
     {
       icon: <Mail className="h-10 w-10 text-vision-600" />,
       title: 'Email',
-      content: 'contato@visiontaubate.com',
-      href: 'mailto:contato@visiontaubate.com'
+      content: 'comercial@visiontaubate.com.br',
+      href: 'mailto:comercial@visiontaubate.com.br'
     },
     {
       icon: <Phone className="h-10 w-10 text-vision-600" />,
       title: 'Telefone',
-      content: '+55 (12) 3456-7890',
-      href: 'tel:+551234567890'
+      content: '+55 (12) 98199-9857',
+      href: 'tel:+5512981999857'
     },
     {
       icon: <MessageSquare className="h-10 w-10 text-vision-600" />,
       title: 'WhatsApp',
-      content: '+55 (12) 98765-4321',
-      href: 'https://wa.me/551298765432'
+      content: '+55 (12) 997856012',
+      href: 'https://api.whatsapp.com/send/?phone=5512997856012&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:'
     }
   ];
 
