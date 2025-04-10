@@ -51,7 +51,7 @@ const Navbar = () => {
               href="#design"
               className="text-gray-700 hover:text-vision-pink transition-colors font-medium"
             >
-              Design
+              Comunicação Visual
             </a>
             <a
               href="#marketing"
