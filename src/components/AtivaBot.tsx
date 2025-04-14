@@ -1,9 +1,83 @@
-
 import { MessageSquare, Users, Zap, ArrowRight } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+interface Message {
+  text: string;
+  sender: 'bot' | 'user';
+  timestamp: string;
+}
 
 const AtivaBot = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+  const [inputMessage, setInputMessage] = useState('');
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      text: 'Olá! Como posso ajudar você hoje?',
+      sender: 'bot',
+      timestamp: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+    }
+  ]);
+
+  const mockResponses: Record<string, string> = {
+    'ola': 'Olá! Como posso ajudar você hoje?',
+    'oi': 'Oi! Em que posso ser útil?',
+    'ativabot': 'O AtivaBot é um sistema completo para atendimento ao cliente que integra WhatsApp, IA e gestão de equipes. Posso te enviar mais informações?',
+    'preco': 'O AtivaBot tem planos a partir de R$ 99/mês. Quer saber mais detalhes sobre os planos?',
+    'planos': 'Temos planos para todos os tamanhos de empresa. O plano básico inclui integração com WhatsApp e respostas automáticas. O plano premium inclui IA avançada e relatórios detalhados.',
+    'whatsapp': 'Sim! O AtivaBot se integra perfeitamente com o WhatsApp da sua empresa, permitindo atendimento unificado e eficiente.',
+    'ia': 'Nossa IA é treinada para entender o contexto das conversas e fornecer respostas precisas. Ela aprende com cada interação para melhorar continuamente.',
+    'equipe': 'O AtivaBot permite gerenciar sua equipe de atendimento, distribuir demandas automaticamente e acompanhar o desempenho de cada atendente.',
+    'ajuda': 'Posso te ajudar com informações sobre: preços, planos, integração com WhatsApp, IA, gestão de equipes e muito mais! O que você gostaria de saber?',
+    'obrigado': 'Por nada! Estou à disposição para ajudar com mais alguma coisa?',
+    'tchau': 'Até logo! Se precisar de mais alguma coisa, estou aqui!'
+  };
+
+  const getBotResponse = (userMessage: string): string => {
+    const lowerMessage = userMessage.toLowerCase();
+    for (const [key, response] of Object.entries(mockResponses)) {
+      if (lowerMessage.includes(key)) {
+        return response;
+      }
+    }
+    return 'Desculpe, não entendi. Você poderia reformular sua pergunta? Posso te ajudar com informações sobre preços, planos, integração com WhatsApp, IA e gestão de equipes.';
+  };
+
+  const handleSendMessage = () => {
+    if (!inputMessage.trim()) return;
+
+    const userMessage: Message = {
+      text: inputMessage,
+      sender: 'user',
+      timestamp: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInputMessage('');
+
+    setTimeout(() => {
+      const botResponse: Message = {
+        text: getBotResponse(inputMessage),
+        sender: 'bot',
+        timestamp: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages(prev => [...prev, botResponse]);
+    }, 1000);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
+  // Efeito para scroll automático quando as mensagens mudam
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -88,15 +162,15 @@ const AtivaBot = () => {
               </div>
               
               <a 
-  href="https://ativabot.com.br/" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="btn-primary inline-flex items-center justify-center gap-2 group bg-vision-teal hover:bg-vision-teal/90"
-  style={{ marginTop: '16px' }}
->
-  Visite o site do AtivaBot
-  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-</a>
+                href="https://ativabot.com.br/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary inline-flex items-center justify-center gap-2 group bg-vision-teal hover:bg-vision-teal/90"
+                style={{ marginTop: '16px' }}
+              >
+                Visite o site do AtivaBot
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
           
@@ -116,30 +190,49 @@ const AtivaBot = () => {
                   <span className="text-xs font-medium text-vision-teal bg-vision-teal/10 px-2 py-1 rounded-full">Online</span>
                 </div>
                 
-                <div className="space-y-4">
-                  <div className="bg-gray-100 p-3 rounded-lg rounded-tl-none max-w-[80%]">
-                    <p className="text-sm text-gray-700">Olá! Como posso ajudar você hoje?</p>
-                    <span className="text-xs text-gray-500 mt-1 block">09:30</span>
-                  </div>
-                  
-                  <div className="bg-vision-teal/10 p-3 rounded-lg rounded-tr-none max-w-[80%] ml-auto">
-                    <p className="text-sm text-gray-700">Gostaria de saber mais sobre o AtivaBot.</p>
-                    <span className="text-xs text-gray-500 mt-1 block">09:31</span>
-                  </div>
-                  
-                  <div className="bg-gray-100 p-3 rounded-lg rounded-tl-none max-w-[80%]">
-                    <p className="text-sm text-gray-700">O AtivaBot é um sistema completo para atendimento ao cliente que integra WhatsApp, IA e gestão de equipes. Posso te enviar mais informações?</p>
-                    <span className="text-xs text-gray-500 mt-1 block">09:32</span>
-                  </div>
+                <div 
+                  ref={chatContainerRef}
+                  className="space-y-4 h-[300px] overflow-y-auto"
+                  style={{
+                    scrollbarWidth: 'thin',
+                    scrollbarColor: 'rgba(16, 185, 129, 0.2) transparent',
+                  }}
+                >
+                  {messages.map((message, index) => (
+                    <div
+                      key={index}
+                      className={`flex flex-col ${
+                        message.sender === 'user' ? 'items-end' : 'items-start'
+                      }`}
+                    >
+                      <div
+                        className={`p-3 rounded-lg max-w-[80%] ${
+                          message.sender === 'user'
+                            ? 'bg-vision-teal/10 rounded-tr-none'
+                            : 'bg-gray-100 rounded-tl-none'
+                        }`}
+                      >
+                        <p className="text-sm text-gray-700">{message.text}</p>
+                        <span className="text-xs text-gray-500 mt-1 block">{message.timestamp}</span>
+                      </div>
+                    </div>
+                  ))}
+                  <div ref={messagesEndRef} />
                 </div>
                 
                 <div className="relative pt-4 border-t border-gray-100">
                   <input
                     type="text"
+                    value={inputMessage}
+                    onChange={(e) => setInputMessage(e.target.value)}
+                    onKeyPress={handleKeyPress}
                     placeholder="Digite sua mensagem..."
                     className="w-full py-2 px-4 bg-gray-100 rounded-full focus:outline-none"
                   />
-                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8 bg-vision-teal rounded-full flex items-center justify-center">
+                  <button
+                    onClick={handleSendMessage}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8 bg-vision-teal rounded-full flex items-center justify-center hover:bg-vision-teal/90 transition-colors"
+                  >
                     <ArrowRight size={16} className="text-white" />
                   </button>
                 </div>

@@ -1,10 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +18,12 @@ const Navbar = () => {
     };
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleSectionClick = (sectionId: string) => {
+    navigate('/', { replace: true });
+    setTimeout(() => {
+      window.location.hash = sectionId;
+    }, 0);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -31,58 +36,58 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img 
               src="/lovable-uploads/logodeitada.png" 
               alt="VisionTaubaté Logo" 
               className="h-10 md:h-4 lg:h-10"
             />
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <a
-              href="#software"
+            <button
+              onClick={() => handleSectionClick('software')}
               className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
             >
               Software
-            </a>
-            <a
-              href="#design"
+            </button>
+            <button
+              onClick={() => handleSectionClick('design')}
               className="text-gray-700 hover:text-vision-pink transition-colors font-medium"
             >
               Comunicação Visual
-            </a>
-            <a
-              href="#marketing"
+            </button>
+            <button
+              onClick={() => handleSectionClick('marketing')}
               className="text-gray-700 hover:text-vision-orange transition-colors font-medium"
             >
               Marketing
-            </a>
-            <a
-              href="#social"
+            </button>
+            <button
+              onClick={() => handleSectionClick('social')}
               className="text-gray-700 hover:text-vision-teal transition-colors font-medium"
             >
               Redes Sociais
-            </a>
-            <a
-              href="#about"
+            </button>
+            <Link
+              to="/sobre"
               className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
             >
               Sobre
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <button
+              onClick={() => handleSectionClick('contact')}
               className="btn-primary"
             >
               Contato
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-700 hover:text-vision-purple focus:outline-none"
-            onClick={toggleMobileMenu}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -92,48 +97,43 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-4 transform origin-top transition-all duration-300 ease-in-out">
             <div className="flex flex-col space-y-4">
-              <a
-                href="#software"
-                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                onClick={() => handleSectionClick('software')}
+                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1 text-left"
               >
                 Software
-              </a>
-              <a
-                href="#design"
-                className="text-gray-700 hover:text-vision-pink transition-colors font-medium px-2 py-1"
-                onClick={() => setIsMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => handleSectionClick('design')}
+                className="text-gray-700 hover:text-vision-pink transition-colors font-medium px-2 py-1 text-left"
               >
-                Design
-              </a>
-              <a
-                href="#marketing"
-                className="text-gray-700 hover:text-vision-orange transition-colors font-medium px-2 py-1"
-                onClick={() => setIsMobileMenuOpen(false)}
+                Comunicação Visual
+              </button>
+              <button
+                onClick={() => handleSectionClick('marketing')}
+                className="text-gray-700 hover:text-vision-orange transition-colors font-medium px-2 py-1 text-left"
               >
                 Marketing
-              </a>
-              <a
-                href="#social"
-                className="text-gray-700 hover:text-vision-teal transition-colors font-medium px-2 py-1"
-                onClick={() => setIsMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => handleSectionClick('social')}
+                className="text-gray-700 hover:text-vision-teal transition-colors font-medium px-2 py-1 text-left"
               >
                 Redes Sociais
-              </a>
-              <a
-                href="#about"
+              </button>
+              <Link
+                to="/sobre"
                 className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Sobre
-              </a>
-              <a
-                href="#contact"
-                className="btn-primary text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
+              </Link>
+              <button
+                onClick={() => handleSectionClick('contact')}
+                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1 text-left"
               >
                 Contato
-              </a>
+              </button>
             </div>
           </div>
         )}
