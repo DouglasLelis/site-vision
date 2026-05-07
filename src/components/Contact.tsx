@@ -1,6 +1,7 @@
 
 import { useState, useRef, useEffect } from 'react';
-import { Mail, MessageSquare, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -63,13 +64,13 @@ const Contact = () => {
       href: 'mailto:comercial@visiontaubate.com.br'
     },
     {
-      icon: <MessageSquare className="h-10 w-10 text-vision-600" />,
+      icon: <FaWhatsapp className="h-10 w-10 text-vision-600" />,
       title: 'WhatsApp - Gráfica',
       content: '+55 (12) 981999857',
       href: 'https://api.whatsapp.com/send/?phone=5512981999857&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:'
     },
     {
-      icon: <MessageSquare className="h-10 w-10 text-vision-600" />,
+      icon: <FaWhatsapp className="h-10 w-10 text-vision-600" />,
       title: 'WhatsApp - Central T.i',
       content: '+55 (12) 997856012',
       href: 'https://api.whatsapp.com/send/?phone=5512997856012&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:'

@@ -9,6 +9,7 @@ import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import FloatingActionButton from '../components/FloatingActionButton';
 
 const Index = () => {
   useEffect(() => {
@@ -103,6 +104,7 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <FloatingActionButton />
     </div>
   );
 };
