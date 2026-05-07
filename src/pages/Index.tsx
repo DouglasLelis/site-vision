@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import Portfolio from '../components/Portfolio';
 import AtivaBot from '../components/AtivaBot';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
@@ -96,6 +97,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Services />
+      <Portfolio />
       <AtivaBot />
       <About />
       <Testimonials />

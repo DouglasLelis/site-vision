@@ -70,6 +70,12 @@ const Navbar = () => {
             >
               Redes Sociais
             </button>
+            <button
+              onClick={() => handleSectionClick('portfolio')}
+              className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
+            >
+              Portfólio
+            </button>
             <Link
               to="/sobre"
               className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
@@ -120,6 +126,12 @@ const Navbar = () => {
                 className="text-gray-700 hover:text-vision-teal transition-colors font-medium px-2 py-1 text-left"
               >
                 Redes Sociais
+              </button>
+              <button
+                onClick={() => handleSectionClick('portfolio')}
+                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1 text-left"
+              >
+                Portfólio
               </button>
               <Link
                 to="/sobre"

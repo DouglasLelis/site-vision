@@ -1,5 +1,6 @@
 
 import { ArrowUp } from 'lucide-react';
+import favicon from '../../public/lovable-uploads/favicon.png';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,8 +16,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="mb-6">
-              <a href="#" className="text-2xl font-bold">
-                Vision<span className="text-vision-400">Taubaté</span>
+              <a href="#" className="text-2xl font-bold flex flex-row items-end gap-2">
+                <img src={favicon} alt="VisionTaubaté Logo" className="h-10" /> VisionTaubaté
               </a>
             </div>
             <p className="text-gray-300 mb-6">
