@@ -109,22 +109,29 @@ const AtivaBot = () => {
     };
   }, []);
 
-  const features = [
+  const features: Array<{
+    title: string;
+    description: string;
+    icon: JSX.Element;
+    label?: string;
+  }> = [
     {
-      title: "Integração WhatsApp",
-      description: "Conecte o WhatsApp da sua empresa para atendimento unificado e eficiente.",
+      title: "Centralize o Atendimento",
+      description: "Centralize o atendimento em um único canal, seja WhatsApp, Facebook, Instagram, Telegram e outros, tudo em um único lugar.",
       icon: <MessageSquare size={24} className="text-vision-teal" />
-    },
-    {
-      title: "Respostas Automáticas com IA",
-      description: "Automatize respostas para as perguntas mais frequentes com inteligência artificial.",
-      icon: <Zap size={24} className="text-vision-teal" />
     },
     {
       title: "Gestão de Equipes",
       description: "Organize sua equipe de atendimento com distribuição inteligente de demandas.",
       icon: <Users size={24} className="text-vision-teal" />
-    }
+    },
+    {
+      title: "Respostas Automáticas com IA",
+      description: "Automatize respostas para as perguntas mais frequentes com inteligência artificial.",
+      icon: <Zap size={24} className="text-vision-teal" />,
+      label: "Em Breve"
+
+    },
   ];
 
   return (
@@ -154,7 +161,14 @@ const AtivaBot = () => {
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
+                      <div className="flex items-center gap-2 mb-2">
+                        <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
+                        {feature.label && (
+                          <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-1 rounded-full">
+                            {feature.label}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-gray-600">{feature.description}</p>
                     </div>
                   </div>

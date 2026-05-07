@@ -26,6 +26,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleMenuLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -46,30 +50,18 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <button
-              onClick={() => handleSectionClick('software')}
+            <Link
+              to="/segmentos/desenvolvimento-de-software"
               className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
             >
               Software
-            </button>
-            <button
-              onClick={() => handleSectionClick('design')}
+            </Link>
+            <Link
+              to="/segmentos/comunicacao-visual"
               className="text-gray-700 hover:text-vision-pink transition-colors font-medium"
             >
               Comunicação Visual
-            </button>
-            <button
-              onClick={() => handleSectionClick('marketing')}
-              className="text-gray-700 hover:text-vision-orange transition-colors font-medium"
-            >
-              Marketing
-            </button>
-            <button
-              onClick={() => handleSectionClick('social')}
-              className="text-gray-700 hover:text-vision-teal transition-colors font-medium"
-            >
-              Redes Sociais
-            </button>
+            </Link>
             <button
               onClick={() => handleSectionClick('portfolio')}
               className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
@@ -103,18 +95,20 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg p-4 transform origin-top transition-all duration-300 ease-in-out">
             <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => handleSectionClick('software')}
+              <Link
+                to="/segmentos/desenvolvimento-de-software"
+                onClick={handleMenuLinkClick}
                 className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1 text-left"
               >
                 Software
-              </button>
-              <button
-                onClick={() => handleSectionClick('design')}
+              </Link>
+              <Link
+                to="/segmentos/comunicacao-visual"
+                onClick={handleMenuLinkClick}
                 className="text-gray-700 hover:text-vision-pink transition-colors font-medium px-2 py-1 text-left"
               >
                 Comunicação Visual
-              </button>
+              </Link>
               <button
                 onClick={() => handleSectionClick('marketing')}
                 className="text-gray-700 hover:text-vision-orange transition-colors font-medium px-2 py-1 text-left"
