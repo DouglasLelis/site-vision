@@ -88,10 +88,6 @@ const Testimonials = () => {
                           src={testimonial.image} 
                           alt={testimonial.name} 
                           className="w-16 h-16 rounded-full object-cover"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = 'https://via.placeholder.com/120';
-                          }}
                         />
                         <div>
                           <h3 className="text-xl font-semibold text-vision-900">{testimonial.name}</h3>

@@ -6,6 +6,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const desktopItemClass = isScrolled
+    ? 'text-gray-700 font-medium transition-colors'
+    : 'text-white font-medium transition-colors';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +45,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/logodeitada.png" 
+              src={isScrolled ? '/lovable-uploads/logodeitada.png' : '/lgo branco vision.png'} 
               alt="VisionTaubaté Logo" 
               className="h-10 md:h-4 lg:h-10"
             />
@@ -52,31 +55,35 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/segmentos/desenvolvimento-de-software"
-              className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
+              className={`${desktopItemClass} hover:text-vision-purple`}
             >
               Software
             </Link>
             <Link
               to="/segmentos/comunicacao-visual"
-              className="text-gray-700 hover:text-vision-pink transition-colors font-medium"
+              className={`${desktopItemClass} hover:text-vision-pink`}
             >
               Comunicação Visual
             </Link>
             <button
               onClick={() => handleSectionClick('portfolio')}
-              className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
+              className={`${desktopItemClass} hover:text-vision-purple`}
             >
               Portfólio
             </button>
             <Link
               to="/sobre"
-              className="text-gray-700 hover:text-vision-purple transition-colors font-medium"
+              className={`${desktopItemClass} hover:text-vision-purple`}
             >
               Sobre
             </Link>
             <button
               onClick={() => handleSectionClick('contact')}
-              className="btn-primary"
+              className={
+                isScrolled
+                  ? 'btn-primary'
+                  : 'inline-flex items-center justify-center rounded-md border border-white/50 bg-white/10 px-4 py-2 font-medium text-white transition-colors hover:bg-white/20'
+              }
             >
               Contato
             </button>
@@ -84,7 +91,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-vision-purple focus:outline-none"
+            className={`md:hidden focus:outline-none ${
+              isScrolled ? 'text-gray-700 hover:text-vision-purple' : 'text-white hover:text-white/80'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

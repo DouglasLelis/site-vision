@@ -23,6 +23,12 @@ const SoftwareDevelopment = () => {
               <Link to="/#services" className="inline-flex rounded-md bg-white text-vision-purple px-4 py-2 font-medium hover:bg-white/90 transition-colors">
                 Voltar para serviços
               </Link>
+              <Link
+                to="/segmentos/comunicacao-visual"
+                className="inline-flex rounded-md border border-white/70 text-white px-4 py-2 font-medium hover:bg-white/10 transition-colors ml-3"
+              >
+                Ver Comunicacao Visual
+              </Link>
             </div>
           </div>
         </section>

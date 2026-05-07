@@ -56,6 +56,49 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Scrollbar global com visual alinhado ao gradiente da Hero */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--vision-pink)) rgba(255, 255, 255, 0.08);
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: linear-gradient(
+      180deg,
+      hsla(var(--vision-purple), 0.2) 0%,
+      hsla(var(--vision-pink), 0.12) 100%
+    );
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsla(var(--vision-pink), 0.9) 0%,
+      hsla(var(--vision-purple), 0.85) 100%
+    );
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.1);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      hsla(var(--vision-orange), 0.95) 0%,
+      hsla(var(--vision-pink), 0.9) 55%,
+      hsla(var(--vision-purple), 0.9) 100%
+    );
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
 @layer components {
