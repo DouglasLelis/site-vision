@@ -5,6 +5,19 @@ import { serviceSegments } from "@/data/serviceSegments";
 const Services = () => {
   const softwareSegment = serviceSegments.software;
   const designSegment = serviceSegments.design;
+  const segmentMedia = {
+    software: {
+      image:
+        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      video:
+        "/dev_write.webm",
+    },
+    design: {
+      image:
+        "https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      video: "/colored_green_smoke.webm",
+    },
+  };
 
   return (
     <div id="services" className="py-24 bg-gray-50">
@@ -22,10 +35,20 @@ const Services = () => {
             className="relative overflow-hidden rounded-2xl min-h-[420px] shadow-xl"
           >
             <img
-              src="/hero-meeting.jpg"
+              src={segmentMedia.software.image}
               alt="Equipe de tecnologia em reunião"
               className="absolute inset-0 w-full h-full object-cover"
             />
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={segmentMedia.software.image}
+            >
+              <source src={segmentMedia.software.video} type="video/mp4" />
+            </video>
             <div className="absolute inset-0 bg-gradient-to-br from-vision-purple/90 via-vision-purple/80 to-vision-pink/70" />
             <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-10 text-white">
               <span className="inline-flex w-fit rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
@@ -49,10 +72,20 @@ const Services = () => {
             className="relative overflow-hidden rounded-2xl min-h-[420px] shadow-xl"
           >
             <img
-              src="/portfolio/mockups/stella.png"
+              src={segmentMedia.design.image}
               alt="Peça de comunicação visual desenvolvida pela VisionTaubaté"
               className="absolute inset-0 w-full h-full object-cover"
             />
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={segmentMedia.design.image}
+            >
+              <source src={segmentMedia.design.video} type="video/webm" />
+            </video>
             <div className="absolute inset-0 bg-gradient-to-br from-vision-pink/90 via-vision-pink/80 to-vision-orange/70" />
             <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-10 text-white">
               <span className="inline-flex w-fit rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">

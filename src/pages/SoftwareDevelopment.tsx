@@ -14,8 +14,25 @@ const SoftwareDevelopment = () => {
       </div>
 
       <main className="pt-[88px]">
-        <section className="bg-gradient-to-r from-vision-purple to-vision-pink text-white">
-          <div className="container mx-auto px-4 py-20">
+        <section className="relative overflow-hidden text-white">
+          <img
+            src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Equipe de tecnologia desenvolvendo software"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          >
+            <source src="/dev_write.webm" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70" />
+          <div className="relative z-10 container mx-auto px-4 py-20">
             <p className="text-sm font-medium uppercase tracking-wide mb-3">Segmento</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{segment.title}</h1>
             <p className="max-w-3xl text-lg md:text-xl text-white/90">{segment.description}</p>

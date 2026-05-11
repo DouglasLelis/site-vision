@@ -29,7 +29,7 @@ const Hero = () => {
       mediaImage:
         'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600',
       mediaVideo:
-        'https://videos.pexels.com/video-files/4496268/4496268-hd_1920_1080_25fps.mp4',
+        '/dev_write.webm',
       mediaAlt: 'Equipe de desenvolvimento trabalhando em software',
     },
     {
