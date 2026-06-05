@@ -10,7 +10,7 @@ export type ServiceItem = {
 export type ServiceSegment = {
   title: string;
   description: string;
-  color: "vision-purple" | "vision-pink";
+  color: "vision-tech" | "vision-pink";
   route: string;
   services: ServiceItem[];
 };
@@ -20,7 +20,7 @@ export const serviceSegments: Record<"software" | "design", ServiceSegment> = {
     title: "Desenvolvimento de Software",
     description:
       "Criamos soluções tecnológicas personalizadas para impulsionar seu negócio no ambiente digital.",
-    color: "vision-purple",
+    color: "vision-tech",
     route: "/segmentos/desenvolvimento-de-software",
     services: [
       {

@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { getNavbarLogo, getSegmentFromPath } from '@/data/segmentBranding';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const segment = getSegmentFromPath(pathname);
   const useTransparentStyle = pathname === '/' && !isScrolled;
+  const navbarLogo = getNavbarLogo(segment, useTransparentStyle);
 
   const desktopItemClass = useTransparentStyle
     ? 'text-white font-medium transition-colors'
@@ -47,10 +50,10 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
-            <img 
-              src={useTransparentStyle ? '/lgo branco vision.png' : '/lovable-uploads/logodeitada.png'} 
-              alt="VisionTaubaté Logo" 
-              className="h-10 md:h-4 lg:h-10"
+            <img
+              src={navbarLogo}
+              alt={segment === 'tech' ? 'VisionTaubaté Tech' : 'VisionTaubaté Logo'}
+              className={segment === 'tech' ? 'h-8 md:h-9 lg:h-10' : 'h-10 md:h-4 lg:h-10'}
             />
           </Link>
 
@@ -58,7 +61,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/segmentos/desenvolvimento-de-software"
-              className={`${desktopItemClass} hover:text-vision-purple`}
+              className={`${desktopItemClass} hover:text-vision-tech`}
             >
               Software
             </Link>
@@ -67,6 +70,12 @@ const Navbar = () => {
               className={`${desktopItemClass} hover:text-vision-pink`}
             >
               Comunicação Visual
+            </Link>
+            <Link
+              to="/solucoes"
+              className={`${desktopItemClass} hover:text-vision-tech`}
+            >
+              Soluções SaaS
             </Link>
             <button
               onClick={() => handleSectionClick('portfolio')}
@@ -110,7 +119,7 @@ const Navbar = () => {
               <Link
                 to="/segmentos/desenvolvimento-de-software"
                 onClick={handleMenuLinkClick}
-                className="text-gray-700 hover:text-vision-purple transition-colors font-medium px-2 py-1 text-left"
+                className="text-gray-700 hover:text-vision-tech transition-colors font-medium px-2 py-1 text-left"
               >
                 Software
               </Link>
@@ -120,6 +129,13 @@ const Navbar = () => {
                 className="text-gray-700 hover:text-vision-pink transition-colors font-medium px-2 py-1 text-left"
               >
                 Comunicação Visual
+              </Link>
+              <Link
+                to="/solucoes"
+                onClick={handleMenuLinkClick}
+                className="text-gray-700 hover:text-vision-tech transition-colors font-medium px-2 py-1 text-left"
+              >
+                Soluções SaaS
               </Link>
               <button
                 onClick={() => handleSectionClick('marketing')}

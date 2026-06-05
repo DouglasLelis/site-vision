@@ -39,10 +39,10 @@ const Services = () => {
                 <source key={s.src} src={s.src} type={s.type} />
               ))}
             </video>
-            <div className="absolute inset-0 bg-gradient-to-br from-vision-purple/90 via-vision-purple/80 to-vision-pink/70" />
+            <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-vision-tech/70 to-vision-tech/50" />
             <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-10 text-white">
-              <span className="inline-flex w-fit rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
-                Tecnologia
+              <span className="inline-flex w-fit rounded-full bg-vision-tech/20 text-vision-tech px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
+                Tech
               </span>
               <h3 className="text-2xl md:text-3xl font-semibold mb-4">{softwareSegment.title}</h3>
               <p className="text-white/90 mb-7 max-w-xl">
@@ -50,7 +50,7 @@ const Services = () => {
               </p>
               <Link
                 to={softwareSegment.route}
-                className="inline-flex w-fit items-center justify-center rounded-md px-5 py-2.5 font-semibold transition-colors bg-white text-vision-purple hover:bg-white/90"
+                className="inline-flex w-fit items-center justify-center rounded-md px-5 py-2.5 font-semibold transition-colors bg-vision-tech text-white hover:bg-vision-tech/90"
               >
                 Ver Serviços de Tecnologia
               </Link>

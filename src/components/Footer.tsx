@@ -1,5 +1,5 @@
-
 import { ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import favicon from '../../public/lovable-uploads/favicon.png';
 
 const Footer = () => {
@@ -59,27 +59,27 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Soluções</h3>
+            <h3 className="text-lg font-semibold mb-6">Soluções SaaS</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Desenvolvimento Web
-                </a>
+                <Link to="/solucoes" className="text-gray-300 hover:text-white transition-colors">
+                  Soluções para seu negócio
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Aplicativos Mobile
-                </a>
+                <Link to="/solucoes#ativabot" className="text-gray-300 hover:text-white transition-colors">
+                  Ativabot (CRM)
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Software Personalizado
-                </a>
+                <Link to="/solucoes#ativaerp" className="text-gray-300 hover:text-white transition-colors">
+                  AtivaERP
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Consultoria Técnica
-                </a>
+                <Link to="/solucoes#petverse" className="text-gray-300 hover:text-white transition-colors">
+                  PetVerse
+                </Link>
               </li>
             </ul>
           </div>

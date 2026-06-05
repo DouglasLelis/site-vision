@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import Methodology from "./pages/Methodology";
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import VisualCommunication from "./pages/VisualCommunication";
+import BusinessSolutions from "./pages/BusinessSolutions";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/metodologia" element={<Methodology />} />
           <Route path="/segmentos/desenvolvimento-de-software" element={<SoftwareDevelopment />} />
           <Route path="/segmentos/comunicacao-visual" element={<VisualCommunication />} />
+          <Route path="/solucoes" element={<BusinessSolutions />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

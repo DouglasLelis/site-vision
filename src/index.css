@@ -42,6 +42,8 @@
     --vision-orange: 20 80% 55%;
     --vision-teal: 180 60% 35%;
     --vision-yellow: 60 70% 60%;
+    /* VisionTaubaté Tech — identidade exclusiva do segmento tech */
+    --vision-tech: 210 100% 56%;
   }
 
   * {
@@ -137,7 +139,11 @@
   }
   
   .segment-card-software {
-    @apply bg-gradient-to-br from-vision-purple/10 to-vision-purple/5 border border-vision-purple/20;
+    @apply bg-gradient-to-br from-vision-tech/10 to-vision-tech/5 border border-vision-tech/20;
+  }
+
+  .btn-tech {
+    @apply bg-vision-tech hover:bg-vision-tech/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
   }
   
   .segment-card-design {

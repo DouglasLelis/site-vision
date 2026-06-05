@@ -12,21 +12,21 @@ const Hero = () => {
   const slides = [
     {
       tags: [
-        { label: 'Software', className: 'bg-vision-purple/10 text-vision-purple' },
+        { label: 'Tech', className: 'bg-vision-tech/20 text-vision-tech' },
         { label: 'Design', className: 'bg-vision-pink/10 text-vision-pink' },
         { label: 'Marketing', className: 'bg-vision-orange/10 text-vision-orange' },
       ],
       title: (
         <>
-          Transformando ideias em <span className="text-vision-purple">Soluções Digitais</span>
+          Transformando ideias em <span className="text-vision-tech">Soluções Digitais</span>
         </>
       ),
       description:
         'Somos uma empresa completa de tecnologia e comunicação, desenvolvendo projetos personalizados para impulsionar sua presença digital.',
       segmentPath: '/segmentos/desenvolvimento-de-software',
       segmentButtonLabel: 'Conhecer Desenvolvimento de Software',
-      accentColor: 'vision-purple',
-      cardGradient: 'from-vision-pink to-vision-purple',
+      accentColor: 'vision-tech',
+      cardGradient: 'from-vision-tech to-black',
       ...segmentBackgroundMedia.software,
       mediaAlt: 'Equipe de desenvolvimento trabalhando em software',
     },
@@ -177,7 +177,7 @@ const Hero = () => {
                   onClick={() => setActiveSlide(index)}
                   className={`h-2.5 rounded-full transition-all ${
                     activeSlide === index
-                      ? `w-8 ${currentSlide.accentColor === 'vision-pink' ? 'bg-vision-pink' : 'bg-vision-purple'}`
+                      ? `w-8 ${currentSlide.accentColor === 'vision-pink' ? 'bg-vision-pink' : 'bg-vision-tech'}`
                       : 'w-2.5 bg-white/60'
                   }`}
                   aria-label={`Ir para slide ${index + 1}`}

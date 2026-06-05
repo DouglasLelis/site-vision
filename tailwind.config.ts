@@ -67,7 +67,8 @@ export default {
 					purple: 'hsl(var(--vision-purple))',
 					orange: 'hsl(var(--vision-orange))',
 					teal: 'hsl(var(--vision-teal))',
-					yellow: 'hsl(var(--vision-yellow))'
+					yellow: 'hsl(var(--vision-yellow))',
+					tech: 'hsl(var(--vision-tech))'
 				}
 			},
 			borderRadius: {

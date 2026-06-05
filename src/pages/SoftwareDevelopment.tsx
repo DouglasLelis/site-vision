@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { serviceSegments } from "@/data/serviceSegments";
 import { segmentBackgroundMedia } from "@/data/segmentBackgroundMedia";
+import { segmentBranding } from "@/data/segmentBranding";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -34,13 +35,20 @@ const SoftwareDevelopment = () => {
             ))}
           </video>
           <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-vision-tech/20 to-black/80" />
           <div className="relative z-10 container mx-auto px-4 py-20">
-            <p className="text-sm font-medium uppercase tracking-wide mb-3">Segmento</p>
+            <img
+              src={segmentBranding.tech.logos.dark}
+              alt="VisionTaubaté Tech"
+              className="h-8 md:h-10 mb-6"
+            />
+            <p className="text-sm font-medium uppercase tracking-[0.2em] mb-3 text-vision-tech">
+              {segmentBranding.tech.tagline}
+            </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{segment.title}</h1>
             <p className="max-w-3xl text-lg md:text-xl text-white/90">{segment.description}</p>
             <div className="mt-8">
-              <Link to="/#services" className="inline-flex rounded-md bg-white text-vision-purple px-4 py-2 font-medium hover:bg-white/90 transition-colors">
+              <Link to="/#services" className="inline-flex rounded-md bg-vision-tech text-white px-4 py-2 font-medium hover:bg-vision-tech/90 transition-colors">
                 Voltar para serviços
               </Link>
               <Link
@@ -56,16 +64,16 @@ const SoftwareDevelopment = () => {
         <section className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {segment.services.map((service, index) => (
-              <article key={index} className="bg-white rounded-xl p-6 shadow-md border border-vision-purple/20">
-                <div className="h-12 w-12 rounded-lg bg-vision-purple/10 flex items-center justify-center mb-6">
-                  <service.icon size={24} className="text-vision-purple" />
+              <article key={index} className="bg-white rounded-xl p-6 shadow-md border border-vision-tech/20">
+                <div className="h-12 w-12 rounded-lg bg-vision-tech/10 flex items-center justify-center mb-6">
+                  <service.icon size={24} className="text-vision-tech" />
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h2>
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <Check size={16} className="text-vision-purple" />
+                      <Check size={16} className="text-vision-tech" />
                       <span>{feature}</span>
                     </li>
                   ))}

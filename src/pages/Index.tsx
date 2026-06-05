@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
-import AtivaBot from '../components/AtivaBot';
+import BusinessSolutions from '../components/BusinessSolutions';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
@@ -50,7 +50,7 @@ const Index = () => {
 
     // Check if we need to scroll to a specific segment
     const hash = window.location.hash.substring(1);
-    if (['software', 'design', 'marketing', 'social'].includes(hash)) {
+    if (['software', 'design', 'marketing', 'social', 'solucoes'].includes(hash)) {
       handleSegmentScroll(hash);
     }
 
@@ -70,7 +70,7 @@ const Index = () => {
     // Listen for hash changes
     const hashChangeHandler = (e: HashChangeEvent) => {
       const newHash = new URL(e.newURL).hash.substring(1);
-      if (['software', 'design', 'marketing', 'social'].includes(newHash)) {
+      if (['software', 'design', 'marketing', 'social', 'solucoes'].includes(newHash)) {
         handleSegmentScroll(newHash);
         
         // Special case for AtivaBot
@@ -99,7 +99,7 @@ const Index = () => {
       <Hero />
       <Services />
       <Portfolio />
-      <AtivaBot />
+      <BusinessSolutions />
       <About />
       <Testimonials />
       <Contact />
