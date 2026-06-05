@@ -3,8 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
+import TechHome from "./pages/TechHome";
+import DesignHome from "./pages/DesignHome";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Methodology from "./pages/Methodology";
@@ -33,12 +35,25 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/tech" element={<TechHome />} />
+          <Route path="/tech/servicos" element={<SoftwareDevelopment />} />
+          <Route path="/tech/solucoes" element={<BusinessSolutions />} />
+          <Route path="/design" element={<DesignHome />} />
+          <Route path="/design/servicos" element={<VisualCommunication />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/metodologia" element={<Methodology />} />
-          <Route path="/segmentos/desenvolvimento-de-software" element={<SoftwareDevelopment />} />
-          <Route path="/segmentos/comunicacao-visual" element={<VisualCommunication />} />
-          <Route path="/solucoes" element={<BusinessSolutions />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+          {/* Redirects das URLs antigas */}
+          <Route
+            path="/segmentos/desenvolvimento-de-software"
+            element={<Navigate to="/tech/servicos" replace />}
+          />
+          <Route
+            path="/segmentos/comunicacao-visual"
+            element={<Navigate to="/design/servicos" replace />}
+          />
+          <Route path="/solucoes" element={<Navigate to="/tech/solucoes" replace />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

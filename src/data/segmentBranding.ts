@@ -1,11 +1,18 @@
 export type SiteSegment = "general" | "tech" | "design";
 
-export const techRoutes = [
-  "/segmentos/desenvolvimento-de-software",
-  "/solucoes",
-] as const;
+export const techRoutes = ["/tech"] as const;
+export const designRoutes = ["/design"] as const;
 
-export const designRoutes = ["/segmentos/comunicacao-visual"] as const;
+export const segmentPaths = {
+  gateway: "/",
+  tech: "/tech",
+  techServicos: "/tech/servicos",
+  techSolucoes: "/tech/solucoes",
+  design: "/design",
+  designServicos: "/design/servicos",
+  sobre: "/sobre",
+  metodologia: "/metodologia",
+} as const;
 
 export function getSegmentFromPath(pathname: string): SiteSegment {
   if (techRoutes.some((route) => pathname.startsWith(route))) return "tech";
@@ -18,6 +25,7 @@ export const segmentBranding = {
     name: "VisionTaubaté Tech",
     tagline: "INTELIGÊNCIA QUE TRANSFORMA",
     accent: "vision-tech" as const,
+    homePath: segmentPaths.tech,
     logos: {
       light: "/tech/logo_visiontaubate_tech_lightmode.png",
       dark: "/tech/logo_visiontaubate_tech.png",
@@ -26,8 +34,9 @@ export const segmentBranding = {
   },
   design: {
     name: "VisionTaubaté",
-    tagline: null,
+    tagline: "Comunicação que conecta",
     accent: "vision-pink" as const,
+    homePath: segmentPaths.design,
     logos: {
       light: "/lovable-uploads/logodeitada.png",
       dark: "/lgo branco vision.png",
@@ -38,6 +47,7 @@ export const segmentBranding = {
     name: "VisionTaubaté",
     tagline: null,
     accent: "vision-purple" as const,
+    homePath: segmentPaths.gateway,
     logos: {
       light: "/lovable-uploads/logodeitada.png",
       dark: "/lgo branco vision.png",

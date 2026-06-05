@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
+import SegmentNavbar from "@/components/SegmentNavbar";
+import { segmentPaths } from "@/data/segmentBranding";
 import Footer from "@/components/Footer";
 import {
   businessSolutions,
@@ -32,9 +33,7 @@ const BusinessSolutionsPage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <div className="fixed top-0 left-0 right-0 bg-white z-50">
-        <Navbar />
-      </div>
+      <SegmentNavbar segment="tech" />
 
       <main className="pt-[88px]">
         <section className="relative overflow-hidden text-white">
@@ -60,10 +59,10 @@ const BusinessSolutionsPage = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                to="/#solucoes"
+                to={`${segmentPaths.tech}#solucoes`}
                 className="inline-flex rounded-md bg-vision-tech text-white px-5 py-2.5 font-medium hover:bg-vision-tech/90 transition-colors"
               >
-                Voltar para a home
+                Voltar para Tech
               </Link>
               <a
                 href="https://wa.me/5512997856012?text=Olá! Gostaria de conhecer as soluções SaaS da VisionTaubaté."

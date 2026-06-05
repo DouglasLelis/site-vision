@@ -21,7 +21,7 @@ export const serviceSegments: Record<"software" | "design", ServiceSegment> = {
     description:
       "Criamos soluções tecnológicas personalizadas para impulsionar seu negócio no ambiente digital.",
     color: "vision-tech",
-    route: "/segmentos/desenvolvimento-de-software",
+    route: "/tech/servicos",
     services: [
       {
         title: "Desenvolvimento Web",
@@ -59,7 +59,7 @@ export const serviceSegments: Record<"software" | "design", ServiceSegment> = {
     title: "Comunicação Visual",
     description: "Criamos sua identidade visual e materiais gráficos que transmitem os valores da sua marca.",
     color: "vision-pink",
-    route: "/segmentos/comunicacao-visual",
+    route: "/design/servicos",
     services: [
       {
         title: "Identidade Visual",

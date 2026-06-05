@@ -34,7 +34,7 @@ export const businessSolutionsPage = {
   title: "Soluções para seu negócio",
   description:
     "Sistemas proprietários da VisionTaubaté, desenvolvidos em nuvem para escalar sua operação com tecnologia de ponta — do atendimento ao financeiro, do ERP geral ao mercado pet.",
-  route: "/solucoes",
+  route: "/tech/solucoes",
 };
 
 export const businessSolutions: BusinessSolution[] = [
