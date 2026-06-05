@@ -27,9 +27,9 @@ export const segmentBranding = {
     accent: "vision-tech" as const,
     homePath: segmentPaths.tech,
     logos: {
-      light: "/tech/logo_visiontaubate_tech_lightmode.png",
-      dark: "/tech/logo_visiontaubate_tech.png",
-      icon: "/tech/logo_visiontaubate_icon.png",
+      light: "/brand/tech/logo_visiontaubate_tech_lightmode.png",
+      dark: "/brand/tech/logo_visiontaubate_tech.png",
+      icon: "/brand/tech/logo_visiontaubate_icon.png",
     },
   },
   design: {

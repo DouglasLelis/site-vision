@@ -2,7 +2,7 @@ export const SITE_NAME = "VisionTaubaté";
 export const SITE_URL =
   import.meta.env.VITE_SITE_URL ?? "https://visiontaubate.com.br";
 export const DEFAULT_OG_IMAGE = "/lovable-uploads/logodeitada.png";
-export const TECH_OG_IMAGE = "/tech/logo_visiontaubate_tech.png";
+export const TECH_OG_IMAGE = "/brand/tech/logo_visiontaubate_tech.png";
 export const CONTACT_EMAIL = "comercial@visiontaubate.com.br";
 
 export type SeoEntry = {
