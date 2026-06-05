@@ -111,7 +111,7 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 			},
 			fontFamily: {
-				sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
+				sans: ['Montserrat', 'system-ui', 'sans-serif'],
 			},
 		}
 	},

@@ -14,7 +14,7 @@ const portalConfig = {
     title: "VisionTaubaté Tech",
     subtitle: "Software, SaaS e consultoria técnica",
     description:
-      "Desenvolvimento sob medida e plataformas próprias para escalar sua operação digital.",
+      "Desenvolvimento sob medida e soluções próprias para escalar seu negócio.",
     tagline: segmentBranding.tech.tagline,
     to: segmentBranding.tech.homePath,
     media: segmentBackgroundMedia.software,
