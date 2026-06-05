@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { PageSEO } from "@/components/seo/PageSEO";
+import { getPageSeo } from "@/config/seo";
 import Index from "./pages/Index";
 import TechHome from "./pages/TechHome";
 import DesignHome from "./pages/DesignHome";
@@ -26,6 +28,15 @@ const ScrollToTop = () => {
   return null;
 };
 
+const RouteSEO = () => {
+  const { pathname } = useLocation();
+  const seo = getPageSeo(pathname);
+
+  if (!seo) return null;
+
+  return <PageSEO seo={seo} />;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -33,6 +44,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <RouteSEO />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/tech" element={<TechHome />} />

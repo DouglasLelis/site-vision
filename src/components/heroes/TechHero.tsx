@@ -56,11 +56,6 @@ const TechHero = () => {
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl space-y-8">
-          <img
-            src={segmentBranding.tech.logos.dark}
-            alt="VisionTaubaté Tech"
-            className="h-8 md:h-10"
-          />
           <div className="flex flex-wrap gap-2">
             {["Tech", "SaaS", "Software"].map((tag) => (
               <span

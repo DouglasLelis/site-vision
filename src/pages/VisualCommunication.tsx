@@ -44,16 +44,16 @@ const VisualCommunication = () => {
             <p className="max-w-3xl text-lg md:text-xl text-white/90">
               {segment.description}
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 to={segmentPaths.design}
-                className="inline-flex rounded-md bg-vision-pink text-white px-4 py-2 font-medium hover:bg-vision-pink/90 transition-colors"
+                className="inline-flex w-fit rounded-md bg-vision-pink text-white px-4 py-2 font-medium hover:bg-vision-pink/90 transition-colors"
               >
                 Voltar para Design
               </Link>
               <Link
                 to={segmentPaths.tech}
-                className="inline-flex rounded-md border border-white/70 text-white px-4 py-2 font-medium hover:bg-white/10 transition-colors ml-3"
+                className="inline-flex w-fit rounded-md border border-white/70 text-white px-4 py-2 font-medium hover:bg-white/10 transition-colors"
               >
                 Ver Tech
               </Link>

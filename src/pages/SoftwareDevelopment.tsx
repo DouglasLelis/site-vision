@@ -35,11 +35,6 @@ const SoftwareDevelopment = () => {
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-vision-tech/20 to-black/80" />
           <div className="relative z-10 container mx-auto px-4 py-20">
-            <img
-              src={segmentBranding.tech.logos.dark}
-              alt="VisionTaubaté Tech"
-              className="h-8 md:h-10 mb-6"
-            />
             <p className="text-sm font-medium uppercase tracking-[0.2em] mb-3 text-vision-tech">
               {segmentBranding.tech.tagline}
             </p>
@@ -49,16 +44,16 @@ const SoftwareDevelopment = () => {
             <p className="max-w-3xl text-lg md:text-xl text-white/90">
               {segment.description}
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 to={segmentPaths.tech}
-                className="inline-flex rounded-md bg-vision-tech text-white px-4 py-2 font-medium hover:bg-vision-tech/90 transition-colors"
+                className="inline-flex w-fit rounded-md bg-vision-tech text-white px-4 py-2 font-medium hover:bg-vision-tech/90 transition-colors"
               >
                 Voltar para Tech
               </Link>
               <Link
                 to={segmentPaths.design}
-                className="inline-flex rounded-md border border-white/70 text-white px-4 py-2 font-medium hover:bg-white/10 transition-colors ml-3"
+                className="inline-flex w-fit rounded-md border border-white/70 text-white px-4 py-2 font-medium hover:bg-white/10 transition-colors"
               >
                 Ver Comunicação Visual
               </Link>
