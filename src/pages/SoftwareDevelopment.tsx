@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { serviceSegments } from "@/data/serviceSegments";
+import { segmentBackgroundMedia } from "@/data/segmentBackgroundMedia";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const SoftwareDevelopment = () => {
       <main className="pt-[88px]">
         <section className="relative overflow-hidden text-white">
           <img
-            src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src={segmentBackgroundMedia.software.poster}
             alt="Equipe de tecnologia desenvolvendo software"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -26,9 +27,11 @@ const SoftwareDevelopment = () => {
             muted
             loop
             playsInline
-            poster="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            poster={segmentBackgroundMedia.software.poster}
           >
-            <source src="/dev_write.webm" type="video/mp4" />
+            {segmentBackgroundMedia.software.sources.map((s) => (
+              <source key={s.src} src={s.src} type={s.type} />
+            ))}
           </video>
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70" />

@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { segmentBackgroundMedia } from '@/data/segmentBackgroundMedia';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -26,10 +27,7 @@ const Hero = () => {
       segmentButtonLabel: 'Conhecer Desenvolvimento de Software',
       accentColor: 'vision-purple',
       cardGradient: 'from-vision-pink to-vision-purple',
-      mediaImage:
-        'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600',
-      mediaVideo:
-        '/dev_write.webm',
+      ...segmentBackgroundMedia.software,
       mediaAlt: 'Equipe de desenvolvimento trabalhando em software',
     },
     {
@@ -49,10 +47,7 @@ const Hero = () => {
       segmentButtonLabel: 'Conhecer Comunicação Visual',
       accentColor: 'vision-pink',
       cardGradient: 'from-vision-orange to-vision-pink',
-      mediaImage:
-        'https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1600',
-      mediaVideo:
-        '/colored_green_smoke.webm',
+      ...segmentBackgroundMedia.design,
       mediaAlt: 'Designer criando material de comunicacao visual',
     },
   ];
@@ -103,20 +98,22 @@ const Hero = () => {
   return (
     <div ref={heroRef} className="relative min-h-screen flex items-center transition-opacity duration-1000 opacity-0 pt-16 overflow-hidden">
       <img
-        src={currentSlide.mediaImage}
+        src={currentSlide.poster}
         alt={currentSlide.mediaAlt}
         className="absolute inset-0 w-full h-full object-cover"
       />
       <video
-        key={currentSlide.mediaVideo}
+        key={currentSlide.sources.map((s) => s.src).join('|')}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        poster={currentSlide.mediaImage}
+        poster={currentSlide.poster}
       >
-        <source src={currentSlide.mediaVideo} type="video/mp4" />
+        {currentSlide.sources.map((s) => (
+          <source key={s.src} src={s.src} type={s.type} />
+        ))}
       </video>
       <div className="absolute inset-0 bg-black/55"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70"></div>
