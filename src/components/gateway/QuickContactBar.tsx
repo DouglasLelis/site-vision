@@ -32,12 +32,9 @@ const QuickContactBar = () => {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className="shrink-0 z-20 border-t border-white/10 bg-black/80 backdrop-blur-md safe-area-bottom mb-2 md:mb-0"
+      className="shrink-0 z-20 border-t border-white/10 bg-black pb-[env(safe-area-inset-bottom,0px)] md:mb-0"
     >
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-4">
-        <p className="text-center text-sm font-semibold text-white mb-2 md:mb-3">
-          Falar agora
-        </p>
         <div className="flex flex-row items-center justify-center gap-2 md:gap-3">
           {contacts.map((contact) => (
             <a

@@ -45,7 +45,7 @@ const SegmentGateway = () => {
 
       <GatewayNavbar />
 
-      <main className="relative z-10 flex flex-1 flex-col min-h-0 px-3 pt-8 pb-2 md:px-6 md:pt-8 md:pb-4">
+      <main className="relative z-10 flex flex-1 flex-col min-h-0 px-3 pt-4 pb-2 md:px-6 md:pt-8 md:pb-4">
         <div className="flex flex-1 flex-col items-center justify-center max-w-5xl mx-auto w-full min-h-0 gap-4 md:gap-8">
           <motion.div
             initial={{ opacity: 0, y: -12 }}
@@ -56,12 +56,12 @@ const SegmentGateway = () => {
             <img
               src={segmentBranding.tech.logos.dark}
               alt="VisionTaubaté Tech"
-              className="h-16 sm:h-16 md:h-32 w-auto max-w-[320px] sm:max-w-[360px] md:max-w-[480px] mx-auto mb-16 md:mb-6 object-contain"
+              className="h-12 xs:h-12 sm:h-16 md:h-32 w-auto max-w-[320px] sm:max-w-[360px] md:max-w-[480px] mx-auto mb-4 md:mb-6 object-contain"
             />
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-1 md:mb-3">
+            <h1 className="text-lg sm:text-3xl md:text-5xl font-bold mb-1 md:mb-3">
               Escolha seu caminho
             </h1>
-            <p className="text-gray-400 text-md md:text-lg max-w-xl mx-auto">
+            <p className="text-gray-400 text-sm md:text-md max-w-xl mx-auto">
               Tecnologia e comunicação visual em experiências dedicadas.
             </p>
           </motion.div>

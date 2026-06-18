@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserChrome } from "@/components/BrowserChrome";
 import { PageSEO } from "@/components/seo/PageSEO";
 import { getPageSeo } from "@/config/seo";
 import Index from "./pages/Index";
@@ -44,6 +45,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <BrowserChrome />
         <RouteSEO />
         <Routes>
           <Route path="/" element={<Index />} />

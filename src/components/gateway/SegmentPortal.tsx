@@ -11,14 +11,14 @@ type SegmentPortalProps = {
 
 const portalConfig = {
   tech: {
-    title: "VisionTaubaté Tech",
+    title: "Tecnologia",
     subtitle: "Software, SaaS e consultoria técnica",
     description:
       "Desenvolvimento sob medida e soluções próprias para escalar seu negócio.",
     tagline: segmentBranding.tech.tagline,
     to: segmentBranding.tech.homePath,
     media: segmentBackgroundMedia.software,
-    tags: ["Ativabot", "AtivaERP", "PetVerse"],
+    tags: ["Aplicativos", "SaaS", "Consultoria"],
     borderHover: "hover:border-vision-tech/60 hover:shadow-vision-tech/20",
     overlay: "from-black/85 via-black/65 to-vision-tech/35",
     tagStyle: "bg-vision-tech/20 text-vision-tech border-vision-tech/30",
@@ -86,7 +86,7 @@ const SegmentPortal = ({ segment, delay = 0 }: SegmentPortalProps) => {
           <p className="text-white/90 text-xs sm:text-sm md:text-base font-medium mb-1 md:mb-2">
             {config.subtitle}
           </p>
-          <p className="text-white/70 text-md md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none">
+          <p className="text-white/70 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none">
             {config.description}
           </p>
           {config.tagline && (
