@@ -50,7 +50,7 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
 
   const techLinks = [
     { label: "SaaS", action: () => handleSectionClick("solucoes") },
-    { label: "Portfólio", action: () => handleSectionClick("portfolio") },
+    { label: "Portfólio", to: segmentPaths.techPortfolio },
     { label: "Depoimentos", action: () => handleSectionClick("testimonials") },
     { label: "Serviços", to: segmentPaths.techServicos },
     { label: "Soluções", to: segmentPaths.techSolucoes },

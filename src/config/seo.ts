@@ -51,6 +51,15 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    path: "/tech/portfolio",
+    title: "Portfólio Tech – VisionTaubaté",
+    description:
+      "Sites, sistemas web, apps e automações desenvolvidos pela VisionTaubaté. Conheça nossos projetos de tecnologia.",
+    ogImage: TECH_OG_IMAGE,
+    priority: 0.8,
+    changefreq: "monthly",
+  },
+  {
     path: "/design",
     title: "Comunicação Visual – VisionTaubaté",
     description:

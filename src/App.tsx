@@ -16,6 +16,7 @@ import Methodology from "./pages/Methodology";
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import VisualCommunication from "./pages/VisualCommunication";
 import BusinessSolutions from "./pages/BusinessSolutions";
+import TechPortfolio from "./pages/TechPortfolio";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/tech" element={<TechHome />} />
           <Route path="/tech/servicos" element={<SoftwareDevelopment />} />
           <Route path="/tech/solucoes" element={<BusinessSolutions />} />
+          <Route path="/tech/portfolio" element={<TechPortfolio />} />
           <Route path="/design" element={<DesignHome />} />
           <Route path="/design/servicos" element={<VisualCommunication />} />
           <Route path="/sobre" element={<About />} />

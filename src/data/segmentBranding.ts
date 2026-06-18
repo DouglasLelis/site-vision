@@ -8,6 +8,7 @@ export const segmentPaths = {
   tech: "/tech",
   techServicos: "/tech/servicos",
   techSolucoes: "/tech/solucoes",
+  techPortfolio: "/tech/portfolio",
   design: "/design",
   designServicos: "/design/servicos",
   sobre: "/sobre",

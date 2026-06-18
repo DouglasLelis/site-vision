@@ -1,7 +1,7 @@
 import SegmentNavbar from "@/components/SegmentNavbar";
 import TechHero from "@/components/heroes/TechHero";
 import BusinessSolutions from "@/components/BusinessSolutions";
-import Portfolio from "@/components/Portfolio";
+import PortfolioPreview from "@/components/PortfolioPreview";
 import SegmentServicesCta from "@/components/SegmentServicesCta";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -21,7 +21,7 @@ const TechHome = () => {
       <SegmentNavbar segment="tech" />
       <TechHero />
       <BusinessSolutions />
-      <Portfolio segment="tech" />
+      <PortfolioPreview />
       <SegmentServicesCta segment="tech" />
       <Testimonials />
       <Contact />

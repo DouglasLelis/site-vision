@@ -10,6 +10,7 @@ const seoPages = [
   { path: "/tech", priority: 0.9, changefreq: "weekly" },
   { path: "/tech/servicos", priority: 0.8, changefreq: "monthly" },
   { path: "/tech/solucoes", priority: 0.8, changefreq: "monthly" },
+  { path: "/tech/portfolio", priority: 0.8, changefreq: "monthly" },
   { path: "/design", priority: 0.9, changefreq: "weekly" },
   { path: "/design/servicos", priority: 0.8, changefreq: "monthly" },
   { path: "/sobre", priority: 0.7, changefreq: "monthly" },
