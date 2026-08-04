@@ -23,8 +23,8 @@ const TechHome = () => {
       <BusinessSolutions />
       <PortfolioPreview />
       <SegmentServicesCta segment="tech" />
-      <Testimonials />
-      <Contact />
+      <Testimonials segment="tech" />
+      <Contact segment="tech" />
       <Footer />
       <FloatingActionButton />
     </div>

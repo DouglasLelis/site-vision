@@ -1,50 +1,55 @@
+import { useState, useEffect, useRef } from "react";
+import { Star } from "lucide-react";
 
-import { useState, useEffect, useRef } from 'react';
-import { Star } from 'lucide-react';
+type TestimonialsProps = {
+  segment?: "tech" | "design";
+};
 
-const Testimonials = () => {
+const testimonials = [
+  {
+    name: "Artur Pinheiro",
+    role: "Cliente, Gráfica",
+    image: "lovable-uploads/cliente.jpg",
+    text: "Excelente atendimento, sempre faço meus cartões e panfletos. melhor preço de Taubaté.!",
+    stars: 5,
+  },
+  {
+    name: "Patricia Braga",
+    role: "Cliente, Stella Turismo",
+    image:
+      "https://lh3.googleusercontent.com/a-/ALV-UjUiTVXZHS3WFAf3twgcVWm20NcvyaPWAdlYz2RL4GH9ymqBf0Uk=w60-h60-p-rp-mo-ba3-br100",
+    text: "Adorei o serviço prestado. Estão de parabéns!! Agilidade, qualidade e ótimo valor.",
+    stars: 5,
+  },
+  {
+    name: "Margareth de Faria",
+    role: "Cliente, Gráfica",
+    image:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXgQcfAVvln8Rq0K4Y8SD_cl682K7vA5K-8Iq7s4D80YKgpmrnluA=w60-h60-p-rp-mo-ba3-br100",
+    text: "O atendimento é maravilhoso. Preço muito bom,  e a qualidade do serviço superou minhas expectativas. ",
+    stars: 5,
+  },
+];
+
+const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const testimonials = [
-    
-    {
-      name: 'Artur Pinheiro',  
-      role: 'Cliente, Gráfica',
-      image: 'lovable-uploads/cliente.jpg',
-      text: 'Excelente atendimento, sempre faço meus cartões e panfletos. melhor preço de Taubaté.!',
-      stars: 5
-    },
-    {
-      name: 'Patricia Braga',
-      role: 'Cliente, Stella Turismo',
-      image: 'https://lh3.googleusercontent.com/a-/ALV-UjUiTVXZHS3WFAf3twgcVWm20NcvyaPWAdlYz2RL4GH9ymqBf0Uk=w60-h60-p-rp-mo-ba3-br100',
-      text: 'Adorei o serviço prestado. Estão de parabéns!! Agilidade, qualidade e ótimo valor.',
-      stars: 5
-    },
-    {
-      name: 'Margareth de Faria',
-      role: 'Cliente, Gráfica',
-      image: 'https://lh3.googleusercontent.com/a-/ALV-UjXgQcfAVvln8Rq0K4Y8SD_cl682K7vA5K-8Iq7s4D80YKgpmrnluA=w60-h60-p-rp-mo-ba3-br100',
-      text: 'O atendimento é maravilhoso. Preço muito bom,  e a qualidade do serviço superou minhas expectativas. ',
-      stars: 5
-    },
-  ];
+  const isTech = segment === "tech";
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100');
+            entry.target.classList.add("opacity-100");
             observer.unobserve(entry.target);
           }
         });
@@ -64,46 +69,98 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div id="testimonials" ref={sectionRef} className="py-24 bg-vision-50 opacity-0 transition-opacity duration-1000">
+    <div
+      id="testimonials"
+      ref={sectionRef}
+      className={`py-24 opacity-0 transition-opacity duration-1000 ${
+        isTech ? "bg-black" : "bg-vision-50"
+      }`}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="section-header">O Que Nossos Clientes Dizem</h2>
-          <p className="section-subheader">
-            Sucesso compartilhado com empresas que confiaram em nossas soluções
-          </p>
+          {isTech ? (
+            <>
+              <p className="uppercase tracking-[0.2em] text-sm mb-2 text-vision-tech">
+                Depoimentos
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-white">
+                O Que Nossos Clientes Dizem
+              </h2>
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-400">
+                Sucesso compartilhado com empresas que confiaram em nossas
+                soluções
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="section-header">O Que Nossos Clientes Dizem</h2>
+              <p className="section-subheader">
+                Sucesso compartilhado com empresas que confiaram em nossas
+                soluções
+              </p>
+            </>
+          )}
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             <div className="overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
               >
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
-                    <div className="bg-white rounded-2xl p-8 shadow-lg">
+                    <div
+                      className={`rounded-2xl p-8 ${
+                        isTech
+                          ? "bg-zinc-900/80 border border-zinc-800 shadow-[0_0_40px_-12px_rgba(30,144,255,0.15)]"
+                          : "bg-white shadow-lg"
+                      }`}
+                    >
                       <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-6">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name} 
-                          className="w-16 h-16 rounded-full object-cover"
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className={`w-16 h-16 rounded-full object-cover ${
+                            isTech ? "ring-2 ring-vision-tech/30" : ""
+                          }`}
                         />
                         <div>
-                          <h3 className="text-xl font-semibold text-vision-900">{testimonial.name}</h3>
-                          <p className="text-gray-600">{testimonial.role}</p>
+                          <h3
+                            className={`text-xl font-semibold ${
+                              isTech ? "text-white" : "text-vision-900"
+                            }`}
+                          >
+                            {testimonial.name}
+                          </h3>
+                          <p className={isTech ? "text-gray-400" : "text-gray-600"}>
+                            {testimonial.role}
+                          </p>
                           <div className="flex mt-2">
                             {[...Array(5)].map((_, i) => (
-                              <Star 
-                                key={i} 
-                                size={16} 
-                                className={i < testimonial.stars ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
+                              <Star
+                                key={i}
+                                size={16}
+                                className={
+                                  i < testimonial.stars
+                                    ? "text-yellow-400 fill-yellow-400"
+                                    : isTech
+                                      ? "text-zinc-600"
+                                      : "text-gray-300"
+                                }
                               />
                             ))}
                           </div>
                         </div>
                       </div>
-                      <p className="text-gray-700 italic">"{testimonial.text}"</p>
+                      <p
+                        className={`italic ${
+                          isTech ? "text-gray-300" : "text-gray-700"
+                        }`}
+                      >
+                        "{testimonial.text}"
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -115,10 +172,16 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                    activeIndex === index ? 'bg-vision-600' : 'bg-gray-300'
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeIndex === index
+                      ? isTech
+                        ? "w-8 bg-vision-tech"
+                        : "w-3 bg-vision-600"
+                      : isTech
+                        ? "w-2 bg-zinc-600 hover:bg-vision-tech/50"
+                        : "w-3 bg-gray-300"
                   }`}
-                  aria-label={`Go to slide ${index + 1}`}
+                  aria-label={`Ir para depoimento ${index + 1}`}
                 />
               ))}
             </div>

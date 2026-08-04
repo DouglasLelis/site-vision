@@ -19,8 +19,8 @@ const DesignHome = () => {
       <SegmentNavbar segment="design" />
       <DesignHero />
       <SegmentServicesCta segment="design" />
-      <Testimonials />
-      <Contact />
+      <Testimonials segment="design" />
+      <Contact segment="design" />
       <Footer />
       <FloatingActionButton />
     </div>
