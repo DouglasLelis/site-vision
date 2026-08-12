@@ -99,20 +99,16 @@ const Contact = ({ segment = "design" }: ContactProps) => {
   };
 
   const inputClass = isTech
-    ? "w-full px-4 py-3 bg-zinc-950 border border-zinc-700 rounded-lg text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-vision-tech focus:border-vision-tech transition-colors"
-    : "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vision-500 focus:border-vision-500 transition-colors";
+    ? "w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-vision-tech focus:border-vision-tech transition-colors"
+    : "w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-vision-500 focus:border-vision-500 transition-colors";
 
-  const labelClass = isTech
-    ? "block text-sm font-medium text-gray-300 mb-1"
-    : "block text-sm font-medium text-gray-700 mb-1";
+  const labelClass = "block text-sm font-medium text-foreground mb-1";
 
   return (
     <div
       id="contact"
       ref={sectionRef}
-      className={`py-24 opacity-0 transition-opacity duration-1000 ${
-        isTech ? "bg-zinc-950" : "bg-white"
-      }`}
+      className="py-24 opacity-0 transition-opacity duration-1000 bg-background"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
@@ -121,17 +117,17 @@ const Contact = ({ segment = "design" }: ContactProps) => {
               <p className="uppercase tracking-[0.2em] text-sm mb-2 text-vision-tech">
                 Contato
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-foreground">
                 Entre em Contato
               </h2>
-              <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-400">
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto text-muted-foreground">
                 Estamos prontos para transformar sua ideia em realidade
               </p>
             </>
           ) : (
             <>
               <h2 className="section-header">Entre em Contato</h2>
-              <p className="section-subheader">
+              <p className="section-subheader text-muted-foreground">
                 Estamos prontos para transformar sua ideia em realidade
               </p>
             </>
@@ -145,10 +141,10 @@ const Contact = ({ segment = "design" }: ContactProps) => {
               return (
                 <a key={index} href={method.href} className="block group">
                   <div
-                    className={`rounded-xl p-6 transition-all duration-300 ${
+                    className={`rounded-xl p-6 transition-all duration-300 bg-card shadow-sm border border-border hover:shadow-md ${
                       isTech
-                        ? "bg-zinc-900/80 border border-zinc-800 hover:border-vision-tech/40 hover:shadow-[0_0_30px_-12px_rgba(30,144,255,0.25)]"
-                        : "bg-white shadow-md border border-gray-100 hover:shadow-lg hover:border-vision-200"
+                        ? "hover:border-vision-tech/40 hover:shadow-[0_0_30px_-12px_rgba(30,144,255,0.25)]"
+                        : "hover:border-vision-200"
                     }`}
                   >
                     <div className="flex items-start gap-4">
@@ -166,14 +162,10 @@ const Contact = ({ segment = "design" }: ContactProps) => {
                         />
                       </div>
                       <div>
-                        <h3
-                          className={`text-lg font-semibold mb-1 ${
-                            isTech ? "text-white" : "text-vision-900"
-                          }`}
-                        >
+                        <h3 className="text-lg font-semibold mb-1 text-foreground">
                           {method.title}
                         </h3>
-                        <p className={isTech ? "text-gray-400" : "text-gray-600"}>
+                        <p className="text-muted-foreground">
                           {method.content}
                         </p>
                       </div>
@@ -184,18 +176,8 @@ const Contact = ({ segment = "design" }: ContactProps) => {
             })}
           </div>
 
-          <div
-            className={`lg:col-span-2 rounded-xl p-8 ${
-              isTech
-                ? "bg-zinc-900/80 border border-zinc-800"
-                : "bg-white shadow-lg border border-gray-100"
-            }`}
-          >
-            <h3
-              className={`text-2xl font-semibold mb-6 ${
-                isTech ? "text-white" : "text-vision-900"
-              }`}
-            >
+          <div className="lg:col-span-2 rounded-xl p-8 bg-card shadow-sm border border-border">
+            <h3 className="text-2xl font-semibold mb-6 text-foreground">
               Envie-nos uma mensagem
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">

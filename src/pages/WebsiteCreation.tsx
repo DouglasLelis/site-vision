@@ -37,7 +37,6 @@ const WebsiteCreation = () => {
       <WebsiteBonuses />
       {/* Reutilizando os componentes de portfólio e depoimentos existentes */}
       <PortfolioPreview />
-      <Testimonials segment="tech" />
       
       {/* CTA Final */}
       <section className="py-24 bg-card border-t border-border">

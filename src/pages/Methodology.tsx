@@ -272,7 +272,7 @@ const Methodology = () => {
                 <div className="w-14 h-14 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4 text-vision-purple">
                   <item.icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">{item.role}</h3>
+                <h3 className="font-bold text-lg mb-2 text-gray-900">{item.role}</h3>
                 <p className="text-sm text-gray-500">{item.desc}</p>
               </motion.div>
             ))}

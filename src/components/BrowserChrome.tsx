@@ -53,12 +53,12 @@ export function BrowserChrome() {
       {/* Safari 26+ deriva a cor das barras de elementos fixed no topo/rodapé */}
       <div
         aria-hidden="true"
-        className="safari-chrome-tint safari-chrome-tint-top"
+        className="safari-chrome-tint safari-chrome-tint-top opacity-0"
         style={{ backgroundColor: themeColor }}
       />
       <div
         aria-hidden="true"
-        className="safari-chrome-tint safari-chrome-tint-bottom"
+        className="safari-chrome-tint safari-chrome-tint-bottom opacity-0"
         style={{ backgroundColor: themeColor }}
       />
     </>

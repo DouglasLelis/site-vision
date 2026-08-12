@@ -8,6 +8,7 @@ import {
   type SiteSegment,
 } from "@/data/segmentBranding";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "./ThemeProvider";
 
 type SegmentNavbarProps = {
   segment: "tech" | "design";
@@ -18,11 +19,22 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { theme } = useTheme();
   const branding = segmentBranding[segment];
   const homePath = branding.homePath;
   const isHome = pathname === homePath || pathname === '/tech/criacao-de-sites';
   const useTransparentStyle = isHome && !isScrolled;
-  const navbarLogo = getNavbarLogo(segment as SiteSegment, useTransparentStyle);
+  
+  let effectiveTheme = theme;
+  if (pathname !== "/tech/criacao-de-sites") {
+    effectiveTheme = (pathname.includes("design") || pathname.includes("comunicacao")) ? "light" : "dark";
+  }
+  if (effectiveTheme === "system") {
+    effectiveTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  
+  const shouldShowWhiteLogo = useTransparentStyle && effectiveTheme === "dark";
+  const navbarLogo = getNavbarLogo(segment as SiteSegment, shouldShowWhiteLogo);
 
   const accentHover =
     segment === "tech" ? "hover:text-vision-tech" : "hover:text-vision-pink";
@@ -46,13 +58,11 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
   };
 
   const desktopItemClass = useTransparentStyle
-    ? "text-white font-medium transition-colors"
+    ? "text-gray-800 dark:text-white font-medium transition-colors"
     : "text-gray-700 font-medium transition-colors";
 
   const techLinks = [
-    { label: "SaaS", action: () => handleSectionClick("solucoes") },
     { label: "Portfólio", to: segmentPaths.techPortfolio },
-    { label: "Depoimentos", action: () => handleSectionClick("testimonials") },
     { label: "Serviços", to: segmentPaths.techServicos },
     { label: "Soluções", to: segmentPaths.techSolucoes },
     { label: "Metodologia", to: segmentPaths.metodologia },
@@ -61,7 +71,6 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
 
   const designLinks = [
     { label: "Serviços", action: () => handleSectionClick("servicos") },
-    { label: "Depoimentos", action: () => handleSectionClick("testimonials") },
     { label: "Ver todos", to: segmentPaths.designServicos },
     { label: "Sobre", to: segmentPaths.sobre },
   ];
@@ -114,7 +123,9 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
               onClick={() => handleSectionClick("contact")}
               className={
                 useTransparentStyle
-                  ? "inline-flex items-center justify-center rounded-md border border-white/50 bg-white/10 px-4 py-2 font-medium text-white transition-colors hover:bg-white/20"
+                  ? effectiveTheme === "dark"
+                    ? "inline-flex items-center justify-center rounded-md border border-white/50 bg-white/10 px-4 py-2 font-medium text-white transition-colors hover:bg-white/20"
+                    : accentBtn
                   : accentBtn
               }
             >
@@ -131,13 +142,13 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
           <div className="flex items-center gap-4">
             {pathname === "/tech/criacao-de-sites" && (
               <ThemeToggle 
-                className={useTransparentStyle ? "text-white hover:bg-white/10" : "text-gray-700 hover:bg-gray-100"}
+                className={useTransparentStyle ? "text-gray-800 dark:text-white hover:bg-white/10" : "text-gray-700 hover:bg-gray-100"}
               />
             )}
             <button
               className={`md:hidden focus:outline-none ${
                 useTransparentStyle
-                  ? "text-white hover:text-white/80"
+                  ? "text-gray-800 dark:text-white hover:opacity-80"
                   : `text-gray-700 ${accentHover}`
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
