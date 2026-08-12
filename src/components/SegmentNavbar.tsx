@@ -7,6 +7,7 @@ import {
   segmentPaths,
   type SiteSegment,
 } from "@/data/segmentBranding";
+import { ThemeToggle } from "./ThemeToggle";
 
 type SegmentNavbarProps = {
   segment: "tech" | "design";
@@ -19,7 +20,7 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
   const { pathname } = useLocation();
   const branding = segmentBranding[segment];
   const homePath = branding.homePath;
-  const isHome = pathname === homePath;
+  const isHome = pathname === homePath || pathname === '/tech/criacao-de-sites';
   const useTransparentStyle = isHome && !isScrolled;
   const navbarLogo = getNavbarLogo(segment as SiteSegment, useTransparentStyle);
 
@@ -127,16 +128,23 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
             </Link>
           </div>
 
-          <button
-            className={`md:hidden focus:outline-none ${
-              useTransparentStyle
-                ? "text-white hover:text-white/80"
-                : `text-gray-700 ${accentHover}`
-            }`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            {pathname === "/tech/criacao-de-sites" && (
+              <ThemeToggle 
+                className={useTransparentStyle ? "text-white hover:bg-white/10" : "text-gray-700 hover:bg-gray-100"}
+              />
+            )}
+            <button
+              className={`md:hidden focus:outline-none ${
+                useTransparentStyle
+                  ? "text-white hover:text-white/80"
+                  : `text-gray-700 ${accentHover}`
+              }`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {isMobileMenuOpen && (

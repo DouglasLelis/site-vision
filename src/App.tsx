@@ -14,9 +14,12 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Methodology from "./pages/Methodology";
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
+import WebsiteCreation from "./pages/WebsiteCreation";
 import VisualCommunication from "./pages/VisualCommunication";
 import BusinessSolutions from "./pages/BusinessSolutions";
 import TechPortfolio from "./pages/TechPortfolio";
+
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const queryClient = new QueryClient();
 
@@ -42,36 +45,39 @@ const RouteSEO = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
-        <ScrollToTop />
-        <BrowserChrome />
-        <RouteSEO />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/tech" element={<TechHome />} />
-          <Route path="/tech/servicos" element={<SoftwareDevelopment />} />
-          <Route path="/tech/solucoes" element={<BusinessSolutions />} />
-          <Route path="/tech/portfolio" element={<TechPortfolio />} />
-          <Route path="/design" element={<DesignHome />} />
-          <Route path="/design/servicos" element={<VisualCommunication />} />
-          <Route path="/sobre" element={<About />} />
-          <Route path="/metodologia" element={<Methodology />} />
+        <ThemeProvider defaultTheme="dark" storageKey="vision-theme">
+          <Toaster />
+          <Sonner />
+          <ScrollToTop />
+          <BrowserChrome />
+          <RouteSEO />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/tech" element={<TechHome />} />
+            <Route path="/tech/servicos" element={<SoftwareDevelopment />} />
+            <Route path="/tech/solucoes" element={<BusinessSolutions />} />
+            <Route path="/tech/portfolio" element={<TechPortfolio />} />
+            <Route path="/tech/criacao-de-sites" element={<WebsiteCreation />} />
+            <Route path="/design" element={<DesignHome />} />
+            <Route path="/design/servicos" element={<VisualCommunication />} />
+            <Route path="/sobre" element={<About />} />
+            <Route path="/metodologia" element={<Methodology />} />
 
-          {/* Redirects das URLs antigas */}
-          <Route
-            path="/segmentos/desenvolvimento-de-software"
-            element={<Navigate to="/tech/servicos" replace />}
-          />
-          <Route
-            path="/segmentos/comunicacao-visual"
-            element={<Navigate to="/design/servicos" replace />}
-          />
-          <Route path="/solucoes" element={<Navigate to="/tech/solucoes" replace />} />
+            {/* Redirects das URLs antigas */}
+            <Route
+              path="/segmentos/desenvolvimento-de-software"
+              element={<Navigate to="/tech/servicos" replace />}
+            />
+            <Route
+              path="/segmentos/comunicacao-visual"
+              element={<Navigate to="/design/servicos" replace />}
+            />
+            <Route path="/solucoes" element={<Navigate to="/tech/solucoes" replace />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ThemeProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

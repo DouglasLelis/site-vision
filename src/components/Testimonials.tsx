@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Artur Pinheiro",
     role: "Cliente, Gráfica",
-    image: "lovable-uploads/cliente.jpg",
+    image: "/lovable-uploads/cliente.jpg",
     text: "Excelente atendimento, sempre faço meus cartões e panfletos. melhor preço de Taubaté.!",
     stars: 5,
   },
@@ -72,9 +72,7 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
     <div
       id="testimonials"
       ref={sectionRef}
-      className={`py-24 opacity-0 transition-opacity duration-1000 ${
-        isTech ? "bg-black" : "bg-vision-50"
-      }`}
+      className="py-24 opacity-0 transition-opacity duration-1000 bg-background"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
@@ -83,18 +81,18 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
               <p className="uppercase tracking-[0.2em] text-sm mb-2 text-vision-tech">
                 Depoimentos
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-foreground">
                 O Que Nossos Clientes Dizem
               </h2>
-              <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-400">
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto text-muted-foreground">
                 Sucesso compartilhado com empresas que confiaram em nossas
                 soluções
               </p>
             </>
           ) : (
             <>
-              <h2 className="section-header">O Que Nossos Clientes Dizem</h2>
-              <p className="section-subheader">
+              <h2 className="section-header text-foreground">O Que Nossos Clientes Dizem</h2>
+              <p className="section-subheader text-muted-foreground">
                 Sucesso compartilhado com empresas que confiaram em nossas
                 soluções
               </p>
@@ -111,30 +109,22 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
               >
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
-                    <div
-                      className={`rounded-2xl p-8 ${
-                        isTech
-                          ? "bg-zinc-900/80 border border-zinc-800 shadow-[0_0_40px_-12px_rgba(30,144,255,0.15)]"
-                          : "bg-white shadow-lg"
-                      }`}
-                    >
+                    <div className="rounded-2xl p-8 bg-card border border-border shadow-md">
                       <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-6">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className={`w-16 h-16 rounded-full object-cover ${
-                            isTech ? "ring-2 ring-vision-tech/30" : ""
-                          }`}
+                          className="w-16 h-16 rounded-full object-cover ring-2 ring-vision-tech/30"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            e.currentTarget.src = "/lovable-uploads/cliente.jpg";
+                          }}
                         />
                         <div>
-                          <h3
-                            className={`text-xl font-semibold ${
-                              isTech ? "text-white" : "text-vision-900"
-                            }`}
-                          >
+                          <h3 className="text-xl font-semibold text-foreground">
                             {testimonial.name}
                           </h3>
-                          <p className={isTech ? "text-gray-400" : "text-gray-600"}>
+                          <p className="text-muted-foreground">
                             {testimonial.role}
                           </p>
                           <div className="flex mt-2">
@@ -145,20 +135,14 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
                                 className={
                                   i < testimonial.stars
                                     ? "text-yellow-400 fill-yellow-400"
-                                    : isTech
-                                      ? "text-zinc-600"
-                                      : "text-gray-300"
+                                    : "text-muted"
                                 }
                               />
                             ))}
                           </div>
                         </div>
                       </div>
-                      <p
-                        className={`italic ${
-                          isTech ? "text-gray-300" : "text-gray-700"
-                        }`}
-                      >
+                      <p className="italic text-muted-foreground">
                         "{testimonial.text}"
                       </p>
                     </div>
@@ -174,12 +158,8 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
                   onClick={() => setActiveIndex(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     activeIndex === index
-                      ? isTech
-                        ? "w-8 bg-vision-tech"
-                        : "w-3 bg-vision-600"
-                      : isTech
-                        ? "w-2 bg-zinc-600 hover:bg-vision-tech/50"
-                        : "w-3 bg-gray-300"
+                      ? "w-8 bg-vision-tech"
+                      : "w-2 bg-muted hover:bg-vision-tech/50"
                   }`}
                   aria-label={`Ir para depoimento ${index + 1}`}
                 />

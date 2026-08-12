@@ -1,6 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import favicon from "../../public/lovable-uploads/favicon.png";
+const favicon = "/lovable-uploads/favicon.png";
 import { segmentPaths } from "@/data/segmentBranding";
 
 const Footer = () => {

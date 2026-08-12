@@ -60,6 +60,15 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    path: "/tech/criacao-de-sites",
+    title: "Criação de Sites Profissionais – VisionTaubaté Tech",
+    description:
+      "Tenha um site de alta performance, otimizado para o Google (SEO) e focado em converter visitantes em clientes reais para o seu negócio.",
+    ogImage: TECH_OG_IMAGE,
+    priority: 0.9,
+    changefreq: "monthly",
+  },
+  {
     path: "/design",
     title: "Comunicação Visual – VisionTaubaté",
     description:
