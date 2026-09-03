@@ -2,8 +2,10 @@ import { ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 const favicon = "/lovable-uploads/favicon.png";
 import { segmentPaths } from "@/data/segmentBranding";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -23,27 +25,26 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-gray-300 mb-6">
-              Transformando ideias em soluções digitais inovadoras para
-              impulsionar o crescimento do seu negócio.
+              {t("footer.description")}
             </p>
             <button
               onClick={scrollToTop}
               className="inline-flex items-center gap-2 text-vision-300 hover:text-white transition-colors"
             >
-              <span>Voltar ao topo</span>
+              <span>{t("footer.backToTop")}</span>
               <ArrowUp size={16} />
             </button>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Segmentos</h3>
+            <h3 className="text-lg font-semibold mb-6">{t("footer.segments")}</h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   to={segmentPaths.tech}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  VisionTaubaté Tech
+                  {t("footer.links.tech")}
                 </Link>
               </li>
               <li>
@@ -51,7 +52,7 @@ const Footer = () => {
                   to={segmentPaths.design}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Comunicação Visual
+                  {t("footer.links.design")}
                 </Link>
               </li>
               <li>
@@ -59,7 +60,7 @@ const Footer = () => {
                   to={segmentPaths.sobre}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Sobre nós
+                  {t("footer.links.about")}
                 </Link>
               </li>
               <li>
@@ -67,21 +68,21 @@ const Footer = () => {
                   to={segmentPaths.metodologia}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Metodologia
+                  {t("footer.links.methodology")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Soluções SaaS</h3>
+            <h3 className="text-lg font-semibold mb-6">{t("footer.saasSolutions")}</h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   to={segmentPaths.techSolucoes}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Soluções para seu negócio
+                  {t("businessSolutions.pageTitle")}
                 </Link>
               </li>
               <li>
@@ -112,12 +113,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contato</h3>
+            <h3 className="text-lg font-semibold mb-6">{t("footer.contact")}</h3>
             <div className="space-y-4">
-              <p className="text-gray-300">
-                Rua Alemanha, 21 - Jardim das Nações,
-                <br />
-                Taubaté/SP CEP 12030-430
+              <p className="text-gray-300 whitespace-pre-line">
+                {t("footer.address")}
               </p>
               <p className="text-gray-300">
                 comercial@visiontaubate.com.br
@@ -130,21 +129,20 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} VisionTaubaté. Todos os direitos
-            reservados.
+            &copy; {new Date().getFullYear()} {t("footer.rights")}
           </p>
           <div className="flex space-x-6">
             <a
               href="#"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              Termos de Uso
+              {t("footer.terms")}
             </a>
             <a
               href="#"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              Política de Privacidade
+              {t("footer.privacy")}
             </a>
           </div>
         </div>

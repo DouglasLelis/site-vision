@@ -6,6 +6,7 @@ export const TECH_OG_IMAGE = "/brand/tech/logo_visiontaubate_tech.png";
 export const CONTACT_EMAIL = "comercial@visiontaubate.com.br";
 
 export type SeoEntry = {
+  id: string;
   path: string;
   title: string;
   description: string;
@@ -16,6 +17,7 @@ export type SeoEntry = {
 
 export const seoPages: SeoEntry[] = [
   {
+    id: "home",
     path: "/",
     title: "VisionTaubaté – Tecnologia e Comunicação Visual",
     description:
@@ -24,6 +26,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "weekly",
   },
   {
+    id: "tech",
     path: "/tech",
     title: "VisionTaubaté Tech – Soluções Digitais",
     description:
@@ -33,6 +36,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "weekly",
   },
   {
+    id: "techServices",
     path: "/tech/servicos",
     title: "Desenvolvimento de Software",
     description:
@@ -42,6 +46,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    id: "techSolutions",
     path: "/tech/solucoes",
     title: "Soluções para seu negócio",
     description:
@@ -51,6 +56,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    id: "techPortfolio",
     path: "/tech/portfolio",
     title: "Portfólio Tech – VisionTaubaté",
     description:
@@ -60,6 +66,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    id: "techSites",
     path: "/tech/criacao-de-sites",
     title: "Criação de Sites Profissionais – VisionTaubaté Tech",
     description:
@@ -69,6 +76,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    id: "design",
     path: "/design",
     title: "Comunicação Visual – VisionTaubaté",
     description:
@@ -77,6 +85,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "weekly",
   },
   {
+    id: "designServices",
     path: "/design/servicos",
     title: "Comunicação Visual",
     description:
@@ -85,6 +94,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    id: "about",
     path: "/sobre",
     title: "Sobre a VisionTaubaté",
     description:
@@ -93,6 +103,7 @@ export const seoPages: SeoEntry[] = [
     changefreq: "monthly",
   },
   {
+    id: "methodology",
     path: "/metodologia",
     title: "Metodologia VisionTaubaté",
     description:

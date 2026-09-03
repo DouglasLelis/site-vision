@@ -3,8 +3,10 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { segmentBackgroundMedia } from "@/data/segmentBackgroundMedia";
 import { segmentBranding, segmentPaths } from "@/data/segmentBranding";
+import { useTranslation } from "react-i18next";
 
 const TechHero = () => {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const media = segmentBackgroundMedia.software;
 
@@ -67,15 +69,14 @@ const TechHero = () => {
             ))}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Transformando ideias em{" "}
-            <span className="text-vision-tech">Soluções Digitais</span>
+            {t("techHero.title1")}{" "}
+            <span className="text-vision-tech">{t("techHero.title2")}</span>
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            Desenvolvimento de software, plataformas SaaS e consultoria técnica
-            para impulsionar seu negócio no ambiente digital.
+            {t("techHero.description")}
           </p>
-          <p className="text-sm uppercase tracking-[0.2em] text-vision-tech">
-            {segmentBranding.tech.tagline}
+          <p className="text-sm font-medium uppercase tracking-[0.2em] mb-4 text-vision-tech">
+            {t(segmentBranding.tech.tagline)}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -84,7 +85,7 @@ const TechHero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Inicie seu projeto
+              {t("techHero.startProject")}
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
@@ -94,14 +95,14 @@ const TechHero = () => {
               to={segmentPaths.techServicos}
               className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-white border border-white/40 bg-white/10 hover:bg-white/20 transition-colors"
             >
-              Ver serviços de tecnologia
+              {t("techHero.viewServices")}
               <ArrowRight size={18} />
             </Link>
             <a
               href="#solucoes"
               className="inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium text-white border border-white/40 bg-white/10 hover:bg-white/20 transition-colors"
             >
-              Conheça nossos SaaS
+              {t("techHero.meetSaaS")}
             </a>
           </div>
         </div>

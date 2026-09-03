@@ -3,15 +3,18 @@ import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { serviceSegments } from "@/data/serviceSegments";
 import { segmentPaths } from "@/data/segmentBranding";
+import { useTranslation } from "react-i18next";
 
 type SegmentServicesCtaProps = {
   segment: "tech" | "design";
 };
 
 const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
+  const { t } = useTranslation();
   const isTech = segment === "tech";
   const data = isTech ? serviceSegments.software : serviceSegments.design;
   const route = isTech ? segmentPaths.techServicos : segmentPaths.designServicos;
+  const segmentKey = isTech ? "software" : "design";
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -37,22 +40,22 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 bg-vision-tech/10 text-vision-tech">
-              Serviços
+              {t("serviceSegments.labels.services")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              {data.title}
+              {t(`serviceSegments.${segmentKey}.title`)}
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-400">
-              {data.description}
+              {t(`serviceSegments.${segmentKey}.description`)}
             </p>
             <p className="text-sm mb-8 text-gray-500">
-              {data.services.length} serviços especializados disponíveis
+              {t("serviceSegments.labels.availableServices", { count: services.length })}
             </p>
             <Link
               to={route}
               className="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition-colors bg-vision-tech text-white hover:bg-vision-tech/90"
             >
-              Ver todos os serviços
+              {t("serviceSegments.labels.viewAll")}
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -66,13 +69,13 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 bg-vision-pink/10 text-vision-pink">
-            Serviços
+            {t("serviceSegments.labels.services")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            {data.title}
+            {t(`serviceSegments.${segmentKey}.title`)}
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-gray-600">
-            {data.description}
+            {t(`serviceSegments.${segmentKey}.description`)}
           </p>
         </div>
 
@@ -86,7 +89,7 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
               className="flex transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
-              {services.map((service) => (
+              {services.map((service, index) => (
                 <article
                   key={service.title}
                   className="w-full shrink-0 bg-white p-6 md:p-8"
@@ -95,11 +98,11 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
                     <service.icon size={24} className="text-vision-pink" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
-                    {service.title}
+                    {t(`serviceSegments.${segmentKey}.services.${index}.title`)}
                   </h3>
-                  <p className="text-gray-600 mb-5">{service.description}</p>
+                  <p className="text-gray-600 mb-5">{t(`serviceSegments.${segmentKey}.services.${index}.description`)}</p>
                   <ul className="space-y-2">
-                    {service.features.slice(0, 4).map((feature) => (
+                    {(t(`serviceSegments.${segmentKey}.services.${index}.features`, { returnObjects: true }) as string[]).slice(0, 4).map((feature: string) => (
                       <li
                         key={feature}
                         className="flex items-center gap-2 text-gray-700 text-sm"
@@ -118,7 +121,7 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
             type="button"
             onClick={() => goTo(activeIndex - 1)}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-5 h-10 w-10 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-700 hover:text-vision-pink transition-colors"
-            aria-label="Serviço anterior"
+            aria-label={t("serviceSegments.labels.prev")}
           >
             <ChevronLeft size={20} />
           </button>
@@ -126,7 +129,7 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
             type="button"
             onClick={() => goTo(activeIndex + 1)}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-5 h-10 w-10 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-700 hover:text-vision-pink transition-colors"
-            aria-label="Próximo serviço"
+            aria-label={t("serviceSegments.labels.next")}
           >
             <ChevronRight size={20} />
           </button>
@@ -142,7 +145,7 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
                     ? "w-8 bg-vision-pink"
                     : "w-2 bg-gray-300 hover:bg-vision-pink/50"
                 }`}
-                aria-label={`Ir para ${service.title}`}
+                aria-label={t("serviceSegments.labels.goTo", { title: t(`serviceSegments.${segmentKey}.services.${index}.title`) })}
               />
             ))}
           </div>
@@ -153,7 +156,7 @@ const SegmentServicesCta = ({ segment }: SegmentServicesCtaProps) => {
             to={route}
             className="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition-colors bg-vision-pink text-white hover:bg-vision-pink/90"
           >
-            Ver todos os serviços
+            {t("serviceSegments.labels.viewAll")}
             <ArrowRight size={18} />
           </Link>
         </div>

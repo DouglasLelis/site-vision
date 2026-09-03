@@ -9,6 +9,7 @@ import {
 import { segmentBranding } from "@/data/segmentBranding";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const techColors = {
   badge: "bg-vision-tech/10 text-vision-tech",
@@ -19,6 +20,7 @@ const techColors = {
 };
 
 const BusinessSolutionsPage = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     const hash = window.location.hash.substring(1);
     if (!hash) return;
@@ -49,28 +51,28 @@ const BusinessSolutionsPage = () => {
               className="h-10 md:h-12 mb-8"
             />
             <p className="text-sm font-medium uppercase tracking-[0.2em] mb-3 text-vision-tech">
-              {segmentBranding.tech.tagline}
+              {t(segmentBranding.tech.tagline)}
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl">
-              {businessSolutionsPage.title}
+              {t("businessSolutions.title")}
             </h1>
             <p className="max-w-3xl text-lg md:text-xl text-gray-400 mb-8">
-              {businessSolutionsPage.description}
+              {t("businessSolutions.description")}
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 to={`${segmentPaths.tech}#solucoes`}
                 className="inline-flex rounded-md bg-vision-tech text-white px-5 py-2.5 font-medium hover:bg-vision-tech/90 transition-colors"
               >
-                Voltar para Tech
+                {t("businessSolutionsPage.backToTech")}
               </Link>
               <a
-                href="https://wa.me/5512997856012?text=Olá! Gostaria de conhecer as soluções SaaS da VisionTaubaté."
+                href={`https://wa.me/5512997856012?text=${encodeURIComponent(t("whatsappMessages.saasIntro"))}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex rounded-md border border-vision-tech/50 text-vision-tech px-5 py-2.5 font-medium hover:bg-vision-tech/10 transition-colors"
               >
-                Falar com especialista
+                {t("businessSolutionsPage.talkToSpecialist")}
               </a>
             </div>
           </div>
@@ -110,22 +112,22 @@ const BusinessSolutionsPage = () => {
                       className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4 ${techColors.badge}`}
                     >
                       <Icon size={14} />
-                      {solution.category}
+                      {t(`businessSolutions.solutions.${solution.id}.category`)}
                     </span>
                     <h2 className={`text-3xl md:text-4xl font-bold mb-2 ${techColors.accent}`}>
-                      {solution.name}
+                      {t(`businessSolutions.solutions.${solution.id}.name`)}
                     </h2>
                     <p className="text-lg font-medium text-gray-500 mb-4">
-                      {solution.tagline}
+                      {t(`businessSolutions.solutions.${solution.id}.tagline`)}
                     </p>
                     <p className="text-gray-400 text-lg mb-8">
-                      {solution.description}
+                      {t(`businessSolutions.solutions.${solution.id}.description`)}
                     </p>
 
                     <ul className="space-y-3 mb-8">
-                      {solution.features.map((feature) => (
+                      {(t(`businessSolutions.solutions.${solution.id}.features`, { returnObjects: true }) as string[]).map((feature, fIndex) => (
                         <li
-                          key={feature}
+                          key={fIndex}
                           className="flex items-start gap-3 text-gray-300"
                         >
                           <Check
@@ -145,12 +147,12 @@ const BusinessSolutionsPage = () => {
                           rel="noopener noreferrer"
                           className={`inline-flex items-center gap-2 rounded-md px-5 py-2.5 font-semibold transition-colors ${techColors.button}`}
                         >
-                          Acessar {solution.name}
+                          {t("businessSolutionsPage.access", { name: solution.name })}
                           <ArrowRight size={18} />
                         </a>
                       ) : null}
                       <a
-                        href={`https://wa.me/5512997856012?text=${encodeURIComponent(solution.whatsappMessage)}`}
+                        href={`https://wa.me/5512997856012?text=${encodeURIComponent(t(`businessSolutions.solutions.${solution.id}.whatsappMessage`, solution.whatsappMessage))}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={
@@ -159,7 +161,7 @@ const BusinessSolutionsPage = () => {
                             : `inline-flex items-center gap-2 rounded-md px-5 py-2.5 font-semibold transition-colors ${techColors.button}`
                         }
                       >
-                        Solicitar demonstração
+                        {t("businessSolutionsPage.requestDemo")}
                         <ArrowRight size={18} />
                       </a>
                     </div>
@@ -179,20 +181,18 @@ const BusinessSolutionsPage = () => {
               className="h-10 w-10 mx-auto mb-6"
             />
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Qual solução é ideal para você?
+              {t("businessSolutionsPage.cta.title")}
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-              Nossa equipe ajuda a identificar a plataforma certa para o momento
-              do seu negócio — seja atendimento, gestão empresarial ou operação
-              pet.
+              {t("businessSolutionsPage.cta.description")}
             </p>
             <a
-              href="https://wa.me/5512997856012?text=Olá! Gostaria de ajuda para escolher a solução SaaS ideal para meu negócio."
+              href={`https://wa.me/5512997856012?text=${encodeURIComponent(t("whatsappMessages.saasHelp"))}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-vision-tech text-white px-6 py-3 font-semibold hover:bg-vision-tech/90 transition-colors"
             >
-              Conversar com a VisionTaubaté
+              {t("businessSolutionsPage.cta.button")}
               <ArrowRight size={18} />
             </a>
           </div>

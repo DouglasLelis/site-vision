@@ -1,0 +1,709 @@
+{
+  "gateway": {
+    "title": "Elige tu camino",
+    "subtitle": "Tecnología y comunicación visual en experiencias dedicadas.",
+    "portal": {
+      "tech": {
+        "title": "Tecnología",
+        "subtitle": "Software, SaaS y consultoría técnica",
+        "description": "Desarrollo a medida y soluciones propias para escalar tu negocio.",
+        "tags": {
+          "apps": "Aplicaciones",
+          "saas": "SaaS",
+          "consulting": "Consultoría"
+        }
+      },
+      "design": {
+        "title": "Comunicación Visual",
+        "subtitle": "Gráfica, branding e identidad de marca",
+        "description": "Identidad visual estratégica y materiales gráficos que fortalecen tu marca.",
+        "tags": {
+          "branding": "Branding",
+          "graphic_design": "Diseño Gráfico",
+          "visual_id": "Identidad Visual"
+        }
+      },
+      "explore": "Explorar segmento"
+    }
+  },
+  "navbar": {
+    "tech": "Tecnología",
+    "design": "Diseño",
+    "email": "Correo",
+    "contact": "Contacto",
+    "home": "Inicio",
+    "methodology": "Metodología",
+    "about": "Sobre Nosotros",
+    "portfolio": "Portafolio",
+    "services": "Servicios",
+    "solutions": "Soluciones",
+    "see_all": "Ver todos"
+  },
+  "techHero": {
+    "title1": "Transformando ideas en",
+    "title2": "Soluciones Digitales",
+    "description": "Desarrollo de software, plataformas SaaS y consultoría técnica para impulsar tu negocio en el entorno digital.",
+    "startProject": "Inicia tu proyecto",
+    "viewServices": "Ver servicios de tecnología",
+    "meetSaaS": "Conoce nuestros SaaS"
+  },
+  "designHero": {
+    "tags": {
+      "visual_comm": "Comunicación Visual",
+      "branding": "Branding",
+      "design": "Diseño"
+    },
+    "title1": "Marcas que destacan con",
+    "title2": "Comunicación Visual",
+    "description": "Creamos identidades y materiales visuales estratégicos para fortalecer tu posicionamiento y conectar tu marca con la audiencia correcta.",
+    "startProject": "Inicia tu proyecto",
+    "viewVisualServices": "Ver servicios visuales",
+    "viewServices": "Ver servicios"
+  },
+  "businessSolutions": {
+    "title": "Soluciones para tu negocio",
+    "description": "Sistemas patentados de VisionTaubaté, desarrollados en la nube para escalar tu operación con tecnología de punta — desde atención al cliente hasta finanzas, desde ERP general hasta el mercado de mascotas.",
+    "pageTitle": "Soluciones para tu negocio",
+    "pageDescription": "Plataformas propias en la nube para transformar la gestión de tu negocio — desde el primer contacto con el cliente hasta el control financiero completo.",
+    "solutions": {
+      "ativabot": {
+        "name": "Ativabot",
+        "tagline": "CRM y atención multicanal",
+        "category": "CRM",
+        "description": "Centraliza WhatsApp, Instagram y otros canales en un único panel. Gestiona tickets, contactos, embudos Kanban, chatbots visuales y campañas con informes de productividad del equipo.",
+        "features": [
+          "Panel de tickets con colas y distribución inteligente",
+          "CRM de contactos con importación y exportación CSV",
+          "Kanban para seguir el embudo comercial",
+          "Chatbot con constructor visual de flujos",
+          "Campañas programadas con seguimiento de envíos",
+          "Informes y dashboard de productividad"
+        ],
+        "highlights": [
+          "Multicanal unificado",
+          "Automatización con chatbot",
+          "Gestión de equipos y filas"
+        ],
+        "demo": "Solicitar demostración",
+        "platform": "Conocer plataforma",
+        "whatsappMessage": "¡Hola! Me gustaría saber más sobre Ativabot (CRM) de VisionTaubaté."
+      },
+      "ativaerp": {
+        "name": "AtivaERP",
+        "tagline": "ERP modular en la nube",
+        "category": "ERP",
+        "description": "Gestión empresarial completa y flexible para pymes. Arma tu plan con los módulos que necesitas — finanzas, ventas, inventario, contabilidad y fiscal — con integración nativa en todas las áreas.",
+        "features": [
+          "Finanzas con flujo de caja, conciliación y recurrencias",
+          "Ventas y compras con flujos personalizables",
+          "Inventario con trazabilidad y vista contable",
+          "Emisión fiscal electrónica integrada al pedido",
+          "Dashboard ejecutivo con KPIs por área",
+          "Multiempresa con matriz y sucursales"
+        ],
+        "highlights": [
+          "Módulos a medida",
+          "Prueba gratis de 7 días",
+          "Flujo fiscal integrado"
+        ],
+        "demo": "Solicitar demostración",
+        "platform": "Conocer plataforma",
+        "whatsappMessage": "¡Hola! Me gustaría saber más sobre AtivaERP de VisionTaubaté."
+      },
+      "petverse": {
+        "name": "PetVerse",
+        "tagline": "ERP para el mercado de mascotas",
+        "category": "ERP Mascotas",
+        "description": "Plataforma completa para tiendas de mascotas, hoteles, clínicas y operaciones de transporte. Une atención al cliente, alojamiento, logística y finanzas — con apps dedicadas para dueños y conductores.",
+        "features": [
+          "Registro de dueños, mascotas, servicios y proveedores",
+          "Agenda e historial unificado de la mascota",
+          "Gestión de alojamiento con reservas y pagos",
+          "App del dueño para seguimiento y pagos",
+          "App del conductor para rutas y recogida/entrega",
+          "Finanzas orientadas a ingresos y cobros"
+        ],
+        "highlights": [
+          "Ecosistema de mascotas integrado",
+          "Apps para Dueños y Conductores",
+          "Listo para cadenas y franquicias"
+        ],
+        "demo": "Solicitar demostración",
+        "platform": "Conocer plataforma",
+        "whatsappMessage": "¡Hola! Me gustaría saber más sobre PetVerse (ERP Mascotas) de VisionTaubaté."
+      }
+    },
+    "seeAll": "Ver todas las soluciones en detalle"
+  },
+  "footer": {
+    "description": "Transformando ideas en soluciones digitales innovadoras para impulsar el crecimiento de tu negocio.",
+    "backToTop": "Volver arriba",
+    "segments": "Segmentos",
+    "saasSolutions": "Soluciones SaaS",
+    "contact": "Contacto",
+    "address": "Calle Alemania, 21 - Jardim das Nações,\nTaubaté/SP Código Postal 12030-430 - Brasil\nCNPJ: 53.814.989/0001-33",
+    "rights": "VisionTaubaté. Todos los derechos reservados.",
+    "terms": "Términos de Uso",
+    "privacy": "Política de Privacidad",
+    "links": {
+      "tech": "VisionTaubaté Tech",
+      "design": "Comunicación Visual",
+      "about": "Sobre Nosotros",
+      "methodology": "Metodología"
+    }
+  },
+  "serviceSegments": {
+    "software": {
+      "title": "Desarrollo de Software",
+      "description": "Creamos soluciones tecnológicas personalizadas para impulsar tu negocio en el entorno digital.",
+      "services": [
+        {
+          "title": "Desarrollo Web",
+          "description": "Creamos sitios y aplicaciones web personalizadas, responsivas y de alto rendimiento.",
+          "features": ["Sitios corporativos", "E-commerce", "Sistemas web", "Portales corporativos", "Integraciones API"]
+        },
+        {
+          "title": "Aplicaciones Móviles",
+          "description": "Desarrollamos aplicaciones intuitivas y funcionales para iOS y Android.",
+          "features": ["Apps nativas", "Apps híbridas", "Diseño UI/UX", "Mantenimiento", "Notificaciones push"]
+        },
+        {
+          "title": "Software Personalizado",
+          "description": "Soluciones de software a medida para satisfacer las necesidades específicas de tu negocio.",
+          "features": ["Automatización", "CRM", "ERP", "Integración de sistemas", "Business Intelligence"]
+        },
+        {
+          "title": "Consultoría Técnica",
+          "description": "Asesoramiento experto en tecnología y desarrollo de software.",
+          "features": ["Arquitectura", "Seguridad", "Soluciones en la nube", "DevOps", "Migración de sistemas"]
+        },
+        {
+          "title": "AtivaBot",
+          "description": "Sistema completo de atención al cliente que integra WhatsApp, IA y gestión de equipos.",
+          "features": ["Respuestas automáticas con IA", "Integración con WhatsApp", "Gestión de equipos", "Informes detallados", "Flujos de trabajo personalizados"]
+        }
+      ],
+      "actions": {
+        "back": "Volver a Tecnología",
+        "viewOther": "Ver Comunicación Visual"
+      }
+    },
+    "design": {
+      "title": "Comunicación Visual",
+      "description": "Creamos tu identidad visual y materiales gráficos que transmiten los valores de tu marca.",
+      "services": [
+        {
+          "title": "Identidad Visual",
+          "description": "Creación de logotipos y elementos visuales que representan la esencia de tu marca.",
+          "features": ["Creación de logotipo", "Paleta de colores", "Tipografía", "Pautas de marca", "Manual de identidad"]
+        },
+        {
+          "title": "Diseño de Fachadas",
+          "description": "Desarrollamos fachadas comerciales impactantes que destacan tu marca y atraen clientes.",
+          "features": ["Letreros personalizados", "Letreros de identificación", "Señalización exterior", "Revestimientos visuales"]
+        },
+        {
+          "title": "Diseño Gráfico",
+          "description": "Desarrollo de materiales gráficos para medios impresos y digitales.",
+          "features": ["Folletos", "Tarjetas de presentación", "Banners", "Papelería", "Catálogos"]
+        },
+        {
+          "title": "Diseño UI/UX",
+          "description": "Diseños modernos y experiencias de usuario intuitivas que deleitan a tus clientes.",
+          "features": ["Prototipado", "Design system", "Pruebas de usuario", "Rediseño", "Wireframes"]
+        },
+        {
+          "title": "Materiales Impresos",
+          "description": "Producción de materiales impresos de alta calidad con acabados profesionales.",
+          "features": ["Revistas", "Libros", "Empaques", "Exhibidores", "Pegatinas personalizadas"]
+        },
+        {
+          "title": "Diseño para Redes Sociales",
+          "description": "Creación de piezas gráficas específicas para cada plataforma de redes sociales.",
+          "features": ["Publicaciones", "Historias", "Portadas", "Destacados", "Plantillas personalizadas"]
+        }
+      ],
+      "actions": {
+        "back": "Volver a Imprenta",
+        "viewOther": "Ver Soluciones Tecnológicas"
+      }
+    },
+    "labels": {
+      "services": "Servicios",
+      "availableServices": "{{count}} servicios especializados disponibles",
+      "viewAll": "Ver todos los servicios",
+      "prev": "Servicio anterior",
+      "next": "Siguiente servicio",
+      "goTo": "Ir a {{title}}"
+    }
+  },
+  "segmentBranding": {
+    "tech": {
+      "tagline": "INTELIGENCIA QUE TRANSFORMA"
+    },
+    "design": {
+      "tagline": "Comunicación que conecta"
+    }
+  },
+  "portfolioPreview": {
+    "section": "Portafolio",
+    "title": "Proyectos Destacados",
+    "description": "Una muestra de lo que hemos construido — explora el portafolio completo por categoría.",
+    "stack": "Stack: ",
+    "prev": "Proyecto anterior",
+    "next": "Siguiente proyecto",
+    "view": "Ver {{title}}",
+    "viewAll": "Ver portafolio completo"
+  },
+  "about": {
+    "title": "Sobre VisionTaubaté",
+    "p1": "Durante más de una década, VisionTaubaté ha transformado el panorama tecnológico con soluciones innovadoras y personalizadas. Somos una empresa de software comprometida con la excelencia y la satisfacción del cliente.",
+    "p2": "Nuestro equipo está formado por expertos apasionados por la tecnología, dedicados a crear soluciones que no solo cumplan, sino que superen las expectativas de nuestros clientes.",
+    "p3": "Trabajamos con metodologías ágiles y las últimas tecnologías del mercado para asegurar productos de alta calidad y con el mejor rendimiento.",
+    "stats": [
+      { "value": "+100", "label": "Proyectos entregados" },
+      { "value": "+50", "label": "Clientes satisfechos" },
+      { "value": "+10", "label": "Años de experiencia" },
+      { "value": "+20", "label": "Especialistas" }
+    ],
+    "mission": {
+      "title": "Nuestra Misión",
+      "text": "Desarrollar soluciones tecnológicas innovadoras que impulsen el crecimiento de nuestros clientes y contribuyan a la transformación digital de las empresas."
+    }
+  },
+  "contact": {
+    "section": "Contacto",
+    "title": "Ponte en Contacto",
+    "subtitle": "Estamos listos para hacer tu idea realidad",
+    "methods": {
+      "email": "Correo",
+      "whatsapp_design": "WhatsApp - Imprenta",
+      "whatsapp_tech": "WhatsApp - Centro Tecnológico",
+      "whatsapp": "WhatsApp"
+    },
+    "form": {
+      "title": "Envíanos un mensaje",
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo",
+      "emailPlaceholder": "tu-correo@ejemplo.com",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Describe tu proyecto o pregunta...",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "error": "Por favor, completa todos los campos",
+      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto."
+    }
+  },
+  "testimonials": {
+    "section": "Testimonios",
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "subtitle": "Éxito compartido con empresas que confiaron en nuestras soluciones",
+    "list": [
+      {
+        "name": "Artur Pinheiro",
+        "role": "Cliente, Imprenta",
+        "text": "Excelente servicio, siempre imprimo mis tarjetas y folletos aquí. ¡El mejor precio en Taubaté!"
+      },
+      {
+        "name": "Patricia Braga",
+        "role": "Cliente, Stella Turismo",
+        "text": "Me encantó el servicio brindado. ¡¡Felicidades!! Agilidad, calidad y gran valor."
+      },
+      {
+        "name": "Margareth de Faria",
+        "role": "Cliente, Imprenta",
+        "text": "El servicio es maravilloso. Muy buen precio y la calidad superó mis expectativas."
+      }
+    ],
+    "goTo": "Ir al testimonio {{index}}"
+  },
+  "websiteBonuses": {
+    "title": "Bono Exclusivo VisionTaubaté",
+    "subtitle": "Al cerrar tu proyecto con nosotros, obtienes <1>1 AÑO COMPLETO</1> de dominio y alojamiento premium por nuestra cuenta.",
+    "domain": {
+      "title": "Dominio Gratis",
+      "text": "Pagamos tu dominio (Registro.br o .com) durante el primer año. Asegura el nombre de tu empresa en internet sin costos iniciales.",
+      "features": [
+        "Válido para nuevos dominios",
+        "Registro oficial bajo tu ID/Empresa"
+      ]
+    },
+    "hosting": {
+      "title": "Alojamiento Premium",
+      "performance": "<1>Servidor de Alto Rendimiento:</1> 99.9% de tiempo de actividad garantizado.",
+      "security": "<1>Seguridad:</1> Certificado SSL (Let's Encrypt) totalmente gratis.",
+      "emails": "<1>Correos Profesionales:</1> 3 cuentas de correo corporativo con 10GB de espacio cada una."
+    },
+    "disclaimer": "* Después del primer año gratuito, el costo anual de renovación para el servidor + cuentas de correo + certificado SSL es de solo <1>$30.00</1> por año.",
+    "cta": "Asegurar Mi Bono Ahora"
+  },
+  "websiteFeatures": {
+    "title": "¿Por qué elegir VisionTaubaté?",
+    "subtitle": "Mucho más allá de la estética, entregamos soluciones enfocadas en resultados y crecimiento digital para tu empresa.",
+    "list": [
+      {
+        "title": "100% Responsivo",
+        "description": "Tu sitio web perfectamente adaptado a teléfonos, tabletas y computadoras, garantizando la mejor experiencia de usuario (UX)."
+      },
+      {
+        "title": "Optimización SEO",
+        "description": "Estructura avanzada preparada para indexación en Google, aumentando tus posibilidades de ser encontrado orgánicamente."
+      },
+      {
+        "title": "Cualquier Tipo de Sitio",
+        "description": "Desarrollamos Landing Pages, Sitios Corporativos, E-commerce, Portafolios y Blogs con diseño exclusivo."
+      },
+      {
+        "title": "Alto Rendimiento",
+        "description": "Sitios web ultrarrápidos, garantizando puntuaciones máximas en Google y menos abandonos por lentitud."
+      }
+    ]
+  },
+  "ativaBot": {
+    "badge": "SaaS",
+    "title": "Conoce",
+    "titleHighlight": "AtivaBot",
+    "description": "Un sistema completo de atención al cliente que integra herramientas como WhatsApp, respuestas automáticas con IA, gestión de equipos e informes detallados, todo para optimizar el soporte de tu empresa.",
+    "features": [
+      {
+        "title": "Centraliza el Soporte",
+        "description": "Centraliza la atención en un solo canal, ya sea WhatsApp, Facebook, Instagram, Telegram u otros, todo en un solo lugar."
+      },
+      {
+        "title": "Gestión de Equipos",
+        "description": "Organiza tu equipo de soporte con distribución inteligente de la demanda."
+      },
+      {
+        "title": "Respuestas Automáticas con IA",
+        "description": "Automatiza las respuestas a las preguntas más frecuentes con inteligencia artificial.",
+        "label": "Próximamente"
+      }
+    ],
+    "visitSite": "Visita el sitio de AtivaBot",
+    "chat": {
+      "status": "En línea",
+      "initialMessage": "¡Hola! ¿Cómo puedo ayudarte hoy?",
+      "inputPlaceholder": "Escribe tu mensaje...",
+      "mockResponses": {
+        "ola": "¡Hola! ¿Cómo puedo ayudarte hoy?",
+        "oi": "¡Hola! ¿En qué puedo asistirte?",
+        "ativabot": "AtivaBot es un sistema completo de atención al cliente que integra WhatsApp, IA y gestión de equipos. ¿Te envío más información?",
+        "preco": "Los planes de AtivaBot comienzan desde $19/mes. ¿Quieres saber más sobre los planes?",
+        "planos": "Tenemos planes para todos los tamaños de empresas. El plan básico incluye integración con WhatsApp y respuestas automáticas. El plan premium incluye IA avanzada e informes detallados.",
+        "whatsapp": "¡Sí! AtivaBot se integra perfectamente con el WhatsApp de tu empresa, permitiendo una atención al cliente unificada y eficiente.",
+        "ia": "Nuestra IA está entrenada para entender el contexto de las conversaciones y brindar respuestas precisas. Aprende de cada interacción para mejorar continuamente.",
+        "equipe": "AtivaBot te permite gestionar tu equipo de soporte, distribuir demandas automáticamente y hacer seguimiento del desempeño de cada agente.",
+        "ajuda": "Puedo ayudarte con información sobre: precios, planes, integración con WhatsApp, IA, gestión de equipos ¡y mucho más! ¿Qué te gustaría saber?",
+        "obrigado": "¡De nada! ¿Puedo ayudarte con algo más?",
+        "tchau": "¡Hasta luego! Si necesitas algo más, ¡estoy aquí!"
+      },
+      "fallbackResponse": "Lo siento, no entendí. ¿Podrías reformular tu pregunta? Puedo ayudarte con información sobre precios, planes, integración con WhatsApp, IA y gestión de equipos."
+    }
+  },
+  "floatingAction": {
+    "labels": {
+      "whatsappDesign": "WhatsApp Imprenta",
+      "whatsappTech": "WhatsApp Tecnología"
+    },
+    "aria": {
+      "close": "Cerrar accesos directos",
+      "open": "Abrir accesos directos"
+    }
+  },
+  "floatingWhatsApp": {
+    "aria": "Chatear por WhatsApp"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "backToHome": "Volver al inicio"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Sobre VisionTaubaté",
+      "subtitle": "Tecnología con Visión, Innovación con Propósito"
+    },
+    "intro": {
+      "p1": "Desde 2015, <1>VisionTaubaté</1> combina creatividad, tecnología y valores cristianos para impulsar negocios y convertir ideas en soluciones reales. Comenzamos nuestro camino en el sector de la comunicación visual, ayudando a las empresas a destacar con identidad y presencia de marca.",
+      "p2": "Pero fue en 2019, al incursionar en el desarrollo de sistemas y aplicaciones, que ampliamos nuestro propósito: <1>usar la tecnología para generar impacto y transformación.</1>",
+      "p3": "Más que solo entregar proyectos, queremos <1>ser parte de la evolución de nuestros clientes</1>. Por eso ponemos a Dios primero en todo lo que hacemos y trabajamos con ética, excelencia y verdadero espíritu de servicio."
+    },
+    "values": {
+      "title": "Lo Que Nos Mueve",
+      "items": [
+        {
+          "title": "Innovación",
+          "description": "Metodologías ágiles y tecnologías de vanguardia para entregar soluciones modernas y eficientes."
+        },
+        {
+          "title": "Valores",
+          "description": "Principios cristianos que guían un servicio cercano, ético y transparente."
+        },
+        {
+          "title": "Propósito",
+          "description": "Pasión por resolver desafíos con creatividad y propósito, generando impacto real."
+        }
+      ]
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "items": [
+        {
+          "title": "Desarrollo de Software",
+          "description": "Soluciones personalizadas que impulsan el crecimiento de tu negocio a través de la tecnología."
+        },
+        {
+          "title": "Comunicación Visual",
+          "description": "Diseño e identidad visual que cuentan la historia de tu marca de manera impactante."
+        }
+      ]
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "text": "Somos un equipo multidisciplinario apasionado por la innovación — desde diseñadores y desarrolladores hasta consultores estratégicos. Cada proyecto se maneja con atención al detalle, porque <1>sabemos que detrás de cada idea hay personas, historias y sueños.</1>"
+    },
+    "vision": {
+      "title": "Visión a Futuro",
+      "text": "Buscamos convertirnos cada vez más en una <1>referencia en tecnología y comunicación visual</1>, brindando soluciones que unan eficiencia, creatividad y valores sólidos.",
+      "quote": "\"Más que una empresa, somos una misión. Tecnología con valores, innovación con alma.\""
+    }
+  },
+  "businessSolutionsPage": {
+    "backToTech": "Volver a Tecnología",
+    "talkToSpecialist": "Hablar con un experto",
+    "access": "Acceder a {{name}}",
+    "requestDemo": "Solicitar demostración",
+    "cta": {
+      "title": "¿Qué solución es adecuada para ti?",
+      "description": "Nuestro equipo te ayuda a identificar la plataforma correcta para el momento de tu negocio — ya sea atención al cliente, gestión empresarial o una operación de mascotas.",
+      "button": "Conversar con VisionTaubaté"
+    }
+  },
+  "methodology": {
+    "hero": {
+      "badge": "Metodología VisionTaubaté",
+      "titlePart1": "Desde la Planificación a la",
+      "titlePart2": "Excelencia en la Entrega",
+      "subtitle": "Trabajamos con un proceso estructurado y transparente centrado en reducir riesgos y maximizar los resultados de tu negocio.",
+      "talkToSpecialist": "Hablar con un experto",
+      "understandHowItWorks": "Entender cómo funciona"
+    },
+    "overview": {
+      "title": "Nuestro Viaje de Construcción",
+      "description": "Convertimos ideas en realidad a través de etapas claras y bien definidas, asegurando que cada paso se dé con seguridad y propósito.",
+      "steps": [
+        { "title": "Análisis Inicial", "desc": "Comprensión macro del desafío." },
+        { "title": "Propuesta", "desc": "Alineación del alcance y la inversión." },
+        { "title": "Discovery & Planificación", "desc": "Análisis profundo técnico y visual." },
+        { "title": "Desarrollo", "desc": "Ejecución ágil y entrega continua." }
+      ]
+    },
+    "detailedSteps": {
+      "title": "Etapas del Proceso",
+      "description": "Una mirada profunda a cómo construimos soluciones valiosas.",
+      "step1": {
+        "title": "1. Análisis Inicial (Overview)",
+        "subtitle": "Comprensión estratégica antes de la propuesta.",
+        "text": "Llevamos a cabo un análisis inicial sin compromiso para:",
+        "list": [
+          "Entender el objetivo de tu negocio.",
+          "Evaluar la madurez de la idea y los desafíos técnicos.",
+          "Mapear restricciones y preferencias tecnológicas."
+        ],
+        "note": "<1>Nota:</1> Esta etapa es estratégica y sirve como base para la propuesta comercial."
+      },
+      "step2": {
+        "title": "2. Propuesta Comercial",
+        "subtitle": "Transparencia en el alcance y la inversión.",
+        "text": "Con base en el análisis general, presentamos una propuesta detallada que contiene:",
+        "list": [
+          "Alcance inicial sugerido",
+          "Estrategia de ejecución",
+          "Plazos estimados",
+          "Modelo de inversión"
+        ]
+      },
+      "step3": {
+        "title": "3. Alineación y Decisión",
+        "subtitle": "Validación de expectativas.",
+        "text": "En esta fase, ajustamos las expectativas para asegurarnos de que estamos en la misma página. La decisión de avanzar se toma de forma consciente por ambas partes, con total claridad sobre lo que se entregará."
+      }
+    },
+    "discovery": {
+      "badge": "Servicio Estratégico",
+      "title": "Product Discovery (Opcional)",
+      "description": "Para proyectos complejos, recomendamos la fase de Discovery. Una fase dedicada a crear prototipos, validar hipótesis y definir profundamente el MVP antes de escribir una sola línea de código.",
+      "list": [
+        "✓ Reduce los riesgos del negocio",
+        "✓ Evita retrabajos en el desarrollo",
+        "✓ Valida soluciones con usuarios reales"
+      ]
+    },
+    "squad": {
+      "title": "Tu Squad a Medida",
+      "description": "Reunimos al equipo ideal para las necesidades de tu proyecto.",
+      "roles": [
+        { "role": "Product Manager", "desc": "Visión de negocio y priorización." },
+        { "role": "Diseñador UX/UI", "desc": "Experiencia e interfaz de usuario." },
+        { "role": "Desarrolladores", "desc": "Frontend, Backend y Móvil." },
+        { "role": "QA / Pruebas", "desc": "Aseguramiento de calidad y estabilidad." }
+      ]
+    },
+    "management": {
+      "title": "Gestión Ágil y Transparente",
+      "description": "Utilizamos metodologías ágiles (Scrum/Kanban) para asegurar entregas frecuentes, visibilidad total y adaptabilidad.",
+      "features": [
+        { "title": "Entregas Incrementales", "desc": "Ves cómo evoluciona el proyecto en cada sprint, sin 'cajas negras'." },
+        { "title": "Comunicación Constante", "desc": "Canales abiertos e informes periódicos para mantener a todos alineados." }
+      ]
+    },
+    "commitments": {
+      "title": "Nuestros Compromisos",
+      "subtitle": "Lo que puedes esperar al asociarte con <1>VisionTaubaté</1>.",
+      "items": [
+        { "title": "Claridad Total", "desc": "Sabrás exactamente qué, cuándo y cómo se entregará." },
+        { "title": "Reducción de Riesgos", "desc": "Procesos validados para evitar la pérdida de tiempo y dinero." },
+        { "title": "Decisiones Basadas en Datos", "desc": "Sin adivinanzas. Estrategia basada en hechos y métricas." },
+        { "title": "Enfoque en Resultados", "desc": "No solo entregamos código; entregamos soluciones comerciales." },
+        { "title": "Visión a Largo Plazo", "desc": "Queremos ser socios en tu evolución continua." },
+        { "title": "Excelencia Técnica", "desc": "Altos estándares de calidad en cada línea de código." }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para hacer realidad tu idea?",
+      "subtitle": "Construyamos algo increíble juntos, con un proceso estructurado, seguridad y enfoque en los resultados.",
+      "button1": "Solicitar Contacto Comercial",
+      "button2": "¿Preguntas? Habla con Nosotros"
+    }
+  },
+  "websiteCreationPage": {
+    "cta": {
+      "title": "¿Listo para transformar tu presencia digital?",
+      "description": "Habla con nuestros expertos en WhatsApp y recibe una cotización sin compromiso en pocos minutos.",
+      "button": "Hablar con un Experto"
+    }
+  },
+  "techPortfolioPage": {
+    "hero": {
+      "title": "Portafolio",
+      "description": "Cada proyecto es el resultado de una verdadera asociación — marcas que fortalecieron su presencia en línea, negocios que ganaron más agilidad y empresas que convirtieron ideas en resultados.",
+      "stats": "{{projects}} proyectos en {{categories}} categorías",
+      "backToTech": "Volver a Tecnología"
+    },
+    "cta": {
+      "title": "¿Quieres un proyecto como estos?",
+      "description": "Comparte tu idea y la transformaremos en una solución digital personalizada para tu negocio.",
+      "button": "Iniciar conversación"
+    }
+  },
+  "techPortfolioCategories": {
+    "all": "Todos",
+    "sites": "Sitios y Landing Pages",
+    "web-systems": "Sistemas Web",
+    "apps-platforms": "Apps y Plataformas",
+    "automations": "Automatizaciones"
+  },
+  "techPortfolioTypes": {
+    "landing": "Landing Page",
+    "site": "Sitio Institucional",
+    "system": "Sistema Web",
+    "ecommerce": "E-commerce",
+    "app": "Aplicación",
+    "bot": "Automatización"
+  },
+  "seo": {
+    "home": {
+      "title": "VisionTaubaté – Tecnología y Comunicación Visual",
+      "description": "Tecnología y comunicación visual en Taubaté. Elige entre soluciones digitales (Tech) o identidad visual (Design)."
+    },
+    "tech": {
+      "title": "VisionTaubaté Tech – Soluciones Digitales",
+      "description": "Desarrollo de software, plataformas SaaS y consultoría técnica para impulsar tu negocio en el entorno digital."
+    },
+    "techServices": {
+      "title": "Desarrollo de Software",
+      "description": "Creamos soluciones tecnológicas personalizadas para impulsar tu negocio en el entorno digital."
+    },
+    "techSolutions": {
+      "title": "Soluciones para tu negocio",
+      "description": "Sistemas patentados de VisionTaubaté, desarrollados en la nube para escalar tu operación con tecnología de punta."
+    },
+    "techPortfolio": {
+      "title": "Portafolio Tech – VisionTaubaté",
+      "description": "Sitios web, sistemas web, apps y automatizaciones desarrollados por VisionTaubaté. Conoce nuestros proyectos de tecnología."
+    },
+    "techSites": {
+      "title": "Creación de Sitios Web Profesionales – VisionTaubaté Tech",
+      "description": "Ten un sitio de alto rendimiento, optimizado para Google (SEO) y enfocado en convertir visitantes en clientes reales para tu negocio."
+    },
+    "design": {
+      "title": "Comunicación Visual – VisionTaubaté",
+      "description": "Creamos identidades y materiales visuales estratégicos para fortalecer tu posicionamiento y conectar tu marca al público adecuado."
+    },
+    "designServices": {
+      "title": "Comunicación Visual",
+      "description": "Creamos tu identidad visual y materiales gráficos que transmiten los valores de tu marca."
+    },
+    "about": {
+      "title": "Sobre VisionTaubaté",
+      "description": "Tecnología con Visión, Innovación con Propósito. Conoce nuestra historia, valores y equipo en Taubaté."
+    },
+    "methodology": {
+      "title": "Metodología VisionTaubaté",
+      "description": "Trabajamos con un proceso estructurado, transparente y enfocado en reducir riesgos y maximizar resultados para tu negocio."
+    }
+  },
+  "whatsappMessages": {
+    "techPortfolio": "¡Hola! Vi el portafolio tech y me gustaría conversar sobre un proyecto.",
+    "saasIntro": "¡Hola! Me gustaría conocer las soluciones SaaS de VisionTaubaté.",
+    "saasHelp": "¡Hola! Me gustaría ayuda para elegir la solución SaaS ideal para mi negocio.",
+    "quoteRequest": "¡Me gustaría un presupuesto! Me llamo:"
+  },
+  "techPortfolioProjects": {
+    "pousada-marina-paraty": {
+      "description": "Landing page para alojamiento en Paraty, enfocada en conversión, presentación de la posada y contacto directo con el visitante."
+    },
+    "brexecutive": {
+      "description": "Sitio web institucional con posicionamiento ejecutivo, presentación de servicios y generación de leads calificados."
+    },
+    "gestcacambas": {
+      "description": "Landing page para operación de alquiler de contenedores, con propuesta de valor clara y canales de contacto rápido."
+    },
+    "stellaturismo": {
+      "description": "Sitio web institucional centrado en la autoridad de la marca, presentación de servicios y generación de contactos calificados para el segmento turístico."
+    },
+    "jfcursoanimal": {
+      "description": "Sitio web para cursos y formación en el segmento de mascotas, con presentación de contenidos, credibilidad y captación de alumnos."
+    },
+    "spartanvale": {
+      "description": "Presencia digital para una marca con enfoque en impacto visual, información institucional y contacto comercial."
+    },
+    "bcelv": {
+      "description": "Landing page objetiva para la presentación de servicios y conversión de visitantes en contactos comerciales."
+    },
+    "jornal-o-independente": {
+      "description": "Portal de noticias desarrollado para publicación ágil de contenidos, organización editorial y mejor experiencia de lectura en escritorio y móviles."
+    },
+    "falexpress": {
+      "description": "Guía empresarial con estructura de búsqueda y categorización, facilitando el descubrimiento de empresas, servicios y oportunidades comerciales locales."
+    },
+    "loja-virtual": {
+      "description": "Plataforma de comercio electrónico de marca blanca (white-label) con gestión de catálogo, pedidos y pagos, creada para escalar operaciones de ventas en línea."
+    },
+    "center-fitness": {
+      "description": "Sistema web para gimnasios con módulos de gestión administrativa, apoyo a la rutina operativa y optimización de procesos internos."
+    },
+    "imoov": {
+      "description": "Aplicación para gestión de ascensores enfocada en control operativo, monitoreo de rutinas técnicas y centralización de la información."
+    },
+    "credluz": {
+      "description": "Proyecto móvil dirigido a la evolución del producto, con reestructuración de funcionalidades y mejora de la experiencia del usuario en la nueva versión."
+    },
+    "medicalbook": {
+      "description": "Plataforma de referencia para médicos y profesionales de la salud, reuniendo contenido técnico y recursos digitales en una experiencia organizada."
+    },
+    "grabtakker": {
+      "description": "Bot para Telegram con automatizaciones y reglas de decisión, diseñado para acelerar respuestas, estandarizar flujos y reducir tareas manuales."
+    }
+  }
+}

@@ -9,6 +9,8 @@ import {
 } from "@/data/segmentBranding";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "./ThemeProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 type SegmentNavbarProps = {
   segment: "tech" | "design";
@@ -20,6 +22,8 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { theme } = useTheme();
+  const { t } = useTranslation();
+  
   const branding = segmentBranding[segment];
   const homePath = branding.homePath;
   const isHome = pathname === homePath || pathname === '/tech/criacao-de-sites';
@@ -62,17 +66,17 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
     : "text-gray-700 font-medium transition-colors";
 
   const techLinks = [
-    { label: "Portfólio", to: segmentPaths.techPortfolio },
-    { label: "Serviços", to: segmentPaths.techServicos },
-    { label: "Soluções", to: segmentPaths.techSolucoes },
-    { label: "Metodologia", to: segmentPaths.metodologia },
-    { label: "Sobre", to: segmentPaths.sobre },
+    { label: t("navbar.portfolio"), to: segmentPaths.techPortfolio },
+    { label: t("navbar.services"), to: segmentPaths.techServicos },
+    { label: t("navbar.solutions"), to: segmentPaths.techSolucoes },
+    { label: t("navbar.methodology"), to: segmentPaths.metodologia },
+    { label: t("navbar.about"), to: segmentPaths.sobre },
   ];
 
   const designLinks = [
-    { label: "Serviços", action: () => handleSectionClick("servicos") },
-    { label: "Ver todos", to: segmentPaths.designServicos },
-    { label: "Sobre", to: segmentPaths.sobre },
+    { label: t("navbar.services"), action: () => handleSectionClick("servicos") },
+    { label: t("navbar.see_all"), to: segmentPaths.designServicos },
+    { label: t("navbar.about"), to: segmentPaths.sobre },
   ];
 
   const links = segment === "tech" ? techLinks : designLinks;
@@ -129,14 +133,15 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
                   : accentBtn
               }
             >
-              Contato
+              {t("navbar.contact")}
             </button>
             <Link
               to={segmentPaths.gateway}
               className={`${desktopItemClass} opacity-70 hover:opacity-100`}
             >
-              Início
+              {t("navbar.home")}
             </Link>
+            <LanguageSwitcher />
           </div>
 
           <div className="flex items-center gap-4">
@@ -185,15 +190,18 @@ const SegmentNavbar = ({ segment }: SegmentNavbarProps) => {
                 onClick={() => handleSectionClick("contact")}
                 className={`text-gray-700 ${accentHover} transition-colors font-medium px-2 py-1 text-left`}
               >
-                Contato
+                {t("navbar.contact")}
               </button>
               <Link
                 to={segmentPaths.gateway}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-700 transition-colors font-medium px-2 py-1"
               >
-                Início
+                {t("navbar.home")}
               </Link>
+              <div className="pt-2">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         )}

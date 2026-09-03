@@ -94,7 +94,7 @@ export const techPortfolioProjects: TechPortfolioProject[] = [
   },
   {
     id: "stellaturismo",
-    title: "Stella Turismo",
+    title: "Stella Braga Turismo",
     year: "2019",
     category: "sites",
     type: "site",

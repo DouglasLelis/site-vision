@@ -1,5 +1,6 @@
 import { MessageSquare, Users, Zap, ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 interface Message {
   text: string;
@@ -8,31 +9,20 @@ interface Message {
 }
 
 const AtivaBot = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const [inputMessage, setInputMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: 'Olá! Como posso ajudar você hoje?',
+      text: t("ativaBot.chat.initialMessage"),
       sender: 'bot',
       timestamp: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
     }
   ]);
 
-  const mockResponses: Record<string, string> = {
-    'ola': 'Olá! Como posso ajudar você hoje?',
-    'oi': 'Oi! Em que posso ser útil?',
-    'ativabot': 'O AtivaBot é um sistema completo para atendimento ao cliente que integra WhatsApp, IA e gestão de equipes. Posso te enviar mais informações?',
-    'preco': 'O AtivaBot tem planos a partir de R$ 99/mês. Quer saber mais detalhes sobre os planos?',
-    'planos': 'Temos planos para todos os tamanhos de empresa. O plano básico inclui integração com WhatsApp e respostas automáticas. O plano premium inclui IA avançada e relatórios detalhados.',
-    'whatsapp': 'Sim! O AtivaBot se integra perfeitamente com o WhatsApp da sua empresa, permitindo atendimento unificado e eficiente.',
-    'ia': 'Nossa IA é treinada para entender o contexto das conversas e fornecer respostas precisas. Ela aprende com cada interação para melhorar continuamente.',
-    'equipe': 'O AtivaBot permite gerenciar sua equipe de atendimento, distribuir demandas automaticamente e acompanhar o desempenho de cada atendente.',
-    'ajuda': 'Posso te ajudar com informações sobre: preços, planos, integração com WhatsApp, IA, gestão de equipes e muito mais! O que você gostaria de saber?',
-    'obrigado': 'Por nada! Estou à disposição para ajudar com mais alguma coisa?',
-    'tchau': 'Até logo! Se precisar de mais alguma coisa, estou aqui!'
-  };
+  const mockResponses: Record<string, string> = t("ativaBot.chat.mockResponses", { returnObjects: true }) as Record<string, string>;
 
   const getBotResponse = (userMessage: string): string => {
     const lowerMessage = userMessage.toLowerCase();
@@ -41,7 +31,7 @@ const AtivaBot = () => {
         return response;
       }
     }
-    return 'Desculpe, não entendi. Você poderia reformular sua pergunta? Posso te ajudar com informações sobre preços, planos, integração com WhatsApp, IA e gestão de equipes.';
+    return t("ativaBot.chat.fallbackResponse");
   };
 
   const handleSendMessage = () => {
@@ -109,29 +99,10 @@ const AtivaBot = () => {
     };
   }, []);
 
-  const features: Array<{
-    title: string;
-    description: string;
-    icon: JSX.Element;
-    label?: string;
-  }> = [
-    {
-      title: "Centralize o Atendimento",
-      description: "Centralize o atendimento em um único canal, seja WhatsApp, Facebook, Instagram, Telegram e outros, tudo em um único lugar.",
-      icon: <MessageSquare size={24} className="text-vision-teal" />
-    },
-    {
-      title: "Gestão de Equipes",
-      description: "Organize sua equipe de atendimento com distribuição inteligente de demandas.",
-      icon: <Users size={24} className="text-vision-teal" />
-    },
-    {
-      title: "Respostas Automáticas com IA",
-      description: "Automatize respostas para as perguntas mais frequentes com inteligência artificial.",
-      icon: <Zap size={24} className="text-vision-teal" />,
-      label: "Em Breve"
-
-    },
+  const featuresData = [
+    <MessageSquare size={24} className="text-vision-teal" />,
+    <Users size={24} className="text-vision-teal" />,
+    <Zap size={24} className="text-vision-teal" />
   ];
 
   return (
@@ -141,38 +112,41 @@ const AtivaBot = () => {
           <div>
             <div className="reveal-item opacity-0 translate-y-8 transition-all duration-700">
               <span className="inline-block px-3 py-1 bg-vision-teal/10 text-vision-teal rounded-full text-sm font-medium mb-4">
-                SaaS
+                {t("ativaBot.badge")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Conheça o <span className="text-vision-teal">AtivaBot</span>
+                {t("ativaBot.title")} <span className="text-vision-teal">{t("ativaBot.titleHighlight")}</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Um sistema completo de atendimento que integra ferramentas como WhatsApp, respostas automáticas com IA, gestão de equipes e relatórios detalhados, tudo para otimizar o atendimento da sua empresa.
+                {t("ativaBot.description")}
               </p>
               
               <div className="space-y-6 mb-8">
-                {features.map((feature, index) => (
-                  <div 
-                    key={index} 
-                    className="reveal-item opacity-0 translate-y-8 transition-all duration-700 flex gap-4"
-                    style={{ transitionDelay: `${index * 100 + 200}ms` }}
-                  >
-                    <div className="h-12 w-12 rounded-lg bg-vision-teal/10 flex items-center justify-center flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
-                        {feature.label && (
-                          <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-1 rounded-full">
-                            {feature.label}
-                          </span>
-                        )}
+                {featuresData.map((icon, index) => {
+                  const featureLabel = t(`ativaBot.features.${index}.label`);
+                  return (
+                    <div 
+                      key={index} 
+                      className="reveal-item opacity-0 translate-y-8 transition-all duration-700 flex gap-4"
+                      style={{ transitionDelay: `${index * 100 + 200}ms` }}
+                    >
+                      <div className="h-12 w-12 rounded-lg bg-vision-teal/10 flex items-center justify-center flex-shrink-0">
+                        {icon}
                       </div>
-                      <p className="text-gray-600">{feature.description}</p>
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="text-xl font-semibold text-gray-800">{t(`ativaBot.features.${index}.title`)}</h3>
+                          {featureLabel && featureLabel !== `ativaBot.features.${index}.label` && (
+                            <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-1 rounded-full">
+                              {featureLabel}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-gray-600">{t(`ativaBot.features.${index}.description`)}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
               
               <a 
@@ -182,7 +156,7 @@ const AtivaBot = () => {
                 className="btn-primary inline-flex items-center justify-center gap-2 group bg-vision-teal hover:bg-vision-teal/90"
                 style={{ marginTop: '16px' }}
               >
-                Visite o site do AtivaBot
+                {t("ativaBot.visitSite")}
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
             </div>
@@ -201,7 +175,7 @@ const AtivaBot = () => {
                     </div>
                     <span className="font-medium text-gray-800">AtivaBot</span>
                   </div>
-                  <span className="text-xs font-medium text-vision-teal bg-vision-teal/10 px-2 py-1 rounded-full">Online</span>
+                  <span className="text-xs font-medium text-vision-teal bg-vision-teal/10 px-2 py-1 rounded-full">{t("ativaBot.chat.status")}</span>
                 </div>
                 
                 <div 
@@ -240,7 +214,7 @@ const AtivaBot = () => {
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Digite sua mensagem..."
+                    placeholder={t("ativaBot.chat.inputPlaceholder")}
                     className="w-full py-2 px-4 bg-gray-100 rounded-full focus:outline-none"
                   />
                   <button

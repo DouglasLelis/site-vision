@@ -1,7 +1,9 @@
 import { FaWhatsapp } from 'react-icons/fa';
 import { trackConversion } from "@/utils/tracking";
+import { useTranslation } from "react-i18next";
 
 export const FloatingWhatsApp = () => {
+  const { t } = useTranslation();
   const handleClick = () => {
     trackConversion('click_whatsapp_floating');
   };
@@ -14,7 +16,7 @@ export const FloatingWhatsApp = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition-transform duration-300 hover:scale-110 animate-float"
-        aria-label="Falar pelo WhatsApp"
+        aria-label={t("floatingWhatsApp.aria")}
       >
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-30"></span>
         <FaWhatsapp className="h-9 w-9 relative z-10" />

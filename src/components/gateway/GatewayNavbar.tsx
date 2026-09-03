@@ -1,7 +1,10 @@
 import { Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { LanguageSwitcher } from "../LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const GatewayNavbar = () => {
+  const { t } = useTranslation();
   return (
     <nav className="hidden md:block shrink-0 relative z-50 py-5">
       <div className="container mx-auto px-6 flex justify-end items-center">
@@ -13,7 +16,7 @@ const GatewayNavbar = () => {
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
           >
             <FaWhatsapp size={16} className="text-vision-tech" />
-            Tech
+            {t("navbar.tech")}
           </a>
           <a
             href="https://api.whatsapp.com/send/?phone=5512981999857&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:"
@@ -22,15 +25,18 @@ const GatewayNavbar = () => {
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
           >
             <FaWhatsapp size={16} className="text-vision-pink" />
-            Design
+            {t("navbar.design")}
           </a>
           <a
             href="mailto:comercial@visiontaubate.com.br"
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
           >
             <Mail size={16} />
-            E-mail
+            {t("navbar.email")}
           </a>
+          <div className="bg-white/5 rounded-full px-2 border border-white/20">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>

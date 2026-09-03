@@ -1,7 +1,9 @@
 import { Gift, Server, Globe, Shield, Mail } from "lucide-react";
 import { trackConversion } from "@/utils/tracking";
+import { useTranslation, Trans } from "react-i18next";
 
 const WebsiteBonuses = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-background relative border-t border-border">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-vision-tech/5 rounded-full blur-[150px] pointer-events-none" />
@@ -11,12 +13,14 @@ const WebsiteBonuses = () => {
           <div className="flex items-center gap-4 mb-8 justify-center">
             <Gift className="w-10 h-10 text-vision-tech animate-pulse" />
             <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center">
-              Bônus Exclusivo VisionTaubaté
+              {t("websiteBonuses.title")}
             </h2>
           </div>
           
           <p className="text-xl text-muted-foreground text-center mb-12">
-            Fechando o seu projeto conosco, você ganha <strong className="text-foreground">1 ANO INTEIRO</strong> de domínio e hospedagem premium por nossa conta.
+            <Trans i18nKey="websiteBonuses.subtitle">
+              Fechando o seu projeto conosco, você ganha <strong className="text-foreground">1 ANO INTEIRO</strong> de domínio e hospedagem premium por nossa conta.
+            </Trans>
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -25,14 +29,15 @@ const WebsiteBonuses = () => {
                 <div className="p-3 rounded-lg bg-vision-tech/10 text-vision-tech">
                   <Globe className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Domínio Grátis</h3>
+                <h3 className="text-2xl font-bold text-foreground">{t("websiteBonuses.domain.title")}</h3>
               </div>
               <p className="text-muted-foreground mb-4">
-                Nós pagamos o seu domínio (Registro.br) durante o primeiro ano. Garanta o nome da sua empresa na internet sem custos iniciais.
+                {t("websiteBonuses.domain.text")}
               </p>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                <li>• Válido para novos domínios (.com.br)</li>
-                <li>• Registro oficial no seu CNPJ/CPF</li>
+                {(t("websiteBonuses.domain.features", { returnObjects: true }) as string[]).map((feature: string, idx: number) => (
+                  <li key={idx}>• {feature}</li>
+                ))}
               </ul>
             </div>
 
@@ -42,21 +47,33 @@ const WebsiteBonuses = () => {
                 <div className="p-3 rounded-lg bg-vision-tech/10 text-vision-tech">
                   <Server className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Hospedagem Premium</h3>
+                <h3 className="text-2xl font-bold text-foreground">{t("websiteBonuses.hosting.title")}</h3>
               </div>
               
               <ul className="space-y-4 text-muted-foreground relative z-10">
                 <li className="flex items-start gap-3">
                   <Server className="w-5 h-5 text-vision-tech mt-1 shrink-0" />
-                  <span><strong className="text-foreground">Servidor de Alta Performance:</strong> 99,9% de Uptime (tempo no ar garantido).</span>
+                  <span>
+                    <Trans i18nKey="websiteBonuses.hosting.performance">
+                      <strong className="text-foreground">Servidor de Alta Performance:</strong> 99,9% de Uptime (tempo no ar garantido).
+                    </Trans>
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="w-5 h-5 text-vision-tech mt-1 shrink-0" />
-                  <span><strong className="text-foreground">Segurança:</strong> Certificado SSL (Let's Encrypt) totalmente gratuito.</span>
+                  <span>
+                    <Trans i18nKey="websiteBonuses.hosting.security">
+                      <strong className="text-foreground">Segurança:</strong> Certificado SSL (Let's Encrypt) totalmente gratuito.
+                    </Trans>
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-vision-tech mt-1 shrink-0" />
-                  <span><strong className="text-foreground">E-mails Profissionais:</strong> 3 contas de e-mail corporativo com 10GB de espaço cada.</span>
+                  <span>
+                    <Trans i18nKey="websiteBonuses.hosting.emails">
+                      <strong className="text-foreground">E-mails Profissionais:</strong> 3 contas de e-mail corporativo com 10GB de espaço cada.
+                    </Trans>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -64,7 +81,9 @@ const WebsiteBonuses = () => {
 
           <div className="mt-12 text-center p-6 rounded-xl bg-card border border-border shadow-sm">
             <p className="text-muted-foreground">
-              * Após o período de 1 ano de gratuidade, o custo anual de renovação do servidor + contas de e-mail + certificado SSL é de apenas <strong className="text-vision-tech text-xl">R$ 150,00</strong> por ano.
+              <Trans i18nKey="websiteBonuses.disclaimer">
+                * Após o período de 1 ano de gratuidade, o custo anual de renovação do servidor + contas de e-mail + certificado SSL é de apenas <strong className="text-vision-tech text-xl">R$ 150,00</strong> por ano.
+              </Trans>
             </p>
           </div>
 
@@ -76,7 +95,7 @@ const WebsiteBonuses = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Garantir Meu Bônus Agora
+                {t("websiteBonuses.cta")}
               </a>
           </div>
 

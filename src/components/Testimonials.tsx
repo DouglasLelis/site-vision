@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type TestimonialsProps = {
   segment?: "tech" | "design";
@@ -15,7 +16,7 @@ const testimonials = [
   },
   {
     name: "Patricia Braga",
-    role: "Cliente, Stella Turismo",
+    role: "Cliente, Stella Braga Turismo",
     image:
       "https://lh3.googleusercontent.com/a-/ALV-UjUiTVXZHS3WFAf3twgcVWm20NcvyaPWAdlYz2RL4GH9ymqBf0Uk=w60-h60-p-rp-mo-ba3-br100",
     text: "Adorei o serviço prestado. Estão de parabéns!! Agilidade, qualidade e ótimo valor.",
@@ -32,6 +33,7 @@ const testimonials = [
 ];
 
 const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isTech = segment === "tech";
@@ -79,22 +81,20 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
           {isTech ? (
             <>
               <p className="uppercase tracking-[0.2em] text-sm mb-2 text-vision-tech">
-                Depoimentos
+                {t("testimonials.section")}
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-foreground">
-                O Que Nossos Clientes Dizem
+                {t("testimonials.title")}
               </h2>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto text-muted-foreground">
-                Sucesso compartilhado com empresas que confiaram em nossas
-                soluções
+                {t("testimonials.subtitle")}
               </p>
             </>
           ) : (
             <>
-              <h2 className="section-header text-foreground">O Que Nossos Clientes Dizem</h2>
+              <h2 className="section-header text-foreground">{t("testimonials.title")}</h2>
               <p className="section-subheader text-muted-foreground">
-                Sucesso compartilhado com empresas que confiaram em nossas
-                soluções
+                {t("testimonials.subtitle")}
               </p>
             </>
           )}
@@ -122,10 +122,10 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
                         />
                         <div>
                           <h3 className="text-xl font-semibold text-foreground">
-                            {testimonial.name}
+                            {t(`testimonials.list.${index}.name`)}
                           </h3>
                           <p className="text-muted-foreground">
-                            {testimonial.role}
+                            {t(`testimonials.list.${index}.role`)}
                           </p>
                           <div className="flex mt-2">
                             {[...Array(5)].map((_, i) => (
@@ -143,7 +143,7 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
                         </div>
                       </div>
                       <p className="italic text-muted-foreground">
-                        "{testimonial.text}"
+                        "{t(`testimonials.list.${index}.text`)}"
                       </p>
                     </div>
                   </div>
@@ -161,7 +161,7 @@ const Testimonials = ({ segment = "design" }: TestimonialsProps) => {
                       ? "w-8 bg-vision-tech"
                       : "w-2 bg-muted hover:bg-vision-tech/50"
                   }`}
-                  aria-label={`Ir para depoimento ${index + 1}`}
+                  aria-label={t("testimonials.goTo", { index: index + 1 })}
                 />
               ))}
             </div>

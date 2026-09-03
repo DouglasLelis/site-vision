@@ -9,6 +9,7 @@ import {
   absoluteImageUrl,
   type SeoEntry,
 } from "@/config/seo";
+import { useTranslation } from "react-i18next";
 
 type PageSEOProps = {
   seo: SeoEntry;
@@ -54,23 +55,28 @@ function buildWebPageSchema(seo: SeoEntry) {
 }
 
 export function PageSEO({ seo }: PageSEOProps) {
-  const documentTitle = formatDocumentTitle(seo.title, seo.path);
+  const { t } = useTranslation();
+  
+  const localizedTitle = t(`seo.${seo.id}.title`, seo.title);
+  const localizedDescription = t(`seo.${seo.id}.description`, seo.description);
+
+  const documentTitle = formatDocumentTitle(localizedTitle, seo.path);
   const canonicalUrl = absoluteUrl(seo.path);
   const ogImage = absoluteImageUrl(seo.ogImage ?? DEFAULT_OG_IMAGE);
 
   const jsonLd =
     seo.path === "/"
       ? [buildOrganizationSchema(), buildWebSiteSchema()]
-      : [buildOrganizationSchema(), buildWebPageSchema(seo)];
+      : [buildOrganizationSchema(), buildWebPageSchema({ ...seo, title: localizedTitle, description: localizedDescription })];
 
   return (
     <Helmet>
       <title>{documentTitle}</title>
-      <meta name="description" content={seo.description} />
+      <meta name="description" content={localizedDescription} />
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:title" content={documentTitle} />
-      <meta property="og:description" content={seo.description} />
+      <meta property="og:description" content={localizedDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
@@ -79,7 +85,7 @@ export function PageSEO({ seo }: PageSEOProps) {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={documentTitle} />
-      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:description" content={localizedDescription} />
       <meta name="twitter:image" content={ogImage} />
 
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

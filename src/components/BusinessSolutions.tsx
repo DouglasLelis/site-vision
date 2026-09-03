@@ -5,6 +5,7 @@ import {
   businessSolutionsPage,
 } from "@/data/businessSolutions";
 import { segmentBranding } from "@/data/segmentBranding";
+import { useTranslation } from "react-i18next";
 
 const techColors = {
   badge: "bg-vision-tech/10 text-vision-tech",
@@ -15,6 +16,7 @@ const techColors = {
 };
 
 const BusinessSolutions = () => {
+  const { t } = useTranslation();
   return (
     <section id="solucoes" className="py-24 bg-black text-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -25,16 +27,14 @@ const BusinessSolutions = () => {
             aria-hidden="true"
             className="h-12 w-12 mx-auto mb-6"
           />
-          <span className="inline-block px-3 py-1 bg-vision-tech/10 text-vision-tech rounded-full text-sm font-medium mb-4 tracking-widest uppercase">
-            {segmentBranding.tech.tagline}
-          </span>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] mb-4 text-vision-tech">
+            {t(segmentBranding.tech.tagline)}
+          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-white opacity-100 animate-fade-in">
-            {businessSolutionsPage.title}
+            {t("businessSolutions.pageTitle")}
           </h2>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 opacity-100 animate-fade-in">
-            Plataformas próprias em nuvem para transformar a gestão do seu
-            negócio — do primeiro contato com o cliente até o controle financeiro
-            completo.
+            {t("businessSolutions.pageDescription")}
           </p>
         </div>
 
@@ -58,24 +58,24 @@ const BusinessSolutions = () => {
                       className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${techColors.badge}`}
                     >
                       <Icon size={14} />
-                      {solution.category}
+                      {t(`businessSolutions.solutions.${solution.id}.category`)}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6 md:p-8">
                   <h3 className={`text-2xl font-bold mb-1 ${techColors.accent}`}>
-                    {solution.name}
+                    {t(`businessSolutions.solutions.${solution.id}.name`)}
                   </h3>
                   <p className="text-sm font-medium text-gray-500 mb-4">
-                    {solution.tagline}
+                    {t(`businessSolutions.solutions.${solution.id}.tagline`)}
                   </p>
                   <p className="text-gray-400 mb-6 line-clamp-3">
-                    {solution.description}
+                    {t(`businessSolutions.solutions.${solution.id}.description`)}
                   </p>
 
                   <ul className="space-y-2 mb-8">
-                    {solution.highlights.map((highlight) => (
+                    {(t(`businessSolutions.solutions.${solution.id}.highlights`, { returnObjects: true }) as string[]).map((highlight: string) => (
                       <li
                         key={highlight}
                         className="flex items-center gap-2 text-sm text-gray-300"
@@ -94,17 +94,17 @@ const BusinessSolutions = () => {
                         rel="noopener noreferrer"
                         className={`inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors ${techColors.button}`}
                       >
-                        Conhecer plataforma
+                        {t(`businessSolutions.solutions.${solution.id}.platform`)}
                         <ArrowRight size={16} />
                       </a>
                     ) : (
                       <a
-                        href={`https://wa.me/5512997856012?text=${encodeURIComponent(solution.whatsappMessage)}`}
+                        href={`https://wa.me/5512997856012?text=${encodeURIComponent(t(`businessSolutions.solutions.${solution.id}.whatsappMessage`, solution.whatsappMessage))}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors ${techColors.button}`}
                       >
-                        Solicitar demonstração
+                        {t(`businessSolutions.solutions.${solution.id}.demo`)}
                         <ArrowRight size={16} />
                       </a>
                     )}
@@ -120,7 +120,7 @@ const BusinessSolutions = () => {
             to={businessSolutionsPage.route}
             className="btn-tech inline-flex items-center gap-2 group"
           >
-            Ver todas as soluções em detalhes
+            {t("businessSolutions.seeAll")}
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"

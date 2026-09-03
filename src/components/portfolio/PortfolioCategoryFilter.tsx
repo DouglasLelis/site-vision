@@ -1,5 +1,6 @@
 import type { TechPortfolioCategory } from "@/data/techPortfolio";
 import { techPortfolioCategories } from "@/data/techPortfolio";
+import { useTranslation } from "react-i18next";
 
 type PortfolioCategoryFilterProps = {
   active: TechPortfolioCategory | "all";
@@ -12,6 +13,8 @@ export function PortfolioCategoryFilter({
   onChange,
   counts,
 }: PortfolioCategoryFilterProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-wrap justify-center gap-2 md:gap-3">
       {techPortfolioCategories.map((category) => (
@@ -25,7 +28,7 @@ export function PortfolioCategoryFilter({
               : "border-zinc-700 text-zinc-400 hover:border-vision-tech/40 hover:text-white"
           }`}
         >
-          {category.label}
+          {t(`techPortfolioCategories.${category.id}`, category.label)}
           <span
             className={`rounded-full px-1.5 py-0.5 text-xs ${
               active === category.id

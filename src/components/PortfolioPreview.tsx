@@ -7,8 +7,10 @@ import {
 } from "@/data/techPortfolio";
 import { segmentPaths } from "@/data/segmentBranding";
 import { PortfolioBrowserFrame } from "@/components/portfolio/PortfolioBrowserFrame";
+import { useTranslation } from "react-i18next";
 
 const PortfolioPreview = () => {
+  const { t } = useTranslation();
   const projects = getFeaturedTechProjects().slice(0, 4);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -28,14 +30,13 @@ const PortfolioPreview = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <p className="uppercase tracking-[0.2em] text-sm mb-2 text-vision-tech">
-            Portfólio
+            {t("portfolioPreview.section")}
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-3 text-foreground">
-            Projetos em destaque
+            {t("portfolioPreview.title")}
           </h2>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto text-muted-foreground">
-            Uma amostra do que desenvolvemos — explore o portfólio completo por
-            categoria.
+            {t("portfolioPreview.description")}
           </p>
         </div>
 
@@ -56,18 +57,18 @@ const PortfolioPreview = () => {
 
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="inline-flex rounded-full bg-vision-tech/10 border border-vision-tech/25 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-vision-tech">
-                    {techPortfolioTypeLabels[active.type]}
+                  <span className="inline-flex rounded-full bg-vision-tech/10 border border-vision-tech/25 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-vision-tech">
+                    {t(`techPortfolioTypes.${active.type}`, techPortfolioTypeLabels[active.type])}
                   </span>
                   <span className="text-sm text-muted-foreground">{active.year}</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
                   {active.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">{active.description}</p>
+                <p className="text-muted-foreground mb-4">{t(`techPortfolioProjects.${active.id}.description`, active.description)}</p>
                 {active.technologies && (
                   <p className="text-sm text-muted-foreground">
-                    <span className="text-muted-foreground/70">Stack: </span>
+                    <span className="text-muted-foreground/70">{t("portfolioPreview.stack")}</span>
                     {active.technologies}
                   </p>
                 )}
@@ -83,7 +84,7 @@ const PortfolioPreview = () => {
                   )
                 }
                 className="h-10 w-10 rounded-full border border-border flex items-center justify-center text-foreground hover:border-vision-tech hover:text-vision-tech transition-colors"
-                aria-label="Projeto anterior"
+                aria-label={t("portfolioPreview.prev")}
               >
                 <ChevronLeft size={18} />
               </button>
@@ -98,7 +99,7 @@ const PortfolioPreview = () => {
                         ? "w-8 bg-vision-tech"
                         : "w-2 bg-muted hover:bg-vision-tech/50"
                     }`}
-                    aria-label={`Ver ${project.title}`}
+                    aria-label={t("portfolioPreview.view", { title: project.title })}
                   />
                 ))}
               </div>
@@ -108,7 +109,7 @@ const PortfolioPreview = () => {
                   setActiveIndex((prev) => (prev + 1) % projects.length)
                 }
                 className="h-10 w-10 rounded-full border border-border flex items-center justify-center text-foreground hover:border-vision-tech hover:text-vision-tech transition-colors"
-                aria-label="Próximo projeto"
+                aria-label={t("portfolioPreview.next")}
               >
                 <ChevronRight size={18} />
               </button>
@@ -121,7 +122,7 @@ const PortfolioPreview = () => {
             to={segmentPaths.techPortfolio}
             className="btn-tech inline-flex items-center gap-2 group"
           >
-            Ver portfólio completo
+            {t("portfolioPreview.viewAll")}
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"

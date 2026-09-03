@@ -1,41 +1,35 @@
 import { ArrowRight, Code, Layout, Rocket, Search } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { trackConversion } from "@/utils/tracking";
+import { useTranslation } from "react-i18next";
 
 const features = [
   {
-    icon: <Layout className="w-6 h-6 text-vision-tech" />,
-    title: "100% Responsivo",
-    description: "Seu site perfeitamente adaptado para celulares, tablets e computadores, garantindo a melhor experiência (UX)."
+    icon: <Layout className="w-6 h-6 text-vision-tech" />
   },
   {
-    icon: <Search className="w-6 h-6 text-vision-tech" />,
-    title: "Otimização SEO",
-    description: "Estrutura avançada preparada para indexação no Google, aumentando suas chances de ser encontrado organicamente."
+    icon: <Search className="w-6 h-6 text-vision-tech" />
   },
   {
-    icon: <Code className="w-6 h-6 text-vision-tech" />,
-    title: "Qualquer tipo de Site",
-    description: "Desenvolvemos Landing Pages, Sites Institucionais, E-commerces, Portfólios e Blogs com design exclusivo."
+    icon: <Code className="w-6 h-6 text-vision-tech" />
   },
   {
-    icon: <Rocket className="w-6 h-6 text-vision-tech" />,
-    title: "Alta Performance",
-    description: "Sites ultrarrápidos, garantindo pontuação máxima no Google e menos desistências por lentidão."
+    icon: <Rocket className="w-6 h-6 text-vision-tech" />
   }
 ];
 
 const WebsiteFeatures = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-background relative">
       <div className="absolute inset-0 bg-gradient-to-b from-vision-tech/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Por que escolher a VisionTaubaté?
+            {t("websiteFeatures.title")}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Muito além da estética, entregamos soluções focadas em resultados e crescimento digital para sua empresa.
+            {t("websiteFeatures.subtitle")}
           </p>
         </div>
 
@@ -48,9 +42,9 @@ const WebsiteFeatures = () => {
               <div className="mb-6 p-4 rounded-xl bg-secondary inline-block group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-3">{t(`websiteFeatures.list.${index}.title`)}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
+                {t(`websiteFeatures.list.${index}.description`)}
               </p>
             </div>
           ))}

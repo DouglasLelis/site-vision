@@ -1,7 +1,8 @@
-
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,12 +35,7 @@ const About = () => {
     };
   }, []);
 
-  const stats = [
-    { value: '+100', label: 'Projetos entregues' },
-    { value: '+50', label: 'Clientes satisfeitos' },
-    { value: '+10', label: 'Anos de experiência' },
-    { value: '+20', label: 'Especialistas' },
-  ];
+  const stats = t('about.stats', { returnObjects: true }) as { value: string; label: string }[];
 
   return (
     <div id="about" ref={sectionRef} className="py-24">
@@ -47,16 +43,16 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4">
           <div>
             <div className="text-center lg:text-left mb-10 lg:mb-0">
-              <h2 className="section-header lg:text-left">Sobre a VisionTaubaté</h2>
+              <h2 className="section-header lg:text-left">{t('about.title')}</h2>
               <div className="reveal-item opacity-0 translate-y-8 transition-all duration-700 delay-100">
                 <p className="text-lg text-gray-600 mb-6">
-                  Há mais de uma década, a VisionTaubaté vem transformando o cenário tecnológico com soluções inovadoras e personalizadas. Somos uma software house comprometida com a excelência e a satisfação dos nossos clientes.
+                  {t('about.p1')}
                 </p>
                 <p className="text-lg text-gray-600 mb-6">
-                  Nossa equipe é formada por especialistas apaixonados por tecnologia, dedicados a criar soluções que não apenas atendem, mas superam as expectativas dos nossos clientes.
+                  {t('about.p2')}
                 </p>
                 <p className="text-lg text-gray-600">
-                  Trabalhamos com metodologias ágeis e as mais recentes tecnologias do mercado para garantir produtos de alta qualidade e com o melhor desempenho.
+                  {t('about.p3')}
                 </p>
               </div>
             </div>
@@ -77,9 +73,9 @@ const About = () => {
             </div>
 
             <div className="reveal-item opacity-0 translate-y-8 transition-all duration-700 delay-700 bg-vision-900 rounded-xl p-8 text-white">
-              <h3 className="text-xl font-semibold mb-4">Nossa Missão</h3>
+              <h3 className="text-xl font-semibold mb-4">{t('about.mission.title')}</h3>
               <p>
-                Desenvolver soluções tecnológicas inovadoras que impulsionem o crescimento dos nossos clientes e contribuam para a transformação digital dos negócios.
+                {t('about.mission.text')}
               </p>
             </div>
           </div>

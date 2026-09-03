@@ -14,8 +14,10 @@ import {
 import { useEffect } from "react";
 import { trackConversion } from "@/utils/tracking";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const WebsiteCreation = () => {
+  const { t } = useTranslation();
   useRevealOnScroll();
   useSegmentHashScroll();
 
@@ -41,9 +43,9 @@ const WebsiteCreation = () => {
       {/* CTA Final */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Pronto para transformar sua presença digital?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">{t("websiteCreationPage.cta.title")}</h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Fale com nossos especialistas no WhatsApp e receba um orçamento sem compromisso em poucos minutos.
+            {t("websiteCreationPage.cta.description")}
           </p>
           <a
             href="https://api.whatsapp.com/send/?phone=5512997856012&text=Gostaria%20de%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site!%20Me%20chamo:"
@@ -52,7 +54,7 @@ const WebsiteCreation = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Falar com Especialista
+            {t("websiteCreationPage.cta.button")}
             <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
           </a>
         </div>

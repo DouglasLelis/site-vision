@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 type ContactProps = {
   segment?: "tech" | "design";
@@ -10,19 +11,19 @@ type ContactProps = {
 const designContactMethods = [
   {
     icon: Mail,
-    title: "Email",
+    titleKey: "contact.methods.email",
     content: "comercial@visiontaubate.com.br",
     href: "mailto:comercial@visiontaubate.com.br",
   },
   {
     icon: FaWhatsapp,
-    title: "WhatsApp - Gráfica",
+    titleKey: "contact.methods.whatsapp_design",
     content: "+55 (12) 981999857",
     href: "https://api.whatsapp.com/send/?phone=5512981999857&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:",
   },
   {
     icon: FaWhatsapp,
-    title: "WhatsApp - Central T.i",
+    titleKey: "contact.methods.whatsapp_tech",
     content: "+55 (12) 997856012",
     href: "https://api.whatsapp.com/send/?phone=5512997856012&text=Gostaria%20de%20um%20or%C3%A7amento!%20Me%20chamo:",
   },
@@ -31,13 +32,13 @@ const designContactMethods = [
 const techContactMethods = [
   {
     icon: Mail,
-    title: "Email",
+    titleKey: "contact.methods.email",
     content: "comercial@visiontaubate.com.br",
     href: "mailto:comercial@visiontaubate.com.br",
   },
   {
     icon: FaWhatsapp,
-    title: "WhatsApp",
+    titleKey: "contact.methods.whatsapp",
     content: "+55 (12) 99785-6012",
     href: "https://api.whatsapp.com/send/?phone=5512997856012&text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20de%20tecnologia.",
   },
@@ -48,6 +49,7 @@ const Contact = ({ segment = "design" }: ContactProps) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const isTech = segment === "tech";
@@ -81,7 +83,7 @@ const Contact = ({ segment = "design" }: ContactProps) => {
     e.preventDefault();
 
     if (!name || !email || !message) {
-      toast.error("Por favor, preencha todos os campos");
+      toast.error(t("contact.form.error"));
       return;
     }
 
@@ -89,7 +91,7 @@ const Contact = ({ segment = "design" }: ContactProps) => {
 
     setTimeout(() => {
       toast.success(
-        "Mensagem enviada com sucesso! Entraremos em contato em breve."
+        t("contact.form.success")
       );
       setName("");
       setEmail("");
@@ -115,20 +117,20 @@ const Contact = ({ segment = "design" }: ContactProps) => {
           {isTech ? (
             <>
               <p className="uppercase tracking-[0.2em] text-sm mb-2 text-vision-tech">
-                Contato
+                {t("contact.section")}
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-foreground">
-                Entre em Contato
+                {t("contact.title")}
               </h2>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto text-muted-foreground">
-                Estamos prontos para transformar sua ideia em realidade
+                {t("contact.subtitle")}
               </p>
             </>
           ) : (
             <>
-              <h2 className="section-header">Entre em Contato</h2>
+              <h2 className="section-header">{t("contact.title")}</h2>
               <p className="section-subheader text-muted-foreground">
-                Estamos prontos para transformar sua ideia em realidade
+                {t("contact.subtitle")}
               </p>
             </>
           )}
@@ -163,7 +165,7 @@ const Contact = ({ segment = "design" }: ContactProps) => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold mb-1 text-foreground">
-                          {method.title}
+                          {t(method.titleKey)}
                         </h3>
                         <p className="text-muted-foreground">
                           {method.content}
@@ -178,12 +180,12 @@ const Contact = ({ segment = "design" }: ContactProps) => {
 
           <div className="lg:col-span-2 rounded-xl p-8 bg-card shadow-sm border border-border">
             <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Envie-nos uma mensagem
+              {t("contact.form.title")}
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className={labelClass}>
-                  Nome completo
+                  {t("contact.form.nameLabel")}
                 </label>
                 <input
                   id="name"
@@ -191,13 +193,13 @@ const Contact = ({ segment = "design" }: ContactProps) => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className={inputClass}
-                  placeholder="Seu nome"
+                  placeholder={t("contact.form.namePlaceholder")}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className={labelClass}>
-                  Email
+                  {t("contact.form.emailLabel")}
                 </label>
                 <input
                   id="email"
@@ -205,13 +207,13 @@ const Contact = ({ segment = "design" }: ContactProps) => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className={inputClass}
-                  placeholder="seu-email@exemplo.com"
+                  placeholder={t("contact.form.emailPlaceholder")}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className={labelClass}>
-                  Mensagem
+                  {t("contact.form.messageLabel")}
                 </label>
                 <textarea
                   id="message"
@@ -219,7 +221,7 @@ const Contact = ({ segment = "design" }: ContactProps) => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className={inputClass}
-                  placeholder="Descreva seu projeto ou dúvida..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                 />
               </div>
 
@@ -230,7 +232,7 @@ const Contact = ({ segment = "design" }: ContactProps) => {
                   isTech ? "btn-tech" : "btn-primary"
                 }`}
               >
-                {loading ? "Enviando..." : "Enviar mensagem"}
+                {loading ? t("contact.form.submitting") : t("contact.form.submit")}
               </button>
             </form>
           </div>

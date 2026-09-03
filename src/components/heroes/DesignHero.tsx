@@ -3,8 +3,10 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { segmentBackgroundMedia } from "@/data/segmentBackgroundMedia";
 import { segmentPaths } from "@/data/segmentBranding";
+import { useTranslation } from "react-i18next";
 
 const DesignHero = () => {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const media = segmentBackgroundMedia.design;
 
@@ -57,7 +59,7 @@ const DesignHero = () => {
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl space-y-8">
           <div className="flex flex-wrap gap-2">
-            {["Comunicação Visual", "Branding", "Design"].map((tag) => (
+            {Object.values(t("designHero.tags", { returnObjects: true })).map((tag: any) => (
               <span
                 key={tag}
                 className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white border border-white/30"
@@ -67,12 +69,11 @@ const DesignHero = () => {
             ))}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Marcas que se destacam com{" "}
-            <span className="text-vision-pink">Comunicação Visual</span>
+            {t("designHero.title1")}{" "}
+            <span className="text-vision-pink">{t("designHero.title2")}</span>
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            Criamos identidades e materiais visuais estratégicos para fortalecer
-            seu posicionamento e conectar sua marca ao público certo.
+            {t("designHero.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -81,7 +82,7 @@ const DesignHero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Inicie seu projeto
+              {t("designHero.startProject")}
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
@@ -91,14 +92,14 @@ const DesignHero = () => {
               to={segmentPaths.designServicos}
               className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-white border border-white/40 bg-white/10 hover:bg-white/20 transition-colors"
             >
-              Ver serviços de comunicação visual
+              {t("designHero.viewVisualServices")}
               <ArrowRight size={18} />
             </Link>
             <a
               href="#servicos"
               className="inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium text-white border border-white/40 bg-white/10 hover:bg-white/20 transition-colors"
             >
-              Ver serviços
+              {t("designHero.viewServices")}
             </a>
           </div>
         </div>

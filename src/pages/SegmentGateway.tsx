@@ -4,8 +4,11 @@ import GatewayNavbar from "@/components/gateway/GatewayNavbar";
 import SegmentPortal from "@/components/gateway/SegmentPortal";
 import QuickContactBar from "@/components/gateway/QuickContactBar";
 import { segmentBranding } from "@/data/segmentBranding";
+import { useTranslation } from "react-i18next";
 
 const SegmentGateway = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
 
@@ -59,10 +62,10 @@ const SegmentGateway = () => {
               className="h-12 xs:h-12 sm:h-16 md:h-32 w-auto max-w-[320px] sm:max-w-[360px] md:max-w-[480px] mx-auto mb-4 md:mb-6 object-contain"
             />
             <h1 className="text-lg sm:text-3xl md:text-5xl font-bold mb-1 md:mb-3">
-              Escolha seu caminho
+              {t("gateway.title")}
             </h1>
             <p className="text-gray-400 text-sm md:text-md max-w-xl mx-auto">
-              Tecnologia e comunicação visual em experiências dedicadas.
+              {t("gateway.subtitle")}
             </p>
           </motion.div>
 

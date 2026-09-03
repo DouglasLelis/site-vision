@@ -24,7 +24,7 @@ export function getSegmentFromPath(pathname: string): SiteSegment {
 export const segmentBranding = {
   tech: {
     name: "VisionTaubaté Tech",
-    tagline: "INTELIGÊNCIA QUE TRANSFORMA",
+    tagline: "segmentBranding.tech.tagline",
     accent: "vision-tech" as const,
     homePath: segmentPaths.tech,
     logos: {
@@ -35,7 +35,7 @@ export const segmentBranding = {
   },
   design: {
     name: "VisionTaubaté",
-    tagline: "Comunicação que conecta",
+    tagline: "segmentBranding.design.tagline",
     accent: "vision-pink" as const,
     homePath: segmentPaths.design,
     logos: {

@@ -5,6 +5,7 @@ import {
   type TechPortfolioProject,
 } from "@/data/techPortfolio";
 import { PortfolioBrowserFrame } from "./PortfolioBrowserFrame";
+import { useTranslation } from "react-i18next";
 
 type PortfolioProjectCardProps = {
   project: TechPortfolioProject;
@@ -15,6 +16,8 @@ export function PortfolioProjectCard({
   project,
   index = 0,
 }: PortfolioProjectCardProps) {
+  const { t } = useTranslation();
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -36,14 +39,14 @@ export function PortfolioProjectCard({
       <div className="flex flex-1 flex-col px-5 pb-5 md:px-6 md:pb-6">
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <span className="inline-flex rounded-full bg-vision-tech/10 border border-vision-tech/25 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-vision-tech">
-            {techPortfolioTypeLabels[project.type]}
+            {t(`techPortfolioTypes.${project.type}`, techPortfolioTypeLabels[project.type])}
           </span>
           <span className="text-xs text-zinc-500">{project.year}</span>
         </div>
 
         <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
         <p className="text-sm text-zinc-400 leading-relaxed mb-4 flex-1">
-          {project.description}
+          {t(`techPortfolioProjects.${project.id}.description`, project.description)}
         </p>
 
         {project.technologies && (

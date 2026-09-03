@@ -5,8 +5,10 @@ import { segmentBackgroundMedia } from "@/data/segmentBackgroundMedia";
 import { segmentPaths } from "@/data/segmentBranding";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const VisualCommunication = () => {
+  const { t } = useTranslation();
   const segment = serviceSegments.design;
 
   return (
@@ -39,23 +41,23 @@ const VisualCommunication = () => {
               Comunicação Visual
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {segment.title}
+              {t("serviceSegments.design.title")}
             </h1>
             <p className="max-w-3xl text-lg md:text-xl text-white/90">
-              {segment.description}
+              {t("serviceSegments.design.description")}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 to={segmentPaths.design}
                 className="inline-flex w-fit rounded-md bg-vision-pink text-white px-4 py-2 font-medium hover:bg-vision-pink/90 transition-colors"
               >
-                Voltar para Design
+                {t("serviceSegments.design.actions.back")}
               </Link>
               <Link
                 to={segmentPaths.tech}
                 className="inline-flex w-fit rounded-md border border-white/70 text-white px-4 py-2 font-medium hover:bg-white/10 transition-colors"
               >
-                Ver Tech
+                {t("serviceSegments.design.actions.viewOther")}
               </Link>
             </div>
           </div>
@@ -72,11 +74,11 @@ const VisualCommunication = () => {
                   <service.icon size={24} className="text-vision-pink" />
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900 mb-3">
-                  {service.title}
+                  {t(`serviceSegments.design.services.${index}.title`)}
                 </h2>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <p className="text-gray-600 mb-6">{t(`serviceSegments.design.services.${index}.description`)}</p>
                 <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
+                  {(t(`serviceSegments.design.services.${index}.features`, { returnObjects: true }) as string[]).map((feature, idx) => (
                     <li
                       key={idx}
                       className="flex items-center gap-2 text-gray-700"
